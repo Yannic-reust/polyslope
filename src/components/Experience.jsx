@@ -4,7 +4,6 @@ import * as THREE from 'three';
 
 import SceneInit from './lib/SceneInit';
 
-
 function Experience() {
   useEffect(() => {
     const test = new SceneInit('myThreeJsCanvas');
@@ -19,7 +18,7 @@ function Experience() {
   }, []);
 
   return (
-    <div id="experience">
+    <div>
       <canvas id="myThreeJsCanvas" />
     </div>
   );

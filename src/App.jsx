@@ -1,4 +1,5 @@
 import './App.css'
+import Experience from './components/Experience';
 import Home from "./components/Home";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <>
       <div>
         <Home />
-      
+        <Experience />
       </div>
      
     </>

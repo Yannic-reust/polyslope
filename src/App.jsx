@@ -1,13 +1,17 @@
+import { useEffect } from 'react';
 import './App.css'
 import Experience from './components/Experience';
-import Home from "./components/Home";
 
 function App() {
+
+  useEffect(() => {
+    // add default sonar font to body
+    document.body.classList.add('font-sonar', 'text-white');
+  }, []);
 
   return (
     <>
       <div>
-        <Home />
         <Experience />
       </div>
     </>

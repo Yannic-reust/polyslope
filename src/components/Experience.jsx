@@ -10,6 +10,8 @@ function Experience() {
     test.initialize();
     test.animate();
 
+    test.scene.background = new THREE.Color("#1B65A6");
+
     const boxGeometry = new THREE.BoxGeometry(16, 16, 16);
     const boxMaterial = new THREE.MeshNormalMaterial();
     const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);

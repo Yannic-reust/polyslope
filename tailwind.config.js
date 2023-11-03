@@ -22,7 +22,6 @@ content: [
       'h-lg': ['36px', { lineHeight: '42px', fontWeight: '700', fontFamily: 'karmina' }],
       'h-md': ['24px', { lineHeight: '30px', fontWeight: '700', fontFamily: 'karmina' }],
       'h-sm': ['24px', { lineHeight: '30px', fontWeight: '700', fontFamily: 'karmina' }],
-      'h-md': ['20px', { lineHeight: '26px', fontWeight: '700', fontFamily: 'karmina' }],
       'p-lg': ['18px', { lineHeight: '28px', fontWeight: '400', fontFamily: 'sonar-sans' }],
       'p-sm': ['18px', { lineHeight: '28px', fontWeight: '400', fontFamily: 'sonar-sans' }],
       'p-xs': ['12px', { lineHeight: '22px', fontWeight: '400', fontFamily: 'sonar-sans' }],

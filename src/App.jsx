@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './App.css'
 import Experience from './components/Experience';
+import SideBar from './components/SideBar';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <div>
+        <SideBar />
         <Experience />
       </div>
     </>

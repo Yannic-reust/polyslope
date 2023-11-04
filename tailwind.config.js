@@ -15,20 +15,20 @@ content: [
       accent: '#F9DC5C',
     },
     fontFamily: {
-      sonar: ['sonar-sans', 'sans-serif'],
-      karmina: ['karmina', 'serif'],
+      sonar: ['sonar-sans', 'sans-serif'], // main font
+      karmina: ['karmina', 'serif'], // title font
     },
     fontSize: {
-      'h-lg': ['36px', { lineHeight: '42px', fontWeight: '700', fontFamily: 'karmina' }],
-      'h-md': ['24px', { lineHeight: '30px', fontWeight: '700', fontFamily: 'karmina' }],
-      'h-sm': ['24px', { lineHeight: '30px', fontWeight: '700', fontFamily: 'karmina' }],
-      'h-md': ['20px', { lineHeight: '26px', fontWeight: '700', fontFamily: 'karmina' }],
-      'p-lg': ['18px', { lineHeight: '28px', fontWeight: '400', fontFamily: 'sonar-sans' }],
-      'p-sm': ['18px', { lineHeight: '28px', fontWeight: '400', fontFamily: 'sonar-sans' }],
-      'p-xs': ['12px', { lineHeight: '22px', fontWeight: '400', fontFamily: 'sonar-sans' }],
-      'label': ['12px', { lineHeight: '16px', fontWeight: '500', fontFamily: 'sonar-sans' }],
+      'h-lg': ['36px', { lineHeight: '42px', fontWeight: '700', fontFamily: 'karmina' }], // desktop main title
+      'h-md': ['26px', { lineHeight: '32px', fontWeight: '700', fontFamily: 'karmina' }], // desktop sub title
+      'h-sm': ['24px', { lineHeight: '30px', fontWeight: '700', fontFamily: 'karmina' }], // mobile main title
+      'h-xs': ['20px', { lineHeight: '26px', fontWeight: '700', fontFamily: 'karmina' }], // mobile sub title
+      'p-lg': ['18px', { lineHeight: '28px', fontWeight: '400', fontFamily: 'sonar-sans' }], // desktop text
+      'p-sm': ['18px', { lineHeight: '28px', fontWeight: '400', fontFamily: 'sonar-sans' }], // mobile text
+      'p-xs': ['12px', { lineHeight: '18px', fontWeight: '400', fontFamily: 'sonar-sans' }], // tiny text
+      'label': ['12px', { lineHeight: '16px', fontWeight: '500', fontFamily: 'sonar-sans' }], // labels
     },
-    extend: {},
+    extend: { fontFamily: { sans: ['sonar-sans'], }, } // set default font
   },
   plugins: [],
 }

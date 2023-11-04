@@ -1,10 +1,17 @@
 import { useState } from "react";
 import About from "./About";
 import NavItem from "./NavItem";
+import CableCarSVG from "../assets/icons/cable-car.svg?react";
+import FoodSVG from "../assets/icons/food.svg?react";
+import WheatherSVG from "../assets/icons/weather-sunny-cloudy.svg?react";
+import FilterSVG from "../assets/icons/filter.svg?react";
+import InfoSVG from "../assets/icons/info.svg?react";
 
 const SideBar = () => {
     const [ page, setPage ] = useState('');
     const [ open, setOpen ] = useState(false)
+
+    const NAV_ICON_CLASSES = "w-10 max-h-9"
 
     const togglePage = (next) => {
         if(page != next) {
@@ -24,27 +31,27 @@ const SideBar = () => {
                 <nav className="w-[100px] pt-10 pb-10 flex flex-col h-full bg-white/20 z-[999]">
                 <div className="flex flex-col items-center flex-grow-0 justify-start flex-1">
                     <div className="">
-                        <NavItem icon="cable-car" title="Plants" togglePage={togglePage} page={page} open={open} />
+                        <NavItem icon={<CableCarSVG className={NAV_ICON_CLASSES} />} title="Plants" togglePage={togglePage} page={page} open={open} />
                     </div>
                     <div className="my-5">
-                        <NavItem icon="food" title="Restaurants" togglePage={togglePage} page={page} open={open} />
+                        <NavItem icon={<FoodSVG className={NAV_ICON_CLASSES} />} title="Restaurants" togglePage={togglePage} page={page} open={open} />
                     </div>
                     <div className="">
-                        <NavItem icon="weather-sunny-cloudy" title="Weather" togglePage={togglePage} page={page} open={open} />
+                        <NavItem icon={<WheatherSVG className={NAV_ICON_CLASSES} />} title="Weather" togglePage={togglePage} page={page} open={open} />
                     </div>
                 </div>
 
                 <div className="flex justify-center items-center flex-grow py-4">
-                    <NavItem icon="filter" title="Filter" togglePage={togglePage} page={page} open={open} />
+                    <NavItem icon={<FilterSVG className={NAV_ICON_CLASSES} />} title="Filter" togglePage={togglePage} page={page} open={open} />
                 </div>
 
                 <div className="flex items-end justify-center py-4">
-                    <NavItem icon="info" title="About" togglePage={togglePage} page={page} open={open} />
+                    <NavItem icon={<InfoSVG className={NAV_ICON_CLASSES} />} title="About" togglePage={togglePage} page={page} open={open} />
                 </div>
                 </nav>
 
                 <div className="content w-[800px] p-10">
-                    { page === 'about' &&  <About /> }
+                    { page === 'About' &&  <About /> }
                 </div>
 
             </aside>

@@ -1,3 +1,11 @@
+/* change and sonar sans font */
+@import url("https://use.typekit.net/bsd1bel.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base { 
+    html, body { 
+      @apply text-white; /* set default color to white */
+    } 
+}

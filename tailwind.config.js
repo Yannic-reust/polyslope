@@ -32,4 +32,3 @@ content: [
   },
   plugins: [],
 }
-

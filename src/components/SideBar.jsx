@@ -7,6 +7,8 @@ import WheatherSVG from "../assets/icons/weather-sunny-cloudy.svg?react";
 import FilterSVG from "../assets/icons/filter.svg?react";
 import InfoSVG from "../assets/icons/info.svg?react";
 
+import Plants from "./Plants/Plants";
+
 const SideBar = () => {
     const [ page, setPage ] = useState('');
     const [ open, setOpen ] = useState(false)
@@ -52,7 +54,9 @@ const SideBar = () => {
 
                 <div className="content w-[800px] p-10">
                     { page === 'About' &&  <About /> }
+                    { page === 'Plants' &&  <Plants /> }
                 </div>
+              
 
             </aside>
         </div>

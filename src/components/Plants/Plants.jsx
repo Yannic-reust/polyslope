@@ -19,7 +19,7 @@ function Plants() {
   ];
 
   return (
-    <div>
+   <> 
       <SidebarIntroduction
         title="Geöffnete Anlagen"
         text="Hier finden Sie eine Übersicht der aktuell geöffneten Anlagen."
@@ -39,7 +39,7 @@ function Plants() {
           </div>
         ))}
       </div>
-    </div>
+   </>
   );
 }
 

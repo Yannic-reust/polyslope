@@ -2,7 +2,7 @@ import "./sidebarElement.css";
 
 const SidebarElement = () => {
   return (
-    <div className="bg-blue-50 p-8">
+    <div className="bg-white/20 p-8">
       <div className="flex justify-between items-center">
         <div className="flex items-center">
           <img

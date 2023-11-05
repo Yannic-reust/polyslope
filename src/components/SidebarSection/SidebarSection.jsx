@@ -10,7 +10,7 @@ const SidebarSection = ({ item }) => {
     toggleOpen(!open);
   };
   return (
-    <div>
+    <div className="">
       <div onClick={handleClick} className="mb-8">
         <SidebarElement item={item} />
         {open && (

@@ -3,8 +3,8 @@ import "./sidebarIntroduction.css";
 const sidebarIntroduction = ({ title, text }) => {
   return (
     <div>
-      <div className="p-8">
-        <h2 className="text-3xl">{title}</h2>
+      <div className="p-8 font-karmina">
+        <p className="text-h-md">{title}</p>
         <p>{text}</p>
       </div>
     </div>

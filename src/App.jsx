@@ -1,16 +1,17 @@
-import './App.css'
-import Experience from './components/Experience';
-import SideBar from './components/SideBar';
+import "./App.css";
+
+import Home from "./components/Home";
+import SideBar from "./components/SideBar";
+
 
 function App() {
   return (
     <>
-      <div>
-        <SideBar />
-        <Experience />
-      </div>
+  <SideBar />
+      
+     
     </>
-  )
+  );
 }
 
-export default App
+export default App;

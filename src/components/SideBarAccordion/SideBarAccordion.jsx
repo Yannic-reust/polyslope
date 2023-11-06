@@ -1,8 +1,8 @@
-import "./sidebarElement.css";
+import "./SideBarAccordion.css";
 import PlusSVG from "../../assets/icons/plus.svg?react";
 import PropTypes from "prop-types";
 
-const SidebarElement = ({item,icon}) => {
+const SideBarAccordion = ({item,icon}) => {
   return (
     <div className="bg-white/20 p-8 pl-4 pr-4">
       <div className="flex justify-between items-center">
@@ -18,9 +18,9 @@ const SidebarElement = ({item,icon}) => {
     </div>
   );
 };
-SidebarElement.propTypes = {
+SideBarAccordion.propTypes = {
   item: PropTypes.object.isRequired,
   icon: PropTypes.element
 };
 
-export default SidebarElement;
+export default SideBarAccordion;

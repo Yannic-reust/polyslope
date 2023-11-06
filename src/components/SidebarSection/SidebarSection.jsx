@@ -1,5 +1,5 @@
 import "./SidebarSection.css";
-import SidebarElement from "../SidebarElement/SidebarElement";
+import SideBarAccordion from "../SideBarAccordion/SideBarAccordion";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import CameraSVG from "../../assets/icons/camera.svg?react";
@@ -18,7 +18,7 @@ const SidebarSection = ({ item, icon }) => {
     <div className="">
       <div className="mb-8 ">
         <div onClick={handleClick} className="cursor-pointer">
-          <SidebarElement item={item} icon={icon} />
+          <SideBarAccordion item={item} icon={icon} />
         </div>
 
         <div

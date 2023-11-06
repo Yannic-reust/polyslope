@@ -1,7 +1,7 @@
 import "./Plants.css";
 import SidebarIntroduction from "../SidebarIntroduction/SidebarIntroduction";
 import SidebarSection from "../SidebarSection/SidebarSection";
-import ResturantSVG from "../../assets/icons/food.svg?react";
+import CableCarVG from "../../assets/icons/cable-car.svg?react";
 import BarSVG from "../../assets/icons/beer.svg?react";
 
 function Plants() {
@@ -11,7 +11,7 @@ function Plants() {
       title: "Anlagen",
       text: "(0/12 geöffnet)",
       open: false,
-      icon: <ResturantSVG className={NAV_ICON_CLASSES} />,
+      icon: <CableCarVG className={NAV_ICON_CLASSES} />,
     },
     {
       title: "Pisten",

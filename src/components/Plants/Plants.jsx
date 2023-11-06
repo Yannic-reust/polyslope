@@ -8,7 +8,7 @@ function Plants() {
   const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
   const items = [
     {
-      title: "Resturants",
+      title: "Anlagen",
       text: "(0/12 geöffnet)",
       open: false,
       icon: <ResturantSVG className={NAV_ICON_CLASSES} />,
@@ -20,19 +20,30 @@ function Plants() {
       icon: <BarSVG className={NAV_ICON_CLASSES} />,
     },
   ];
-  
+
   return (
     <>
       <SidebarIntroduction
         title="Geöffnete Anlagen"
-        text="Hier finden Sie eine Übersicht der aktuell geöffneten Anlagen."
-      />
+        text="Hier finden Sie eine Übersicht der aktuell geöffneten Anlagen." />
       <div className="p-8 pt-0">
         <ul>
-          <li>Lawinenwarnstufe</li>
-          <li>Neuschnee seit 24h</li>
-          <li>Schneehöhe Berg (2970 m)</li>
-          <li>Schneehöhe Tal (1638 m)</li>
+          <li className="flex">
+            <p>Lawinenwarnstufe: </p>
+            <p className="ml-1">-</p>
+          </li>
+          <li className="flex">
+            <p>Neuschnee seit 24h: </p>
+            <p className="ml-1">0cm</p>
+          </li>
+          <li className="flex">
+            <p>Schneehöhe Berg (2970 m): </p>
+            <p className="ml-1">0cm</p>
+          </li>
+          <li className="flex">
+            <p>LSchneehöhe Tal (1638 m): </p>
+            <p className="ml-1">0cm</p>
+          </li>
         </ul>
       </div>
 

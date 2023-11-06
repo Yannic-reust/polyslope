@@ -13,6 +13,8 @@ content: [
       black: '#13070C',
       darkblue: '#1B65A6',
       accent: '#F9DC5C',
+      green:'#79BE6D',
+      red:'#F43C39'
     },
     fontFamily: {
       sonar: ['sonar-sans', 'sans-serif'], // main font

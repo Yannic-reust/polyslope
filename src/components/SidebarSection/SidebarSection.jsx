@@ -2,33 +2,40 @@ import "./SidebarSection.css";
 import SidebarElement from "../SidebarElement/SidebarElement";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import CameraSVG from "../../assets/icons/camera.svg?react";
 
 const SidebarSection = ({ item, icon }) => {
   const [open, toggleOpen] = useState(false);
 
+  const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
+
+  //toggles color on dot
+  const active = false
   const handleClick = () => {
     toggleOpen(!open);
   };
   return (
     <div className="">
-      <div className="mb-8 cursor-pointer">
-        <div onClick={handleClick}>
+      <div className="mb-8 ">
+        <div onClick={handleClick} className="cursor-pointer">
           <SidebarElement item={item} icon={icon} />
         </div>
 
         <div
-          className={`transition-all duration-500 ease-in-out ${
-            open ? "opacity-100" : "opacity-0 "
+          className={` ease-in-out duration-500 group ${
+            open ? "is-active " : ""
           }`}
         >
-          <p className="text-xl-4 font-medium text-1xl mt-6">Bergbahnen</p>
-          <div className="flex  mt-2 justify-between w-full">
-            <div className="flex items-center">
-              <span className="dot"></span>
-              <p className="ml-4">Lauterbrunnen - Mürren</p>
+          <div className="overflow-hidden duration-500 max-h-0 group-[.is-active]:max-h-[100px] pl-4 pr-4">
+            <p className="text-xl-4 font-medium text-1xl mt-6">Bergbahnen</p>
+            <div className="flex  mt-2 justify-between w-full">
+              <div className="flex items-center">
+                <span className={`dot ${active ? "bg-green":"bg-red"}`}></span>
+                <p className="ml-4">Lauterbrunnen - Mürren</p>
+              </div>
+              <CameraSVG className={NAV_ICON_CLASSES} />
+          
             </div>
-
-            <img src="/vite.svg" alt="camera icon" className="w-4" />
           </div>
         </div>
       </div>

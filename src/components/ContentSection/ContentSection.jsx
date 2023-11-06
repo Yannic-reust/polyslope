@@ -10,7 +10,7 @@ const ContentSection = ({ item, icon }) => {
   const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
 
   //toggles color on dot
-  const active = false
+  const active = false;
   const handleClick = () => {
     toggleOpen(!open);
   };
@@ -28,13 +28,14 @@ const ContentSection = ({ item, icon }) => {
         >
           <div className="overflow-hidden duration-500 max-h-0 group-[.is-active]:max-h-[100px] pl-4 pr-4">
             <p className="text-xl-4 font-medium text-1xl mt-6">Bergbahnen</p>
-            <div className="flex  mt-2 justify-between w-full">
+            <div className="flex  mt-2 justify-between w-full p-2 trasition-all duration-500 hover:bg-white/20">
               <div className="flex items-center">
-                <span className={`dot ${active ? "bg-green":"bg-red"}`}></span>
+                <span
+                  className={`dot ${active ? "bg-green" : "bg-red"}`}
+                ></span>
                 <p className="ml-4">Lauterbrunnen - Mürren</p>
               </div>
               <CameraSVG className={NAV_ICON_CLASSES} />
-          
             </div>
           </div>
         </div>

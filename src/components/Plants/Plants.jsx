@@ -22,7 +22,7 @@ function Plants() {
   ];
   return (
     <>
-      <div className="p-8">
+      <div>
         <ContentIntroduction
           title="Geöffnete Anlagen"
           text="Hier finden Sie eine Übersicht der aktuell geöffneten Anlagen."

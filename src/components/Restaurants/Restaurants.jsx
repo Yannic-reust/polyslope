@@ -22,7 +22,7 @@ function Restaurants() {
   ];
   return (
     <>
-      <div className="p-8 ">
+      <div>
         <ContentIntroduction
           title="Unsere Bergrestaurants"
           text="In den Bergrestaurants unseres Skigebiets erwartet Sie Vielfalt pur. Ob für Jung oder Alt, hier findet jeder Gaumen das Passende. Geniessen Sie zudem in unseren Après-Ski-Bars das besondere Flair nach einem aufregenden Tag auf der Piste."

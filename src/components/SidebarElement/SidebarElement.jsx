@@ -1,28 +1,26 @@
 import "./sidebarElement.css";
+import PlusSVG from "../../assets/icons/plus.svg?react";
+import PropTypes from "prop-types";
 
-const SidebarElement = () => {
+const SidebarElement = ({item,icon}) => {
   return (
-    <div className="bg-white/20 p-8">
+    <div className="bg-white/20 p-8 pl-4 pr-4">
       <div className="flex justify-between items-center">
         <div className="flex items-center">
-          <img
-            src="/iconsSidebarElements/restaurant.png"
-            alt=""
-            className="w-12 "
-          />
+         {icon}
           <div className="flex items-baseline">
-            <h2 className="ml-4 text-3xl">Anlagen</h2>
-            <p className="ml-4">(0/12 geöffnet)</p>
+            <h2 className="ml-4 text-h-md font-karmina ">{item.title}</h2>
+            <p className="ml-4">{item.text}</p>
           </div>
         </div>
-        <img
-          src="/iconsSidebarElements/restaurant.png"
-          alt="icon open"
-          className="h-8"
-        />
+        <PlusSVG className="w-6 max-h-6"/>
       </div>
     </div>
   );
+};
+SidebarElement.propTypes = {
+  item: PropTypes.object.isRequired,
+  icon: PropTypes.element
 };
 
 export default SidebarElement;

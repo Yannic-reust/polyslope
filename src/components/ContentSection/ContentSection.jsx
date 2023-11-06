@@ -1,10 +1,10 @@
-import "./SidebarSection.css";
-import SideBarAccordion from "../SideBarAccordion/SideBarAccordion";
+import "./ContentSection.css";
+import ContentAccordion from "../ContentAccordion/ContentAccordion";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import CameraSVG from "../../assets/icons/camera.svg?react";
 
-const SidebarSection = ({ item, icon }) => {
+const ContentSection = ({ item, icon }) => {
   const [open, toggleOpen] = useState(false);
 
   const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
@@ -18,7 +18,7 @@ const SidebarSection = ({ item, icon }) => {
     <div className="">
       <div className="mb-8 ">
         <div onClick={handleClick} className="cursor-pointer">
-          <SideBarAccordion item={item} icon={icon} />
+          <ContentAccordion item={item} icon={icon} />
         </div>
 
         <div
@@ -43,9 +43,9 @@ const SidebarSection = ({ item, icon }) => {
   );
 };
 
-SidebarSection.propTypes = {
+ContentSection.propTypes = {
   item: PropTypes.object.isRequired,
   icon: PropTypes.element,
 };
 
-export default SidebarSection;
+export default ContentSection;

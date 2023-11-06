@@ -1,6 +1,6 @@
 import "./Restaurants.css";
-import SidebarIntroduction from "../SidebarIntroduction/SidebarIntroduction";
-import SidebarSection from "../SidebarSection/SidebarSection";
+import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
+import ContentSection from "../ContentSection/ContentSection";
 import ResturantSVG from "../../assets/icons/food.svg?react";
 import BarSVG from "../../assets/icons/beer.svg?react";
 
@@ -23,14 +23,14 @@ function Restaurants() {
   return (
     <>
       <div className="p-8 ">
-        <SidebarIntroduction
+        <ContentIntroduction
           title="Unsere Bergrestaurants"
           text="In den Bergrestaurants unseres Skigebiets erwartet Sie Vielfalt pur. Ob für Jung oder Alt, hier findet jeder Gaumen das Passende. Geniessen Sie zudem in unseren Après-Ski-Bars das besondere Flair nach einem aufregenden Tag auf der Piste."
         />
         <div className="">
           {items.map((item, index) => (
             <div key={index}>
-              <SidebarSection item={item} icon={item.icon} />
+              <ContentSection item={item} icon={item.icon} />
             </div>
           ))}
         </div>

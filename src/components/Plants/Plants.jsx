@@ -1,6 +1,6 @@
 import "./Plants.css";
-import SidebarIntroduction from "../SidebarIntroduction/SidebarIntroduction";
-import SidebarSection from "../SidebarSection/SidebarSection";
+import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
+import ContentSection from "../ContentSection/ContentSection";
 import CableCarVG from "../../assets/icons/cable-car.svg?react";
 import BarSVG from "../../assets/icons/beer.svg?react";
 
@@ -23,7 +23,7 @@ function Plants() {
   return (
     <>
       <div className="p-8">
-        <SidebarIntroduction
+        <ContentIntroduction
           title="Geöffnete Anlagen"
           text="Hier finden Sie eine Übersicht der aktuell geöffneten Anlagen."
         />
@@ -50,7 +50,7 @@ function Plants() {
         <div>
           {items.map((item, index) => (
             <div key={index}>
-              <SidebarSection item={item} icon={item.icon} />
+              <ContentSection item={item} icon={item.icon} />
             </div>
           ))}
         </div>

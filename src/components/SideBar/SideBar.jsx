@@ -33,13 +33,13 @@ const SideBar = () => {
             <aside className={`flex w-[900px] right-0 top-0 h-screen pointer-events-auto backdrop-blur backdrop-brightness-90 bg-darkblue/80 transition-all duration-500 ease-in-out ${open ? "translate-x-0" : "translate-x-[800px]"}`}>
                 <nav className="w-[100px] pt-10 pb-10 flex flex-col h-full bg-white/20 z-[999]">
                 <div className="flex flex-col space-y-5 items-center flex-grow-0 justify-start flex-1">
-                    <div className="">
+                    <div>
                         <NavItem icon={<CableCarSVG className={NAV_ICON_CLASSES} />} title="Plants" togglePage={togglePage} page={page} open={open} />
                     </div>
-                    <div className="">
+                    <div>
                         <NavItem icon={<FoodSVG className={NAV_ICON_CLASSES} />} title="Restaurants" togglePage={togglePage} page={page} open={open} />
                     </div>
-                    <div className="">
+                    <div>
                         <NavItem icon={<WheatherSVG className={NAV_ICON_CLASSES} />} title="Weather" togglePage={togglePage} page={page} open={open} />
                     </div>
                 </div>

@@ -8,8 +8,8 @@ import Experience from "./components/Experience";
 function App() {
   return (
     <>
-      <SideBar className="visible" />
-      <TabBar className="hidden" />
+      <SideBar />
+      <TabBar />
       <Experience />
     </>
   );

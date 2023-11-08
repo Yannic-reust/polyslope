@@ -15,7 +15,7 @@ function Weather() {
 
   const sliceArray = (data) => {
     if (data && data.hourly && data.hourly.temperature_2m) {
-      const tempData = data.hourly.temperature_2m;
+      const txempData = data.hourly.temperature_2m;
 
       const slicedArrays = [];
       for (let i = 0; i < tempData.length; i += 24) {

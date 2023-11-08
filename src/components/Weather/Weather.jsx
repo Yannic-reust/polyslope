@@ -11,7 +11,7 @@ function Weather() {
       try {
         const response = await fetch(
           "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m"
-        ); 
+        );
         if (!response.ok) {
           throw new Error(`HTTP Error! Status: ${response.status}`);
         }
@@ -25,7 +25,6 @@ function Weather() {
     }
 
     fetchData();
-   
   }, []);
   return (
     <>
@@ -34,20 +33,52 @@ function Weather() {
           title="Wetter"
           text="Informieren Sie sich über das aktuelle Wetter im Skigebiet Mürren - Schilthorn."
         />
-        {loading ? (
+        <div className="grid grid-cols-6 gap-4">
+          <div className="bg-white/20  col-span-2 p-8">
+            <p>Heute</p>
+          </div>
+          <div className="bg-white/20  col-span-4 p-8">
+            <p>Sonnenscheindauer</p>
+            <p>Niederschlag</p>
+            <p>Wind</p>
+            <p>Schnee Berg</p>
+            <p>Schnee Tal</p>
+            <p>Lawinengefahrenstufe</p>
+          </div>
+        </div>
+        <div className="grid grid-cols-6 gap-4 mt-4">
+          <div className="bg-white/20  col-span-1 p-2">
+            <p>Montag</p>
+          </div>
+          <div className="bg-white/20  col-span-1 p-2">
+            <p>Dienstag</p>
+          </div>
+          <div className="bg-white/20  col-span-1 p-2">
+            <p>Mittwoch</p>
+          </div>
+          <div className="bg-white/20  col-span-1 p-2">
+            <p>Donnerstag</p>
+          </div>
+          <div className="bg-white/20  col-span-1 p-2">
+            <p>Freitag</p>
+          </div>
+          <div className="bg-white/20  col-span-1 p-2">
+            <p>Samstag</p>
+          </div>
+        </div>
+        {/* {loading ? (
           <p>Loading...</p>
         ) : (
           <div>
             {data ? (
               <div>
-
                 <pre>{JSON.stringify(data)}</pre>
               </div>
             ) : (
               <p>No data available</p>
             )}
           </div>
-        )}
+            )}*/}
       </div>
     </>
   );

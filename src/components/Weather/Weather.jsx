@@ -1,9 +1,21 @@
 import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
+import WeatherTodayDetail from "../WeatherTodayDetail/WeatherTodayDetail";
+import WeatherTile from "../WeatherTile/WeatherTile";
 import { useState, useEffect } from "react";
+import SunnySVG from "../../assets/icons/sun.svg?react";
 
 function Weather() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const days = [
+    "Montag",
+    "Dienstag",
+    "Mittwoch",
+    "donnerstag",
+    "freitag",
+    "samstag",
+  ];
+  const NAV_ICON_CLASSES = "w-16  fill-white";
 
   useEffect(() => {
     // Function to make an asynchronous query
@@ -34,37 +46,20 @@ function Weather() {
           text="Informieren Sie sich über das aktuelle Wetter im Skigebiet Mürren - Schilthorn."
         />
         <div className="grid grid-cols-6 gap-4">
-          <div className="bg-white/20  col-span-2 p-8">
-            <p>Heute</p>
+          <div className="bg-white/20  col-span-2 p-4">
+          {/* { props.icon } */}
+        <WeatherTile />
           </div>
           <div className="bg-white/20  col-span-4 p-8">
-            <p>Sonnenscheindauer</p>
-            <p>Niederschlag</p>
-            <p>Wind</p>
-            <p>Schnee Berg</p>
-            <p>Schnee Tal</p>
-            <p>Lawinengefahrenstufe</p>
+            <WeatherTodayDetail />
           </div>
         </div>
         <div className="grid grid-cols-6 gap-4 mt-4">
-          <div className="bg-white/20  col-span-1 p-2">
-            <p>Montag</p>
-          </div>
-          <div className="bg-white/20  col-span-1 p-2">
-            <p>Dienstag</p>
-          </div>
-          <div className="bg-white/20  col-span-1 p-2">
-            <p>Mittwoch</p>
-          </div>
-          <div className="bg-white/20  col-span-1 p-2">
-            <p>Donnerstag</p>
-          </div>
-          <div className="bg-white/20  col-span-1 p-2">
-            <p>Freitag</p>
-          </div>
-          <div className="bg-white/20  col-span-1 p-2">
-            <p>Samstag</p>
-          </div>
+          {days.map((item, index) => (
+            <div className="bg-white/20  col-span-1 p-2" key={index}>
+              <p>{item}</p>
+            </div>
+          ))}
         </div>
         {/* {loading ? (
           <p>Loading...</p>

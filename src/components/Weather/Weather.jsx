@@ -7,15 +7,45 @@ import SunnySVG from "../../assets/icons/sun.svg?react";
 function Weather() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const days = [
-    "Montag",
-    "Dienstag",
-    "Mittwoch",
-    "donnerstag",
-    "freitag",
-    "samstag",
+  const tempWeatherData = [
+    {
+      day: "Montag",
+      icon: <SunnySVG className="mt-6" />,
+      tempLow: 3,
+      tempHigh: 20,
+    },
+    {
+      day: "Dienstag",
+      icon: <SunnySVG className="mt-6" />,
+      tempLow: 3,
+      tempHigh: 20,
+    },
+    {
+      day: "Mittwoch",
+      icon: <SunnySVG className="mt-6" />,
+      tempLow: 3,
+      tempHigh: 20,
+    },
+    {
+      day: "Donnerstag",
+      icon: <SunnySVG className="mt-6" />,
+      tempLow: 3,
+      tempHigh: 20,
+    },
+    {
+      day: "Freitag",
+      icon: <SunnySVG className="mt-6" />,
+      tempLow: 3,
+      tempHigh: 20,
+    },
+    {
+      day: "Samstag",
+      icon: <SunnySVG className="mt-6" />,
+      tempLow: 3,
+      tempHigh: 20,
+    },
+    
   ];
-  const NAV_ICON_CLASSES = "w-16  fill-white";
 
   useEffect(() => {
     // Function to make an asynchronous query
@@ -46,18 +76,28 @@ function Weather() {
           text="Informieren Sie sich über das aktuelle Wetter im Skigebiet Mürren - Schilthorn."
         />
         <div className="grid grid-cols-6 gap-4">
-          <div className="bg-white/20  col-span-2 p-4">
-          {/* { props.icon } */}
-        <WeatherTile />
+          <div className="bg-white/20  col-span-2 ">
+            {/* { props.icon } */}
+            <WeatherTile
+              day={"Today"}
+              icon={<SunnySVG className="mt-6" />}
+              tempLow={3}
+              tempHigh={20}
+            />
           </div>
           <div className="bg-white/20  col-span-4 p-8">
             <WeatherTodayDetail />
           </div>
         </div>
         <div className="grid grid-cols-6 gap-4 mt-4">
-          {days.map((item, index) => (
-            <div className="bg-white/20  col-span-1 p-2" key={index}>
-              <p>{item}</p>
+          {tempWeatherData.map((item, index) => (
+            <div className="bg-white/20  col-span-1 " key={index}>
+              <WeatherTile
+                day={item.day}
+                icon={item.icon}
+                tempLow={item.tempLow}
+                tempHigh={item.tempHigh}
+              />
             </div>
           ))}
         </div>

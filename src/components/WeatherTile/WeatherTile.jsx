@@ -1,24 +1,28 @@
+import PropTypes from "prop-types";
 
-import SunnySVG from "../../assets/icons/sun.svg?react";
-
-function WeatherTile({}) {
-  
+function WeatherTile({day, icon, tempLow, tempHigh }) {
   return (
     <>
- 
-          <div >
+      <div className="h-full flex flex-col items-center p-4">
+        <p className="text-center text-h-xs font-thin ">{day}</p>
+        {icon}
        
-            <p className="text-center">Heute</p>
-      <SunnySVG />
-            <span>0</span>
-            <span>
-              |3<sup>°C</sup>
-            </span>
-          </div>
-         
-     
+        <div  className="mt-6">
+          <span className="align-baseline text-h-xs font-thin" >{tempLow}</span>
+          <span className="text-h-md font-thin ">
+            |{tempHigh}<sup className="text-h-xs font-thin">°C</sup>
+          </span>
+        </div>
+      </div>
     </>
   );
 }
+
+WeatherTile.propTypes = {
+  day: PropTypes.string.isRequired,
+  icon: PropTypes.element.isRequired,
+  tempLow: PropTypes.number.isRequired,
+  tempHigh: PropTypes.number.isRequired
+};
 
 export default WeatherTile;

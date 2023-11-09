@@ -12,7 +12,7 @@ function App() {
       <SideBar />
       <TabBar />
       <StoreDemo />
-      <Experience />
+      {/* <Experience /> */}
     </>
   );
 }

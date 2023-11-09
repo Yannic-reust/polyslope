@@ -1,29 +1,22 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from './counterSlice'
-
+import { useSelector, useDispatch } from "react-redux";
+import { toggleAnimation } from "../store/animations/animationsState";
 
 const StoreDemo = () => {
-  const count = useSelector((state) => state.counter.value)
-  const dispatch = useDispatch()
+  const count = useSelector((state) => state.animation.value);
+  const dispatch = useDispatch();
 
   return (
     <div>
-      <div>
-        <button
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          Increment
+      <div className="bg-darkblue">
+        <p> asd</p>
+        <button aria-label="Toggle" onClick={() => dispatch(toggleAnimation())}>
+          Toggle
         </button>
-        <span>{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-        >
-          Decrement
-        </button>
+
+        {count && <p>True{count}</p>}
+        {!count && <p>False{count}</p>}
       </div>
     </div>
-  )
-}
+  );
+};
 export default StoreDemo;

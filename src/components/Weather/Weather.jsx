@@ -44,7 +44,6 @@ function Weather() {
       tempLow: 3,
       tempHigh: 20,
     },
-    
   ];
 
   useEffect(() => {
@@ -52,8 +51,9 @@ function Weather() {
     async function fetchData() {
       try {
         const response = await fetch(
-          "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m"
+          "https://api.open-meteo.com/v1/forecast?latitude=46.5594243057797&longitude=7.893055030509216&hourly=temperature_2m"
         );
+
         if (!response.ok) {
           throw new Error(`HTTP Error! Status: ${response.status}`);
         }
@@ -68,6 +68,7 @@ function Weather() {
 
     fetchData();
   }, []);
+  console.log(data);
   return (
     <>
       <div>
@@ -89,6 +90,7 @@ function Weather() {
             <WeatherTodayDetail />
           </div>
         </div>
+
         <div className="grid grid-cols-6 gap-4 mt-4">
           {tempWeatherData.map((item, index) => (
             <div className="bg-white/20  col-span-1 " key={index}>
@@ -101,19 +103,29 @@ function Weather() {
             </div>
           ))}
         </div>
-        {/* {loading ? (
+        {loading ? (
           <p>Loading...</p>
         ) : (
           <div>
             {data ? (
               <div>
-                <pre>{JSON.stringify(data)}</pre>
+                <div>
+                  {data.hourly.time.map((item, index) => (
+                    <p key={index}>{item}</p>
+                  ))}
+                  {data.hourly.temperature_2m.map((item, index) => (
+                    <p key={index}>{item}</p>
+                  ))}
+                </div>
+
+                {/* <pre>{data.hourly.temperature_2m}</pre>
+                <pre>{data.hourly.time}</pre> */}
               </div>
             ) : (
               <p>No data available</p>
             )}
           </div>
-            )}*/}
+        )}
       </div>
     </>
   );

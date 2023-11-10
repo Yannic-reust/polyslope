@@ -49,7 +49,6 @@ function Weather() {
 
     fetchData();
   }, []);
-
   return (
     <>
       <div>

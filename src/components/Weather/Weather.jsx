@@ -4,8 +4,8 @@ import WeatherTile from "../WeatherTile/WeatherTile";
 import useDayData from "./useDayData";
 import { useState, useEffect } from "react";
 import SunnySVG from "../../assets/icons/sun.svg?react";
+import useDayData from "./useDayData";
 import { useState, useEffect } from "react";
-
 
 function Weather() {
   const [slicedData, setSlicedData] = useState(null);

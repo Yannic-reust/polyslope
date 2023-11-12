@@ -102,10 +102,10 @@ function Weather() {
               <WeatherTile
                 idx={0}
                 data={slicedData[0]}
-                day={"Today"}
+                day={"Heute"}
                 icon={<SunnySVG className="mt-6" />}
-                tempLow={3}
-                tempHigh={20}
+
+                
               />
             )}
           </div>
@@ -123,8 +123,7 @@ function Weather() {
                   data={slicedData[index]}
                   day={daysArray[index]}
                   icon={item.icon}
-                  tempLow={item.tempLow}
-                  tempHigh={item.tempHigh}
+                
                 />
               )}
             </div>

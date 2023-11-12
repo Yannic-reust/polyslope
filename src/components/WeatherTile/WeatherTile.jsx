@@ -4,7 +4,6 @@ import useWeatherData from "./useWeatherData";
 function WeatherTile({ data, day, icon }) {
   const { tempLow, tempHigh } = useWeatherData(data);
 
-  console.log("array" + data);
   return (
     <>
       <div className="h-full flex flex-col items-center p-4">

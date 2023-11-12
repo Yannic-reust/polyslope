@@ -2,18 +2,18 @@ import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import WeatherTodayDetail from "../WeatherTodayDetail/WeatherTodayDetail";
 import WeatherTile from "../WeatherTile/WeatherTile";
 import SunnySVG from "../../assets/icons/sun.svg?react";
+import useDayData from "./useDayData";
 import { useState, useEffect } from "react";
 
-
 function Weather() {
-  
   const [loading, setLoading] = useState(true);
   const [slicedData, setSlicedData] = useState(null);
 
+  const { daysArray } = useDayData();
 
   const sliceArray = (data) => {
     if (data && data.hourly && data.hourly.temperature_2m) {
-      const tempData = data.hourly.temperature_2m; // Assuming temperature_2m is an array
+      const tempData = data.hourly.temperature_2m;
 
       const slicedArrays = [];
       for (let i = 0; i < tempData.length; i += 24) {
@@ -25,9 +25,6 @@ function Weather() {
   };
 
   useEffect(() => {
-   
-    
-    // Function to make an asynchronous query
     async function fetchData() {
       try {
         const response = await fetch(
@@ -38,7 +35,7 @@ function Weather() {
           throw new Error(`HTTP Error! Status: ${response.status}`);
         }
         const result = await response.json();
-      
+
         sliceArray(result);
         setLoading(false);
       } catch (error) {
@@ -100,7 +97,7 @@ function Weather() {
         <div className="grid grid-cols-6 gap-4">
           <div className="bg-white/20  col-span-2 ">
             {/* { props.icon } */}
-           
+
             {slicedData && (
               <WeatherTile
                 idx={0}
@@ -124,7 +121,7 @@ function Weather() {
                 <WeatherTile
                   idx={index + 1}
                   data={slicedData[index]}
-                  day={item.day}
+                  day={daysArray[index]}
                   icon={item.icon}
                   tempLow={item.tempLow}
                   tempHigh={item.tempHigh}

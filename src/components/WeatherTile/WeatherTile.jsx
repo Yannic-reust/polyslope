@@ -25,8 +25,6 @@ function WeatherTile({ data, day, icon }) {
 WeatherTile.propTypes = {
   day: PropTypes.string.isRequired,
   icon: PropTypes.element.isRequired,
-  tempLow: PropTypes.number.isRequired,
-  tempHigh: PropTypes.number.isRequired,
   data: PropTypes.array.isRequired,
 };
 

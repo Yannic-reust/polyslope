@@ -1,13 +1,14 @@
 import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import WeatherTodayDetail from "../WeatherTodayDetail/WeatherTodayDetail";
 import WeatherTile from "../WeatherTile/WeatherTile";
-import SunnySVG from "../../assets/icons/sun.svg?react";
+import SunnySVG from "../../assets/iconsWeather/weather-sun.svg?react";
 import useDayData from "./useDayData";
 import { useState, useEffect } from "react";
 
 function Weather() {
   const [loading, setLoading] = useState(true);
   const [slicedData, setSlicedData] = useState(null);
+  const [icons, setIcons] = useState(null);
 
   const { daysArray } = useDayData();
 
@@ -28,7 +29,7 @@ function Weather() {
     async function fetchData() {
       try {
         const response = await fetch(
-          "https://api.open-meteo.com/v1/forecast?latitude=46.5594243057797&longitude=7.893055030509216&hourly=temperature_2m"
+          "https://api.open-meteo.com/v1/forecast?latitude=46.5594243057797&longitude=7.893055030509216&hourly=temperature_2m&daily=weather_code"
         );
 
         if (!response.ok) {
@@ -37,6 +38,8 @@ function Weather() {
         const result = await response.json();
 
         sliceArray(result);
+        setIcons(result.daily.weather_code);
+
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -96,16 +99,12 @@ function Weather() {
         />
         <div className="grid grid-cols-6 gap-4">
           <div className="bg-white/20  col-span-2 ">
-            {/* { props.icon } */}
-
             {slicedData && (
               <WeatherTile
                 idx={0}
                 data={slicedData[0]}
                 day={"Heute"}
-                icon={<SunnySVG className="mt-6" />}
-
-                
+                weatherCode={icons[0]}
               />
             )}
           </div>
@@ -122,8 +121,7 @@ function Weather() {
                   idx={index + 1}
                   data={slicedData[index]}
                   day={daysArray[index]}
-                  icon={item.icon}
-                
+                  weatherCode={icons[index + 1]}
                 />
               )}
             </div>

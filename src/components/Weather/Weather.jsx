@@ -1,6 +1,7 @@
 import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import WeatherTodayDetail from "../WeatherTodayDetail/WeatherTodayDetail";
 import WeatherTile from "../WeatherTile/WeatherTile";
+import SunnySVG from "../../assets/iconsWeather/weather-sun.svg?react";
 import useDayData from "./useDayData";
 import { useState, useEffect } from "react";
 
@@ -41,6 +42,8 @@ function Weather() {
         setCurrentData(result.current);
         sliceArray(result);
         setIcons(result.daily.weather_code);
+
+        
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -76,10 +79,10 @@ function Weather() {
             {arr.map((item) => (
               <div className="bg-white/20  col-span-1 " key={item}>
                 <WeatherTile
-                  idx={item}
-                  data={slicedData[item]}
-                  day={daysArray[item - 1]}
-                  weatherCode={icons[item]}
+                  idx={index + 1}
+                  data={slicedData[index]}
+                  day={daysArray[index]}
+                  weatherCode={icons[index + 1]}
                 />
               </div>
             ))}

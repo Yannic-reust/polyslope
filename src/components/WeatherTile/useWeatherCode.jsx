@@ -43,7 +43,7 @@ const useWeatherCode = (weatherCode) => {
       case 80:
       case 81:
       case 82:
-        weatherCondition = <RainSVG className={ICON_CLASSES} alt="Rain icon"/>;
+        weatherCondition = <RainSVG className={ICON_CLASSES} />;
         //weatherCondition = "Rain - Slight, Moderate, Heavy intensity";
         //weatherCondition = "Freezing Rain - Light, Heavy intensity";
         //weatherCondition = "Rain Showers - Slight, Moderate, and Violent";

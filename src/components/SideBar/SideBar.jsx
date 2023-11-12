@@ -3,7 +3,7 @@ import About from "../About/About";
 import NavItem from "./NavItem";
 import CableCarSVG from "../../assets/icons/cable-car.svg?react";
 import FoodSVG from "../../assets/icons/food.svg?react";
-import WheatherSVG from "../../assets/icons/weather-sunny-cloudy.svg?react";
+import WheatherSVG from "../../assets/iconsWeather/weather-sunny-cloudy.svg?react";
 import FilterSVG from "../../assets/icons/filter.svg?react";
 import InfoSVG from "../../assets/icons/info.svg?react";
 

@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 
-//const [data, setData] = useState(null);
-
 const useWeatherData = (props) => {
-  //console.log(props);
   const [tempLow, setLowest] = useState(null);
   const [tempHigh, setHighest] = useState(null);
 

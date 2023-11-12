@@ -1,16 +1,21 @@
 import PropTypes from "prop-types";
+import useWeatherData from "./useWeatherData";
 
-function WeatherTile({day, icon, tempLow, tempHigh }) {
+function WeatherTile({ data, day, icon }) {
+  const { tempLow, tempHigh } = useWeatherData(data);
+
+  console.log("array" + data);
   return (
     <>
       <div className="h-full flex flex-col items-center p-4">
         <p className="text-center text-h-xs font-thin ">{day}</p>
         {icon}
-       
-        <div  className="mt-6">
-          <span className="align-baseline text-h-xs font-thin" >{tempLow}</span>
+        {/* <p>{weather}</p> */}
+        <div className="mt-6">
+          <span className="align-baseline text-h-xs font-thin">{tempLow}</span>
           <span className="text-h-md font-thin ">
-            |{tempHigh}<sup className="text-h-xs font-thin">°C</sup>
+            |{tempHigh}
+            <sup className="text-h-xs font-thin">°C</sup>
           </span>
         </div>
       </div>
@@ -22,7 +27,8 @@ WeatherTile.propTypes = {
   day: PropTypes.string.isRequired,
   icon: PropTypes.element.isRequired,
   tempLow: PropTypes.number.isRequired,
-  tempHigh: PropTypes.number.isRequired
+  tempHigh: PropTypes.number.isRequired,
+  data: PropTypes.array.isRequired,
 };
 
 export default WeatherTile;

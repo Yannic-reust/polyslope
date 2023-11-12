@@ -1,17 +1,61 @@
 import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import WeatherTodayDetail from "../WeatherTodayDetail/WeatherTodayDetail";
 import WeatherTile from "../WeatherTile/WeatherTile";
-import { useState, useEffect } from "react";
 import SunnySVG from "../../assets/icons/sun.svg?react";
+import { useState, useEffect } from "react";
+
 
 function Weather() {
-  const [data, setData] = useState(null);
+  
   const [loading, setLoading] = useState(true);
+  const [slicedData, setSlicedData] = useState(null);
+
+
+  const sliceArray = (data) => {
+    if (data && data.hourly && data.hourly.temperature_2m) {
+      const tempData = data.hourly.temperature_2m; // Assuming temperature_2m is an array
+
+      const slicedArrays = [];
+      for (let i = 0; i < tempData.length; i += 24) {
+        const slicedData = tempData.slice(i, i + 24);
+        slicedArrays.push(slicedData);
+      }
+      setSlicedData(slicedArrays);
+    }
+  };
+
+  useEffect(() => {
+   
+    
+    // Function to make an asynchronous query
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          "https://api.open-meteo.com/v1/forecast?latitude=46.5594243057797&longitude=7.893055030509216&hourly=temperature_2m"
+        );
+
+        if (!response.ok) {
+          throw new Error(`HTTP Error! Status: ${response.status}`);
+        }
+        const result = await response.json();
+      
+        sliceArray(result);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  /* wip end */
   const tempWeatherData = [
     {
       day: "Montag",
       icon: <SunnySVG className="mt-6" />,
-      tempLow: 3,
+      tempLow: 2,
       tempHigh: 20,
     },
     {
@@ -46,29 +90,6 @@ function Weather() {
     },
   ];
 
-  useEffect(() => {
-    // Function to make an asynchronous query
-    async function fetchData() {
-      try {
-        const response = await fetch(
-          "https://api.open-meteo.com/v1/forecast?latitude=46.5594243057797&longitude=7.893055030509216&hourly=temperature_2m"
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP Error! Status: ${response.status}`);
-        }
-        const result = await response.json();
-        setData(result);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      }
-    }
-
-    fetchData();
-  }, []);
-  console.log(data);
   return (
     <>
       <div>
@@ -79,12 +100,17 @@ function Weather() {
         <div className="grid grid-cols-6 gap-4">
           <div className="bg-white/20  col-span-2 ">
             {/* { props.icon } */}
-            <WeatherTile
-              day={"Today"}
-              icon={<SunnySVG className="mt-6" />}
-              tempLow={3}
-              tempHigh={20}
-            />
+           
+            {slicedData && (
+              <WeatherTile
+                idx={0}
+                data={slicedData[0]}
+                day={"Today"}
+                icon={<SunnySVG className="mt-6" />}
+                tempLow={3}
+                tempHigh={20}
+              />
+            )}
           </div>
           <div className="bg-white/20  col-span-4 p-8">
             <WeatherTodayDetail />
@@ -94,12 +120,16 @@ function Weather() {
         <div className="grid grid-cols-6 gap-4 mt-4">
           {tempWeatherData.map((item, index) => (
             <div className="bg-white/20  col-span-1 " key={index}>
-              <WeatherTile
-                day={item.day}
-                icon={item.icon}
-                tempLow={item.tempLow}
-                tempHigh={item.tempHigh}
-              />
+              {slicedData && (
+                <WeatherTile
+                  idx={index + 1}
+                  data={slicedData[index]}
+                  day={item.day}
+                  icon={item.icon}
+                  tempLow={item.tempLow}
+                  tempHigh={item.tempHigh}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -107,23 +137,31 @@ function Weather() {
           <p>Loading...</p>
         ) : (
           <div>
-            {data ? (
-              <div>
-                <div>
-                  {data.hourly.time.map((item, index) => (
-                    <p key={index}>{item}</p>
-                  ))}
-                  {data.hourly.temperature_2m.map((item, index) => (
-                    <p key={index}>{item}</p>
-                  ))}
+            <div>
+              {/* <p>{first24Elements}</p>
+              <p>{lowestTemp}</p>
+              <p>{highestTemp}</p> */}
+
+              {/* <p>{second24Elements}</p> */}
+              {/*<div className="flex">
+                  <div>
+                    <p>Time</p>
+                    {data.hourly.time.map((item, index) => (
+                      <p key={index}>{item}</p>
+                    ))}
+                  </div>
+                  <div>
+                    <p>Value</p>
+
+                    {data.hourly.temperature_2m.map((item, index) => (
+                      <p key={index}>{item}</p>
+                    ))}
+                  </div>
                 </div>
 
                 {/* <pre>{data.hourly.temperature_2m}</pre>
                 <pre>{data.hourly.time}</pre> */}
-              </div>
-            ) : (
-              <p>No data available</p>
-            )}
+            </div>
           </div>
         )}
       </div>

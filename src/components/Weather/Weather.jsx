@@ -1,7 +1,6 @@
 import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import WeatherTodayDetail from "../WeatherTodayDetail/WeatherTodayDetail";
 import WeatherTile from "../WeatherTile/WeatherTile";
-import SunnySVG from "../../assets/iconsWeather/weather-sun.svg?react";
 import useDayData from "./useDayData";
 import { useState, useEffect } from "react";
 
@@ -9,6 +8,8 @@ function Weather() {
   const [loading, setLoading] = useState(true);
   const [slicedData, setSlicedData] = useState(null);
   const [icons, setIcons] = useState(null);
+
+  const arr = [1, 2, 3, 4, 5, 6];
 
   const { daysArray } = useDayData();
 
@@ -50,45 +51,7 @@ function Weather() {
     fetchData();
   }, []);
 
-  /* wip end */
-  const tempWeatherData = [
-    {
-      day: "Montag",
-      icon: <SunnySVG className="mt-6" />,
-      tempLow: 2,
-      tempHigh: 20,
-    },
-    {
-      day: "Dienstag",
-      icon: <SunnySVG className="mt-6" />,
-      tempLow: 3,
-      tempHigh: 20,
-    },
-    {
-      day: "Mittwoch",
-      icon: <SunnySVG className="mt-6" />,
-      tempLow: 3,
-      tempHigh: 20,
-    },
-    {
-      day: "Donnerstag",
-      icon: <SunnySVG className="mt-6" />,
-      tempLow: 3,
-      tempHigh: 20,
-    },
-    {
-      day: "Freitag",
-      icon: <SunnySVG className="mt-6" />,
-      tempLow: 3,
-      tempHigh: 20,
-    },
-    {
-      day: "Samstag",
-      icon: <SunnySVG className="mt-6" />,
-      tempLow: 3,
-      tempHigh: 20,
-    },
-  ];
+  
 
   return (
     <>
@@ -112,21 +75,20 @@ function Weather() {
             <WeatherTodayDetail />
           </div>
         </div>
-
-        <div className="grid grid-cols-6 gap-4 mt-4">
-          {tempWeatherData.map((item, index) => (
-            <div className="bg-white/20  col-span-1 " key={index}>
-              {slicedData && (
+        {slicedData && (
+          <div className="grid grid-cols-6 gap-4 mt-4">
+            {arr.map((item) => (
+              <div className="bg-white/20  col-span-1 " key={item}>
                 <WeatherTile
-                  idx={index + 1}
-                  data={slicedData[index]}
-                  day={daysArray[index]}
-                  weatherCode={icons[index + 1]}
+                  idx={item}
+                  data={slicedData[item]}
+                  day={daysArray[item-1]}
+                  weatherCode={icons[item]}
                 />
-              )}
-            </div>
-          ))}
-        </div>
+              </div>
+            ))}
+          </div>
+        )}
         {loading ? (
           <p>Loading...</p>
         ) : (

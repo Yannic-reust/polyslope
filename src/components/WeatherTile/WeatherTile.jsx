@@ -11,9 +11,10 @@ function WeatherTile({ data, day, weatherCode }) {
     <>
       <div className="h-full flex flex-col items-center p-4">
         <p className="text-center text-h-xs font-thin ">{day}</p>
-        {icon.icon}
-
-        {/* <p>{weather}</p> */}
+        <div className="h-16">
+        {icon.icon}      
+        </div>
+      
         <div className="mt-6">
           <span className="align-baseline text-h-xs font-thin">{tempLow}</span>
           <span className="text-h-md font-thin ">

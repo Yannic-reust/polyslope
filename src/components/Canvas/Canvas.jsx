@@ -26,7 +26,7 @@ const Canvas = () => {
                 }}
             >
                 <Light distance={8000}/>
-                <Detailed distances={[0, 4500, 6000]}>
+                <Detailed distances={[0, 450, 600]}>
                     <LandscapeHigh />
                     <LandscapeMed />
                     <LandscapeLow />

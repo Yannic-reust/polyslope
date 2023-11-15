@@ -14,7 +14,7 @@ const Sun = ({ position }) => {
                 geometry={nodes.Sphere.geometry} 
                 material={materials['Material.001']}
                 position={position}
-                scale={50}
+                scale={500}
             >
                 <meshBasicMaterial color="yellow"/>
             </mesh>

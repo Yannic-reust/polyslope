@@ -1,4 +1,5 @@
-import landscapeLow from "../../assets/gltf/landscapes/landscapeLow.glb";
+// import landscapeLow from "../../assets/gltf/landscapes/landscapeLow.glb";
+import landscapeLow from "../../assets/testGLTF/landscapes/landscapeLow.glb";
 import { useGLTF } from '@react-three/drei'
 import { Suspense, useRef } from "react";
 
@@ -11,8 +12,8 @@ const LandscapeLow = () => {
         <Suspense>
             <mesh 
                 ref={ref}
-                geometry={nodes.landscape.geometry} 
-                material={nodes.landscape.material} 
+                geometry={nodes.landscapeLow.geometry} 
+                material={nodes.landscapeLow.material} 
                 scale={[1, 1, 1]}
             />
         </Suspense>

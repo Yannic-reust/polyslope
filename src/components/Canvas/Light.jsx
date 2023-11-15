@@ -18,7 +18,7 @@ const Light = ({distance}) => {
     const [angle, setAngle] = useState(0);
 
     useFrame(() => {
-        setAngle(angle - 0.01);
+        // setAngle(angle - 0.01);
     })
 
     //calculate light position based of current time and sun position
@@ -28,8 +28,8 @@ const Light = ({distance}) => {
     let angle = -((360 / 24) * time);
     angle = 0;
     */
-    let lightX = -Math.sin(angle) * distance;
-    let lightY = -Math.cos(angle) * distance;
+    let lightX = Math.sin(angle) * distance;
+    let lightY = Math.cos(angle) * distance;
 
 
 

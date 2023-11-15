@@ -6,6 +6,9 @@ import Light from "./Light";
 import LandscapeLow from "./LandscapeLow";
 import LandscapeMedium from "./LandscapeMedium";
 import LandscapeHigh from "./LandscapeHigh";
+import RestaurantsHigh from "./RestaurantsHigh";
+import { Loader } from "three";
+import Trees from "./Trees";
 
 
 const Canvas = () => {
@@ -20,11 +23,17 @@ const Canvas = () => {
                 }}
             >
                 <Light distance={8000}/>
-                <Detailed distances={[0, 450, 600]}>
+                <Detailed distances={[0, 4500, 6000]}>
                     <LandscapeHigh />
                     <LandscapeMedium />
                     <LandscapeLow />
                 </Detailed>
+                <Detailed distances={[0, 4500, 6000]}>
+                    <RestaurantsHigh scale={[1, 1, 1]} />
+                    <RestaurantsHigh scale={[5, 5, 5]} />
+                    <RestaurantsHigh scale={[10, 10, 10]} />
+                </Detailed>
+                <Trees />
                 <OrbitControls 
                     minDistance={300} 
                     maxDistance={20000}

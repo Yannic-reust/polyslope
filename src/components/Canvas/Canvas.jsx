@@ -19,7 +19,7 @@ const Canvas = () => {
                     maxDistance: 300000
                 }}
             >
-                <Light distance={800}/>
+                <Light distance={8000}/>
                 <Detailed distances={[0, 450, 600]}>
                     <LandscapeHigh />
                     <LandscapeMedium />
@@ -27,7 +27,7 @@ const Canvas = () => {
                 </Detailed>
                 <OrbitControls 
                     minDistance={300} 
-                    maxDistance={2000}
+                    maxDistance={20000}
                     minPolarAngle={Math.PI * 0.2}
                     maxPolarAngle={Math.PI * 0.45}
                 />

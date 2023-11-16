@@ -5,12 +5,18 @@ const AnimationsStatus = () => {
   const active = useSelector((state) => state.animation.value);
   return (
     <>
-      {active && (
-        <div className="bg-[#165185]  flex items-center p-4 w-48">
-          <InfoSVG className="w-4 white" fill="white" />
-          <p className="ml-4">Animatons paused</p>
+      <div
+        className={` ease-in-out duration-500 group ${
+          active ? "is-active " : ""
+        }`}
+      >
+        <div className="overflow-hidden duration-500 opacity-0 group-[.is-active]:opacity-100">
+          <div className="bg-[#165185]  flex items-center p-4 w-48">
+            <InfoSVG className="w-4 white" fill="white" />
+            <p className="ml-4">Animatons paused</p>
+          </div>
         </div>
-      )}
+      </div>
     </>
   );
 };

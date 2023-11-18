@@ -9,6 +9,7 @@ import InfoSVG from "../../assets/icons/info.svg?react";
 
 import Plants from "../Plants/Plants";
 import Restaurants from "../Restaurants/Restaurants";
+import Filter from "../Filter/Filter";
 
 const SideBar = () => {
     const [ page, setPage ] = useState('');
@@ -57,6 +58,7 @@ const SideBar = () => {
                     { page === 'About' &&  <About /> }
                     { page === 'Plants' &&  <Plants /> }
                     { page === 'Restaurants' &&  <Restaurants /> }
+                    { page === 'Filter' &&  <Filter /> }
                 </div>
               
 

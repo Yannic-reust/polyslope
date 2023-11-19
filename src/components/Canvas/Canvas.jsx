@@ -15,19 +15,19 @@ const Canvas = () => {
                 camera={{
                     far: 50000, 
                     position: [6000, 2000, -6000],
-                    minDistance: 300,
+                    minDistance: 3000,
                     maxDistance: 300000
                 }}
             >
-                <Light distance={800}/>
-                <Detailed distances={[0, 450, 600]}>
+                <Light distance={8000}/>
+                <Detailed distances={[0, 4500, 6000]}>
                     <LandscapeHigh />
                     <LandscapeMedium />
                     <LandscapeLow />
                 </Detailed>
                 <OrbitControls 
                     minDistance={300} 
-                    maxDistance={2000}
+                    maxDistance={20000}
                     minPolarAngle={Math.PI * 0.2}
                     maxPolarAngle={Math.PI * 0.45}
                 />

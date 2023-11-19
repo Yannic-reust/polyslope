@@ -13,6 +13,7 @@ const LandscapeLow = () => {
                 ref={ref}
                 geometry={nodes.landscape.geometry} 
                 material={nodes.landscape.material} 
+                scale={[1, 1, 1]}
             />
         </Suspense>
     )

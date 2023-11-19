@@ -5,4 +5,5 @@ import svgr from 'vite-plugin-svgr' // used to import svgs as components
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
+  assetsInclude: ["**/*.glb"],
 })

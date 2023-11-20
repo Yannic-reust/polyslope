@@ -16,23 +16,23 @@ const useWeatherCode = (weatherCode) => {
     let weatherCondition = null;
     switch (weatherCode) {
       case 0:
-        weatherCondition = <SunnySVG className={ICON_CLASSES} />;
+        weatherCondition = <SunnySVG className={ICON_CLASSES} alt="Sun icon"/>;
         break;
       case 1:
       case 2:
       case 3:
-        weatherCondition = <CloudySVG className={ICON_CLASSES} />;
+        weatherCondition = <CloudySVG className={ICON_CLASSES} alt="Cloudy icon"/>;
         //weatherCondition = "Mainly clear, Pretty Cloudy, Overcast";
         break;
       case 45:
       case 48:
-        weatherCondition = <FogSVG className={ICON_CLASSES} />;
+        weatherCondition = <FogSVG className={ICON_CLASSES} alt="Fog icon" />;
         //weatherCondition = "Fog";
         break;
       case 51:
       case 53:
       case 55:
-        weatherCondition = <RainCloudySVG className={ICON_CLASSES} />;
+        weatherCondition = <RainCloudySVG className={ICON_CLASSES} alt="RainCloud icon"/>;
         // weatherCondition = "Drizzle - Light, Moderate, and Dense intensity";
         break;
       case 61:
@@ -43,7 +43,7 @@ const useWeatherCode = (weatherCode) => {
       case 80:
       case 81:
       case 82:
-        weatherCondition = <RainSVG className={ICON_CLASSES} />;
+        weatherCondition = <RainSVG className={ICON_CLASSES} alt="Rain icon"/>;
         //weatherCondition = "Rain - Slight, Moderate, Heavy intensity";
         //weatherCondition = "Freezing Rain - Light, Heavy intensity";
         //weatherCondition = "Rain Showers - Slight, Moderate, and Violent";
@@ -54,7 +54,7 @@ const useWeatherCode = (weatherCode) => {
       case 77:
       case 85:
       case 86:
-        weatherCondition = <SnowSVG className={ICON_CLASSES} />;
+        weatherCondition = <SnowSVG className={ICON_CLASSES} alt="Snow icon" />;
         //weatherCondition = "Snow Showers - Slight and Heavy";
         //weatherCondition = "Snowfall - Slight, Moderate, Heavy intensity";
         //weatherCondition = "Snow Grains";
@@ -62,7 +62,7 @@ const useWeatherCode = (weatherCode) => {
       case 95:
       case 96:
       case 99:
-        weatherCondition = <ThunderstormSVG className={ICON_CLASSES} />;
+        weatherCondition = <ThunderstormSVG className={ICON_CLASSES} alt="Thunderstorm icon"/>;
         //weatherCondition = "Thunderstorm - Slight or Moderate";
         //weatherCondition = "Thunderstorm with Slight, Heavy Hail";
         break;

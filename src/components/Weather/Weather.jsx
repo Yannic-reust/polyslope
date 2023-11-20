@@ -89,37 +89,6 @@ function Weather() {
             ))}
           </div>
         )}
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <div>
-            <div>
-              {/* <p>{first24Elements}</p>
-              <p>{lowestTemp}</p>
-              <p>{highestTemp}</p> */}
-
-              {/* <p>{second24Elements}</p> */}
-              {/*<div className="flex">
-                  <div>
-                    <p>Time</p>
-                    {data.hourly.time.map((item, index) => (
-                      <p key={index}>{item}</p>
-                    ))}
-                  </div>
-                  <div>
-                    <p>Value</p>
-
-                    {data.hourly.temperature_2m.map((item, index) => (
-                      <p key={index}>{item}</p>
-                    ))}
-                  </div>
-                </div>
-
-                {/* <pre>{data.hourly.temperature_2m}</pre>
-                <pre>{data.hourly.time}</pre> */}
-            </div>
-          </div>
-        )}
       </div>
     </>
   );

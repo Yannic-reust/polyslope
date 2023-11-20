@@ -1,15 +1,16 @@
 import "./App.css";
 
-import Home from "./components/Home";
-import SideBar from "./components/SideBar";
+import SideBar from "./components/SideBar/SideBar";
+import TabBar from "./components/TabBar/TabBar";
+import Canvas from "./components/Canvas/Canvas";
 
 
 function App() {
   return (
     <>
-  <SideBar />
-      
-     
+      <SideBar />
+      <TabBar />
+      <Canvas />
     </>
   );
 }

@@ -4,7 +4,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import CameraSVG from "../../assets/icons/camera.svg?react";
 
-const ContentSection = ({ item, icon }) => {
+const ContentSection = ({ item, icon, camera }) => {
   const [open, toggleOpen] = useState(false);
 
   const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
@@ -18,7 +18,7 @@ const ContentSection = ({ item, icon }) => {
     <div className="">
       <div className="mb-8 ">
         <div onClick={handleClick} className="cursor-pointer">
-          <ContentAccordion item={item} icon={icon} />
+          <ContentAccordion item={item} icon={icon} open={open}/>
         </div>
 
         <div
@@ -35,7 +35,7 @@ const ContentSection = ({ item, icon }) => {
                 ></span>
                 <p className="ml-4">Lauterbrunnen - Mürren</p>
               </div>
-              <CameraSVG className={NAV_ICON_CLASSES} />
+              {camera && <CameraSVG className={NAV_ICON_CLASSES} />}
             </div>
           </div>
         </div>
@@ -47,6 +47,7 @@ const ContentSection = ({ item, icon }) => {
 ContentSection.propTypes = {
   item: PropTypes.object.isRequired,
   icon: PropTypes.element,
+  camera: PropTypes.bool.isRequired
 };
 
 export default ContentSection;

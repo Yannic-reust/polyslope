@@ -5,8 +5,8 @@ import useDayData from "./useDayData";
 import { useState, useEffect } from "react";
 
 function Weather() {
-  const [loading, setLoading] = useState(true);
   const [slicedData, setSlicedData] = useState(null);
+  const [currentData, setCurrentData] = useState(null);
   const [icons, setIcons] = useState(null);
 
   const arr = [1, 2, 3, 4, 5, 6];
@@ -30,7 +30,7 @@ function Weather() {
     async function fetchData() {
       try {
         const response = await fetch(
-          "https://api.open-meteo.com/v1/forecast?latitude=46.5594243057797&longitude=7.893055030509216&hourly=temperature_2m&daily=weather_code"
+          "https://api.open-meteo.com/v1/forecast?latitude=46.5594243057797&longitude=7.893055030509216&current=temperature_2m,rain,snowfall,cloud_cover,wind_speed_10m&hourly=temperature_2m&daily=weather_code"
         );
 
         if (!response.ok) {
@@ -38,20 +38,16 @@ function Weather() {
         }
         const result = await response.json();
 
+        setCurrentData(result.current);
         sliceArray(result);
         setIcons(result.daily.weather_code);
-
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false);
       }
     }
 
     fetchData();
   }, []);
-
-  
 
   return (
     <>
@@ -72,7 +68,7 @@ function Weather() {
             )}
           </div>
           <div className="bg-white/20  col-span-4 p-8">
-            <WeatherTodayDetail />
+            {currentData && <WeatherTodayDetail weather={currentData} />}
           </div>
         </div>
         {slicedData && (
@@ -82,7 +78,7 @@ function Weather() {
                 <WeatherTile
                   idx={item}
                   data={slicedData[item]}
-                  day={daysArray[item-1]}
+                  day={daysArray[item - 1]}
                   weatherCode={icons[item]}
                 />
               </div>

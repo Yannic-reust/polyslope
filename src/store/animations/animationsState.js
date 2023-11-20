@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const animations = createSlice({
-  name: 'counter',
+  name: 'animations',
   initialState: {
-    value: false
+    value: true
 
   },
   reducers: {

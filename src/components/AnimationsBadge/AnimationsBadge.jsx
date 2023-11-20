@@ -10,10 +10,10 @@ const AnimationsBadge = () => {
   return (
     <>
       <div
-        className="w-20 h-20 rounded-full bg-darkblue/80  flex  justify-center items-center p-4 cursor-pointer"
+        className="w-20 h-20 rounded-full bg-darkblue/80 flex justify-center items-center p-4 cursor-pointer"
       >
-        {active && <AnimationsOnSVG className="w-8 " />}
-        {!active && <AnimationsOffSVG className="w-8 " />}
+        {active && <AnimationsOnSVG className="w-8" />}
+        {!active && <AnimationsOffSVG className="w-8 translate-y-[-2px]" />}
       </div>
     </>
   );

@@ -33,7 +33,7 @@ const AnimationsStatus = () => {
         }`}
       >
         <div className="overflow-hidden duration-500 opacity-0 group-[.is-active]:opacity-100">
-          <div className="bg-[#165185]  flex items-center p-4 w-48">
+          <div className="bg-[#165185] flex items-center p-4 w-48">
             <InfoSVG className="w-4 white" fill="white" />
             {animationStatus && <p className="ml-4">Animatons paused</p>}
             {!animationStatus && <p className="ml-4">Animatons on</p>}

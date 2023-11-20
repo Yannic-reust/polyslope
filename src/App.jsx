@@ -15,7 +15,7 @@ function App() {
         <TabBar />
 
         <div
-          className="ml-8 absolute bottom-8"
+          className="ml-8 absolute bottom-8 hidden tablet:inline"
           onClick={() => dispatch(toggleAnimation())}
         >
           <AnimationsBadge />

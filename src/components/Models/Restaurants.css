@@ -1,0 +1,21 @@
+.content {
+    transform: translate3d(-50%, -150%, 0);
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    background-color: #4e82b5;
+    padding: 8px;
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 40px;
+    left: 50%;
+    z-index: 1;
+    height: 12px;
+    width: 1px;
+    background-color: #4e82b5;
+}

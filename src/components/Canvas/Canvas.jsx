@@ -9,6 +9,7 @@ import LandscapeMed from "../Landscapes/LandscapeMed";
 import Trees from "../Models/Trees";
 import Restaurants from "../Models/Restaurants";
 import Lifts from "../Models/Lifts";
+import Slopes from "../Models/Slope-23";
 
 
 const Canvas = () => {
@@ -32,6 +33,7 @@ const Canvas = () => {
                 <Restaurants />
                 <Lifts />
                 <Trees />
+                <Slopes />
                 <OrbitControls 
                     minDistance={300} 
                     maxDistance={20000}

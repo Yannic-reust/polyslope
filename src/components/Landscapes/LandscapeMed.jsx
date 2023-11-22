@@ -7,7 +7,7 @@ export default function LandscapeMed(props) {
     return (
         <group {...props} dispose={null}>
         <mesh geometry={nodes.landscapeMed.geometry} position={[0, 375.448, 0]} >
-            <meshStandardMaterial color='#00ff00' />
+            <meshStandardMaterial color='#F0F0F2' />
         </mesh>
         </group>
     )

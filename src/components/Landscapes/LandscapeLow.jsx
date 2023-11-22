@@ -7,7 +7,7 @@ export default function LandscapeLow(props) {
     return (
         <group {...props} dispose={null}>
         <mesh geometry={nodes.landscapeLow.geometry} position={[0, 375.448, 0]} >
-            <meshStandardMaterial color='#ff0000' />
+            <meshStandardMaterial color='#F0F0F2' />
         </mesh>
         </group>
     )

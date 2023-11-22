@@ -9,7 +9,7 @@ import LandscapeMed from "../Landscapes/LandscapeMed";
 import Trees from "../Models/Trees";
 import Restaurants from "../Models/Restaurants";
 import Lifts from "../Models/Lifts";
-import Slopes from "../Models/Slope-23";
+import Slopes from "../Models/Slopes";
 
 
 const Canvas = () => {
@@ -18,8 +18,8 @@ const Canvas = () => {
             <R3fCanvas 
                 camera={{
                     near: 5, // stops flickering when viewed from distance
-                    far: 50000, 
-                    position: [6000, 6000, 0],
+                    far: 50000,
+                    position: [5500, 6000, 0],
                     minDistance: 3000,
                     maxDistance: 300000
                 }}
@@ -39,6 +39,7 @@ const Canvas = () => {
                     maxDistance={20000}
                     minPolarAngle={Math.PI * 0.2}
                     maxPolarAngle={Math.PI * 0.45}
+                    target={[0,0,-637.425]} // changed y position since scene is not in center
                 />
             </R3fCanvas>
         </div>

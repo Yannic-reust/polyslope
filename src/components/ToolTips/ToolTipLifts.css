@@ -18,10 +18,9 @@
     content: "";
     position: absolute;
     transform: translate(50%, -50%);
-    top: 40px;
-    left: 50%;
+    top: 36px;
     z-index: 1;
-    height: 12px;
+    height: 18px;
     width: 2px;
     background-color: #4e82b5;
 }

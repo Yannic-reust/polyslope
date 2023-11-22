@@ -5,6 +5,8 @@ import SideBar from "./components/SideBar/SideBar";
 import TabBar from "./components/TabBar/TabBar";
 import AnimationsBadge from "./components/AnimationsBadge/AnimationsBadge";
 import AnimationsStatus from "./components/AnimationsStatus/AnimationsStatus";
+import Canvas from "./components/Canvas/Canvas";
+
 
 function App() {
   const dispatch = useDispatch();

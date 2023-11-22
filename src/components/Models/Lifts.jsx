@@ -1,13 +1,18 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import lifts from "../../assets/gltf/lifts.glb";
-
+import ToolTipLifts from '../ToolTips/ToolTipLifts';
+import { Html } from "@react-three/drei"
 
 export default function Lifts(props) {
   const { nodes, materials } = useGLTF(lifts)
   return (
     <group {...props} dispose={null}>
       <group position={[2048.018, 1565.711, 1693.519]} rotation={[-3.097, 0.098, -2.971]} scale={2}>
+      <Html >
+       
+          <ToolTipLifts LiftName="Schilthornhütte" OpeningHours="8:30 - 17:00"/>
+        </Html>
         <mesh geometry={nodes['stop-mesh'].geometry} material={materials.silver_dark} />
         <mesh geometry={nodes['stop-mesh_1'].geometry} material={materials['black.002']} />
         <mesh geometry={nodes['stop-mesh_2'].geometry} material={materials['silver.002']} />

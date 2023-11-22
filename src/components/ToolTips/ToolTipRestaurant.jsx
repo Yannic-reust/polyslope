@@ -2,7 +2,7 @@ import "./ToolTipRestaurant.css";
 import { useState } from "react";
 import FoodSVG from "../../assets/icons/food.svg?react";
 
-function ToolTipRestaurant({ RestaurantName, OpeingHours }) {
+function ToolTipRestaurant({ RestaurantName, OpeningHours }) {
   const ICON_CLASSES = "w-3 h-auto fill-white";
   const [open, setOpen] = useState(false);
 
@@ -22,7 +22,7 @@ function ToolTipRestaurant({ RestaurantName, OpeingHours }) {
         {open && (
           <div className="flex flex-col text-white ">
             <p className="text-p-xs text-center">Öffnungszeiten:</p>
-            <p className="text-p-xs text-center">{OpeingHours}</p>
+            <p className="text-p-xs text-center">{OpeningHours}</p>
           </div>
         )}
       </div>

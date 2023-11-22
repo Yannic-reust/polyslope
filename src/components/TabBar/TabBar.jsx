@@ -3,7 +3,7 @@ import About from "../About/About";
 import NavItem from "../SideBar/NavItem";
 import CableCarSVG from "../../assets/icons/cable-car.svg?react";
 import FoodSVG from "../../assets/icons/food.svg?react";
-import WheatherSVG from "../../assets/icons/weather-sunny-cloudy.svg?react";
+import WheatherSVG from "../../assets/iconsWeather/weather-sunny-cloudy.svg?react";
 import FilterSVG from "../../assets/icons/filter.svg?react";
 import InfoSVG from "../../assets/icons/info.svg?react";
 import MenuSVG from "../../assets/icons/menu-lined.svg?react"
@@ -11,6 +11,7 @@ import NavItemMobile from "./NavItemMobile";
 import Plants from "../Plants/Plants";
 import Restaurants from "../Restaurants/Restaurants";
 import InsideNav from "./InsideNav";
+import Weather from "../Weather/Weather";
 
 const TabBar = () => {
     const [ page, setPage ] = useState('');
@@ -97,7 +98,7 @@ const TabBar = () => {
                 { /* main content */ }
                 { page === 'Plants' && <Plants /> }
                 { page === 'Restaurants' && <Restaurants /> }
-                { page === 'Weather' && <h1>Weather</h1> }
+                { page === 'Weather' && <Weather /> }   
 
                 { /* more content */ }
                 { page === 'More' && subPage === 'Filter' && <h1>Filter</h1> }

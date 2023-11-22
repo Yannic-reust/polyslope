@@ -12,9 +12,9 @@ function App() {
   const dispatch = useDispatch();
   return (
     <>
-      <div className="relative h-screen ">
         <SideBar />
         <TabBar />
+        <Canvas />
 
         <div
           className="ml-8 absolute bottom-8 hidden tablet:inline"
@@ -23,12 +23,9 @@ function App() {
           <AnimationsBadge />
         </div>
 
-        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-8">
+        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-8 hidden tablet:inline">
           <AnimationsStatus />
         </div>
-
-        {/* <Experience /> */}
-      </div>
     </>
   );
 }

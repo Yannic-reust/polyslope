@@ -11,6 +11,7 @@ import NavItemMobile from "./NavItemMobile";
 import Plants from "../Plants/Plants";
 import Restaurants from "../Restaurants/Restaurants";
 import InsideNav from "./InsideNav";
+import Weather from "../Weather/Weather";
 
 const TabBar = () => {
     const [ page, setPage ] = useState('');
@@ -97,7 +98,7 @@ const TabBar = () => {
                 { /* main content */ }
                 { page === 'Plants' && <Plants /> }
                 { page === 'Restaurants' && <Restaurants /> }
-                { page === 'Weather' && <h1>Weather</h1> }
+                { page === 'Weather' && <Weather /> }   
 
                 { /* more content */ }
                 { page === 'More' && subPage === 'Filter' && <h1>Filter</h1> }

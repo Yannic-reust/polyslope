@@ -36,12 +36,8 @@ const Light = ({distance}) => {
     return ( 
         <>
             <directionalLight 
-                ref={directionalLightRef}
-                position={[lightX, lightY, 0]}
-            />
-            <directionalLight 
                 position={[0, 500, 0]}
-                intensity={0.4}
+                intensity={2}
                 castShadow={false}
             />
             <Sun position={[lightX, lightY, 0]}/>

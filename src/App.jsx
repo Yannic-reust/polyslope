@@ -16,8 +16,8 @@ function App() {
     <>
         <SideBar />
         <TabBar />
-        <Tutorial />
         <Canvas />
+        <Tutorial />
 
         <div
           className="ml-8 absolute bottom-8 hidden tablet:inline"

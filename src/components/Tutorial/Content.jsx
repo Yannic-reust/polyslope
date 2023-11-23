@@ -7,17 +7,17 @@ import SkiSVG from "../../assets/icons/ski.svg?react";
 const Content = ({ stage }) => {
 
     let titleArray = [
-        "Welcome",
-        "Move",
-        "Zoom",
-        "Rotate"
+        "Wilkommen",
+        "Bewegen",
+        "Zoomen",
+        "Drehen"
     ];
 
     let textArray = [
-        "to the ski area Mürren-Schilthorn",
-        "Use your left mouse button to move the camera around.",
-        "Use your mouse wheel to zoom in and out.",
-        "Use your right mouse button to rotate the camera."
+        "im Skigebiet Mürren-Schilthorn",
+        "Nutze Linksklick um die Ansicht zu bewegen.",
+        "Nutze dein Mausrad zum Zoomen.",
+        "Nutze Recktsklick um die Ansicht zu drehen."
     ]
 
     return ( 

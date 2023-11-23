@@ -1,4 +1,4 @@
-.content {
+.contentLift {
     transform: translate3d(-50%, -150%, 0);
     text-align: left;
     border-radius: 5px;
@@ -14,7 +14,7 @@
     white-space: nowrap;
 }
 
-.content::before {
+.contentLift::before {
     content: "";
     position: absolute;
     transform: translate(50%, -50%);
@@ -24,7 +24,7 @@
     width: 2px;
     background-color: #1A65A6;
 }
-.line::before{
+.lineLift::before{
     top: 140px;
     height: 52px;
 }

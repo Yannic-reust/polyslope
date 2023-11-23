@@ -12,7 +12,7 @@ function ToolTipLifts({ LiftName, OpeningHours, lastDescent }) {
 
   return (
     <>
-      <div className={`content ${open ? "line" : ""}`} onClick={toggleOpen}>
+      <div className={`contentLift ${open ? "lineLift" : ""}`} onClick={toggleOpen}>
         <div className="flex">
           {!open && <PlantsSVG className={ICON_CLASSES} />}
           {open && <p className="ml-2 text-p-lg text-white">{LiftName}</p>}

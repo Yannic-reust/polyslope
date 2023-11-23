@@ -11,7 +11,7 @@ export default function Lifts(props) {
       <group position={[2048.018, 1565.711, 1693.519]} rotation={[-3.097, 0.098, -2.971]} scale={2}>
       <Html >
        
-          <ToolTipLifts LiftName="Schilthornhütte" OpeningHours="8:30 - 17:00"/>
+          <ToolTipLifts LiftName="Schilthornhütte" OpeningHours="8:30 - 17:00" lastDescent="16:30"/>
         </Html>
         <mesh geometry={nodes['stop-mesh'].geometry} material={materials.silver_dark} />
         <mesh geometry={nodes['stop-mesh_1'].geometry} material={materials['black.002']} />

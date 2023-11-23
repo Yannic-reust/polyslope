@@ -4,7 +4,7 @@
     border-radius: 5px;
     cursor: pointer;
     color: black;
-    background-color: #4e82b5;
+    background-color: #1A65A6;
     padding: 8px;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@
     z-index: 1;
     height: 18px;
     width: 2px;
-    background-color: #4e82b5;
+    background-color: #1A65A6;
 }
 .line::before{
     top: 140px;

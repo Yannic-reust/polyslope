@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import restaurants from "../../assets/gltf/restaurants.glb";
 import { Html } from "@react-three/drei"
-import ToolTipRestaurant from '../Tooltips/ToolTipRestaurant';
+import ToolTipRestaurant from '../ToolTips/ToolTipRestaurant';
 
 // no instancing used to handle clicks later
 export default function Restaurants(props) {

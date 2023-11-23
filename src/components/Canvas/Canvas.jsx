@@ -39,6 +39,13 @@ const Canvas = () => {
                     maxDistance={20000}
                     minPolarAngle={Math.PI * 0.2}
                     maxPolarAngle={Math.PI * 0.45}
+                    enableRotate
+                    rotateSpeed={1}
+                    mouseButtons={{
+                        LEFT: 2,
+                        MIDDLE: 1,
+                        RIGHT: 0,
+                    }}
                     target={[0,0,-637.425]} // changed y position since scene is not in center
                 />
             </R3fCanvas>

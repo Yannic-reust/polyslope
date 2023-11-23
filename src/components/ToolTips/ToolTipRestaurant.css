@@ -1,0 +1,33 @@
+.content {
+    transform: translate3d(-50%, -150%, 0);
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    background-color: #4e82b5;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 80px;
+    width: auto;
+    white-space: nowrap;
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 40px;
+    left: 50%;
+    z-index: 1;
+    height: 12px;
+    width: 2px;
+    background-color: #4e82b5;
+}
+
+
+.line::before{
+    top: 90px;
+    height: 52px;
+}

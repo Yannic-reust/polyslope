@@ -12,7 +12,7 @@ function ToolTipRestaurant({ RestaurantName, OpeningHours }) {
 
   return (
     <>
-      <div className={`content ${open ? "line" : ""}`} onClick={toggleOpen}>
+      <div className={`contentRestaurant ${open ? "lineRestaurant" : ""}`} onClick={toggleOpen}>
         <div className="flex">
           {!open && <FoodSVG className={ICON_CLASSES} />}
           {open && (

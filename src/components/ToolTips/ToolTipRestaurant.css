@@ -1,4 +1,4 @@
-.content {
+.contentRestaurant {
     transform: translate3d(-50%, -150%, 0);
     text-align: left;
     border-radius: 5px;
@@ -14,7 +14,7 @@
     white-space: nowrap;
 }
 
-.content::before {
+.contentRestaurant::before {
     content: "";
     position: absolute;
     transform: translate(50%, -50%);
@@ -27,7 +27,7 @@
 }
 
 
-.line::before{
+.lineRestaurant::before{
     top: 90px;
     height: 52px;
 }

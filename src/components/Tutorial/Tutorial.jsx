@@ -9,20 +9,19 @@ const Tutorial = () => {
 
     return ( 
         
-        <div className={`w-screen h-screen bg-slate-300 backdrop-blur-sm grid place-items-center ${menuState == 4 ? "hidden" : "block"}`}>
+        <div className={`w-screen h-screen bg-slate-300 backdrop-blur grid place-items-center ${menuState == 4 ? "hidden" : "block"}`}>
 
-            <div className="w-[450px] h-[350px] grid items-center bg-white/50"
+            <div className="w-[450px] h-[350px] grid items-center bg-white/70"
                  style={{gridTemplateRows: "2fr 10fr 2fr 2fr"}}>
                 <p className="justify-self-end px-4 font-thin text-xs text-black cursor-pointer"
                         style={{fontSize: "0.9em"}}
-                        onClick={() => setMenuState(4)}>Skip</p>
+                        onClick={() => setMenuState(4)}>Überspringen</p>
 
                 <Content stage={menuState}/>
 
                 <input type="button" 
-                        value="Next" 
-                        className="px-6 py-2 cursor-pointer justify-self-center h-max w-max row-start-3"
-                        style={{backgroundColor: "rgb(2 132 199)"}}
+                        value="Weiter" 
+                        className="px-6 py-2 cursor-pointer bg-darkblue justify-self-center min-w-[160px] h-max w-max row-start-3"
                         onClick={() => setMenuState(menuState + 1)}/>
 
                 <div className="row-start-4 justify-self-center w-max flex gap-[7px]">

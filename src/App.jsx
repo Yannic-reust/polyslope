@@ -6,6 +6,8 @@ import TabBar from "./components/TabBar/TabBar";
 import AnimationsBadge from "./components/AnimationsBadge/AnimationsBadge";
 import AnimationsStatus from "./components/AnimationsStatus/AnimationsStatus";
 import Canvas from "./components/Canvas/Canvas";
+import Tutorial from "./components/Tutorial/Tutorial";
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
     <>
         <SideBar />
         <TabBar />
+        <Tutorial />
         <Canvas />
 
         <div

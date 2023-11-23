@@ -9,13 +9,13 @@ function Restaurants() {
   const items = [
     {
       title: "Resturants",
-      text: "(0/12 geöffnet)",
+      text: "(2/12 geöffnet)",
       open: false,
       icon: <ResturantSVG className={NAV_ICON_CLASSES} />,
     },
     {
       title: "Bars",
-      text: "(1/55 km geöffnet)",
+      text: "(4/12 geöffnet)",
       open: false,
       icon: <BarSVG className={NAV_ICON_CLASSES} />,
     },

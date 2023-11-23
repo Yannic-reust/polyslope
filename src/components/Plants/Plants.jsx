@@ -2,22 +2,22 @@ import "./Plants.css";
 import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import ContentSection from "../ContentSection/ContentSection";
 import CableCarVG from "../../assets/icons/cable-car.svg?react";
-import BarSVG from "../../assets/icons/beer.svg?react";
+import SkiSVG from "../../assets/icons/ski.svg?react";
 
 function Plants() {
-  const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
+  const ICON_CLASSES = "w-8 max-h-7 fill-white";
   const items = [
     {
       title: "Anlagen",
-      text: "(0/12 geöffnet)",
+      text: "(2/12 geöffnet)",
       open: false,
-      icon: <CableCarVG className={NAV_ICON_CLASSES} />,
+      icon: <CableCarVG className={ICON_CLASSES} />,
     },
     {
       title: "Pisten",
-      text: "(1/55 km geöffnet)",
+      text: "(5/55 km geöffnet)",
       open: false,
-      icon: <BarSVG className={NAV_ICON_CLASSES} />,
+      icon: <SkiSVG className={ICON_CLASSES} />,
     },
   ];
   return (

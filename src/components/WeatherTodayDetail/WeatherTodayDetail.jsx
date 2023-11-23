@@ -1,8 +1,8 @@
 function WeatherTodayDetail(weather) {
   console.log(weather.weather);
   const weatherData = [
-    {name: "Cloud Cover", data: weather.weather.cloud_cover+" %"},
-    {name: "Snowfall", data:weather.weather.snowfall+" %"},
+    {name: "Wolkendecke", data: weather.weather.cloud_cover+" %"},
+    {name: "Scheefall", data:weather.weather.snowfall+" %"},
     {name: "Wind", data:weather.weather.wind_speed_10m+" km/h"},
     {name: "Regen", data:weather.weather.rain+" mm"},
     {name: "Aktuelle Temperatur", data:weather.weather.temperature_2m+" °C"},

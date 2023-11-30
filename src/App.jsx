@@ -2,17 +2,14 @@ import "./App.css";
 
 import SideBar from "./components/SideBar/SideBar";
 import TabBar from "./components/TabBar/TabBar";
-import Experience from "./components/Experience";
-import Auth from "./components/Auth";
-
+import Canvas from "./components/Canvas/Canvas";
 
 function App() {
   return (
     <>
-      { /* <SideBar /> */ }
-      { /* <TabBar /> */ }
-      { /* <Experience /> */ }
-      <Auth />
+      <SideBar />
+      <TabBar />
+      <Canvas />
     </>
   );
 }

@@ -6,4 +6,8 @@ import svgr from 'vite-plugin-svgr' // used to import svgs as components
 export default defineConfig({
   plugins: [react(), svgr()],
   assetsInclude: ["**/*.glb"],
+  test: {
+    globals: true,
+    environment: 'jsdom'
+  }
 })

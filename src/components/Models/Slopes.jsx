@@ -5,7 +5,7 @@ import slopes from "../../assets/gltf/slopes/slopes.glb";
 export default function Slopes(props) {
   const { nodes, materials } = useGLTF(slopes)
 
-  const moveUp = 10;
+  const moveUp = 10; // to remove z-fighting
 
   return (
     <group position={[0,0 + moveUp,0]} {...props} dispose={null}>

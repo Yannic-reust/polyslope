@@ -10,6 +10,7 @@ import Trees from "../Models/Trees";
 import Restaurants from "../Models/Restaurants";
 import Lifts from "../Models/Lifts";
 import Slopes from "../Models/Slopes";
+import Huts from "../Models/Huts";
 
 
 const Canvas = () => {
@@ -34,6 +35,7 @@ const Canvas = () => {
                 <Lifts />
                 <Trees />
                 <Slopes />
+                <Huts />
                 <OrbitControls 
                     minDistance={300} 
                     maxDistance={20000}

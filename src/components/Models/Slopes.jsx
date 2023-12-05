@@ -97,4 +97,3 @@ export default function Slopes(props) {
 }
 
 useGLTF.preload(slopes)
-// <meshBasicMaterial color='#0000FF' opacity={0.5} transparent />

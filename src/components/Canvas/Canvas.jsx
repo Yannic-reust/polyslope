@@ -1,7 +1,9 @@
 import { Canvas as R3fCanvas } from "@react-three/fiber";
-import { OrbitControls, Detailed } from '@react-three/drei';
+import { CameraControls, Detailed } from '@react-three/drei';
+import { useRef } from "react";
 
 //component imports
+import SetUpControls from "./SetUpControls";
 import Light from "./Light";
 import LandscapeLow from "../Landscapes/LandscapeLow";
 import LandscapeHigh from "../Landscapes/LandscapeHigh";
@@ -10,9 +12,14 @@ import Trees from "../Models/Trees";
 import Restaurants from "../Models/Restaurants";
 import Lifts from "../Models/Lifts";
 import Slopes from "../Models/Slopes";
+ 
 
 
 const Canvas = () => {
+
+    const ref = useRef();
+    const controlerRef = useRef();
+
     return ( 
         <div className="absolute canvas-container h-screen w-screen bg-darkblue z-[-1]">
             <R3fCanvas 
@@ -24,33 +31,31 @@ const Canvas = () => {
                     maxDistance: 300000
                 }}
             >
-                <Light distance={8000}/>
-                <Detailed distances={[0, 4500, 6000]}>
-                    <LandscapeHigh />
-                    <LandscapeMed />
-                    <LandscapeLow />
-                </Detailed>
-                <Restaurants />
-                <Lifts />
-                <Trees />
-                <Slopes />
-                <OrbitControls 
+                <CameraControls 
+                    ref={controlerRef}
                     minDistance={300} 
                     maxDistance={20000}
                     minPolarAngle={Math.PI * 0.2}
                     maxPolarAngle={Math.PI * 0.45}
                     enableRotate
                     rotateSpeed={1}
-                    mouseButtons={{
-                        LEFT: 2,
-                        MIDDLE: 1,
-                        RIGHT: 0,
-                    }}
-                    target={[0,0,-637.425]} // changed y position since scene is not in center
+                    target={[0,0,-637.425]}
                 />
+                <Light distance={8000}/>
+                <Detailed distances={[0, 4500, 6000]}>
+                    <LandscapeHigh />
+                    <LandscapeMed />
+                    <LandscapeLow view={controlerRef} />
+                </Detailed>
+                <Restaurants controls={controlerRef} />
+                <Lifts />
+                <Trees />
+                <Slopes />
+                <SetUpControls controls={controlerRef}/>
             </R3fCanvas>
         </div>
      );
 }
+
  
 export default Canvas;

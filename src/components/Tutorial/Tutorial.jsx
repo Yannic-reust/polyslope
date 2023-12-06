@@ -5,13 +5,12 @@ import Content from "./Content"
 const Tutorial = () => {
 
     const [menuState, setMenuState] = useState(0);
-    
 
     return ( 
         
-        <div className={`w-screen h-screen bg-slate-300 backdrop-blur-sm grid place-items-center ${menuState == 4 ? "hidden" : "block"}`}>
+        <div className={`w-screen absolute h-screen bg-slate-300 backdrop-blur-sm grid place-items-center ${menuState == 4 ? "hidden" : "block"}`}>
 
-            <div className="w-[450px] h-[350px] grid items-center bg-white/50"
+            <div className="max-w-[450px] w-[100%] h-[350px] grid items-center bg-white/50"
                  style={{gridTemplateRows: "2fr 10fr 2fr 2fr"}}>
                 <p className="justify-self-end px-4 font-thin text-xs text-black cursor-pointer"
                         style={{fontSize: "0.9em"}}

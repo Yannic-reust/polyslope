@@ -13,16 +13,19 @@ const useAPIData = () => {
           "https://www.jungfrau.ch/api/resort/v01/winter/overview"
         );
         const newData = await response.json();
-        console.log(newData.data.resorts[2].lifts)
+        
         dispatch(setRestaurants(newData.data.resorts[2].restaurants));
-        dispatch(setLift(newData.data.resorts[2].lifts));
+        dispatch(setLift(newData.data.resorts[2].lifts.slice(0, 19)));
 
       } catch (error) {
         const existingDataResponse = await fetch(
           "../../public/backup_data.json"
         );
         const existingData = await existingDataResponse.json();
+
         dispatch(setRestaurants(existingData.restaurants));
+        dispatch(setLift(existingData.data.lifts.slice(0, 19)));
+
         console.error("Error fetching data:", error);
       }
     };

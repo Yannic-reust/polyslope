@@ -2,24 +2,28 @@ import "./Plants.css";
 import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import ContentSection from "../ContentSection/ContentSection";
 import CableCarVG from "../../assets/icons/cable-car.svg?react";
-import BarSVG from "../../assets/icons/beer.svg?react";
+import SkiSVG from "../../assets/icons/ski.svg?react";
+import { useSelector } from "react-redux";
+import useCalcStatus from "../../services/useCalcStatus";
 
 function Plants() {
   const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
-  const items = [
-    {
-      title: "Anlagen",
-      text: "(0/12 geöffnet)",
-      open: false,
-      icon: <CableCarVG className={NAV_ICON_CLASSES} />,
-    },
-    {
-      title: "Pisten",
-      text: "(1/55 km geöffnet)",
-      open: false,
-      icon: <BarSVG className={NAV_ICON_CLASSES} />,
-    },
-  ];
+
+  const lift = useSelector((state) => state.lift.value);
+  
+    const liftsText = {
+    title: "Anlagen",
+    text: `(${useCalcStatus(lift).openCount}/19 geöffnet)`,
+    open: false,
+    icon: <CableCarVG className={NAV_ICON_CLASSES} />,
+  };
+  const pistsText = {
+    title: "Pisten",
+    text: "",
+    open: false,
+    icon: <SkiSVG className={NAV_ICON_CLASSES} />,
+  };
+
   return (
     <>
       <div>
@@ -27,7 +31,7 @@ function Plants() {
           title="Geöffnete Anlagen"
           text="Hier finden Sie eine Übersicht der aktuell geöffneten Anlagen."
         />
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <ul>
             <li className="flex">
               <p>Lawinenwarnstufe: </p>
@@ -46,14 +50,26 @@ function Plants() {
               <p className="ml-1">0cm</p>
             </li>
           </ul>
+        </div> */}
+
+        <div className="">
+          <ContentSection
+            item={liftsText}
+            data={lift}
+            camera={false}
+            title={"Bergbahnen"}
+            height={520}
+          />
         </div>
-        <div>
-          {items.map((item, index) => (
-            <div key={index}>
-              <ContentSection item={item} icon={item.icon} camera={true} data={[]} title={"asd"}/>
-            </div>
-          ))}
-        </div>
+      </div>
+      <div id="pists">
+        <ContentSection
+          item={pistsText}
+          data={lift}
+          camera={false}
+          title={"Pisten"}
+          height={800}
+        />
       </div>
     </>
   );

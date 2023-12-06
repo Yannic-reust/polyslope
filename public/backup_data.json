@@ -1,0 +1,1077 @@
+{
+  "lastUpdated": "2022-12-06T07:00:32Z",
+  "resort": {
+    "id": "muerren_schilthorn",
+    "name": "Mürren-Schilthorn",
+    "sismediaId": "2",
+    "valley": {
+      "id": "muerren",
+      "name": "Mürren",
+      "lat": "46.5588",
+      "lng": "7.8929",
+      "elevation": 1638,
+      "geonamesId": 2659530
+    },
+    "peak": {
+      "id": "schilthorn",
+      "name": "Schilthorn",
+      "lat": "46.55726",
+      "lng": "7.83527",
+      "elevation": 2970,
+      "geonamesId": 2658736
+    },
+    "snowInfoPhoneNumber": "+41 33 856 21 40"
+  },
+  "summary": {
+    "pistes": {
+      "total": 29,
+      "open": 0,
+      "metersTotal": 55710,
+      "metersOpen": 0
+    },
+    "lifts": {
+      "total": 13,
+      "open": 2
+    },
+    "tracksByType": {
+      "VALLEY_RUN": {
+        "total": 0,
+        "open": 0
+      },
+      "UNAVAILABLE": {
+        "total": 3,
+        "open": 0
+      },
+      "PISTE_VARIANT": {
+        "total": 2,
+        "open": 0
+      },
+      "SNOWSHOE_TRAIL": {
+        "total": 1,
+        "open": 1
+      },
+      "FUN": {
+        "total": 4,
+        "open": 0
+      },
+      "PISTE_EASY": {
+        "total": 9,
+        "open": 0
+      },
+      "TOBOGGANING_COMBINED": {
+        "total": 0,
+        "open": 0
+      },
+      "TOBOGGANING": {
+        "total": 3,
+        "open": 0
+      },
+      "PISTE_HARD": {
+        "total": 9,
+        "open": 0
+      },
+      "HIKING": {
+        "total": 7,
+        "open": 5
+      },
+      "PISTE_MEDIUM": {
+        "total": 9,
+        "open": 0
+      }
+    },
+    "liftsByType": {
+      "CHAIR_LIFT_2_SEATS": {
+        "total": 4,
+        "open": 0
+      },
+      "SKI_LIFT": {
+        "total": 2,
+        "open": 0
+      },
+      "AVALANCHE_INFO": {
+        "total": 5,
+        "open": 0
+      },
+      "FUNICULAR": {
+        "total": 4,
+        "open": 3
+      },
+      "AERIAL_TRAMWAY": {
+        "total": 6,
+        "open": 1
+      },
+      "CHAIR_LIFT_4_SEATS": {
+        "total": 3,
+        "open": 0
+      }
+    },
+    "valleySnow": {
+      "heightInCm": 68.0,
+      "last24hInCm": 13.0,
+      "lastSnowfall": "2023-12-02T00:00:00Z",
+      "condition": "UNAVAILABLE"
+    },
+    "peakSnow": {
+      "heightInCm": 157.0,
+      "last24hInCm": 18.0,
+      "lastSnowfall": "2023-12-02T00:00:00Z",
+      "condition": "POWDER"
+    },
+    "avalancheRisk": {
+      "level": 3,
+      "name": "CONSIDERABLE"
+    },
+    "pistesReport": {
+      "de": "Aktuelle Infos unter www.jungfrau.ch\r\n\r\n",
+      "en": "Aktuelle Infos unter www.jungfrau.ch",
+      "fr": "Aktuelle Infos unter www.jungfrau.ch"
+    },
+    "messages": {
+      "de": [],
+      "en": [],
+      "fr": []
+    }
+  },
+  "tracks": [
+    {
+      "id": "muerren_schilthorn_track_100_ll_stechelberg",
+      "name": "LL Stechelberg",
+      "trackType": "UNAVAILABLE",
+      "lengthInMeter": 0,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "100",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_39_nachtschalter",
+      "name": "Nachtschalter",
+      "trackType": "UNAVAILABLE",
+      "lengthInMeter": null,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "39",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_38_blitzleuchte",
+      "name": "Blitzleuchte",
+      "trackType": "UNAVAILABLE",
+      "lengthInMeter": null,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "38",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_8_27_abfahrtsroute_gimmelwald",
+      "name": "27 Abfahrtsroute Gimmelwald",
+      "difficulty": "VARIANT",
+      "trackType": "PISTE_VARIANT",
+      "lengthInMeter": 1280,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "8",
+      "showInReport": false,
+      "orderInReport": 122,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_77_abfahrtsroute_finel",
+      "name": "Abfahrtsroute Finel",
+      "difficulty": "VARIANT",
+      "trackType": "PISTE_VARIANT",
+      "lengthInMeter": 0,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "77",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_50_schneeschuhtrail_muerren",
+      "name": "Schneeschuhtrail Mürren",
+      "trackType": "SNOWSHOE_TRAIL",
+      "lengthInMeter": 2000,
+      "status": "OPEN",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "50",
+      "showInReport": true,
+      "orderInReport": 0,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_101_snowtubing_winteregg",
+      "name": "Snowtubing Winteregg",
+      "trackType": "FUN",
+      "lengthInMeter": null,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "101",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_36_skyline_snowpark",
+      "name": "Skyline Snowpark",
+      "trackType": "FUN",
+      "lengthInMeter": 200,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "36",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_335_inferno",
+      "name": "Inferno",
+      "trackType": "FUN",
+      "lengthInMeter": null,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "335",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_336_skicross_maulerhubel",
+      "name": "Skicross Maulerhubel",
+      "trackType": "FUN",
+      "lengthInMeter": null,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "336",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_73_26_wintertal",
+      "name": "26 Wintertal",
+      "difficulty": "EASY",
+      "trackType": "PISTE_EASY",
+      "lengthInMeter": 1280,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "73",
+      "showInReport": false,
+      "orderInReport": 104,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_70_23_gimmeln",
+      "name": "23 Gimmeln",
+      "difficulty": "EASY",
+      "trackType": "PISTE_EASY",
+      "lengthInMeter": 1670,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "70",
+      "showInReport": false,
+      "orderInReport": 103,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_65_7_allmi",
+      "name": "7 Allmi",
+      "difficulty": "EASY",
+      "trackType": "PISTE_EASY",
+      "lengthInMeter": 1800,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "65",
+      "showInReport": false,
+      "orderInReport": 105,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_64_4_maulerhubel",
+      "name": "4 Maulerhubel",
+      "difficulty": "EASY",
+      "trackType": "PISTE_EASY",
+      "lengthInMeter": 1670,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "64",
+      "showInReport": false,
+      "orderInReport": 107,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_63_2_dreistern",
+      "name": "2 Dreistern",
+      "difficulty": "EASY",
+      "trackType": "PISTE_EASY",
+      "lengthInMeter": 2570,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "63",
+      "showInReport": false,
+      "orderInReport": 108,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_6_20_hindenburg",
+      "name": "20 Hindenburg",
+      "difficulty": "EASY",
+      "trackType": "PISTE_EASY",
+      "lengthInMeter": 3850,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "6",
+      "showInReport": false,
+      "orderInReport": 102,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_4_6_allmendhubel_-_muerren_(bob-run)",
+      "name": "6 Allmendhubel - Mürren (Bob-Run)",
+      "difficulty": "EASY",
+      "trackType": "PISTE_EASY",
+      "lengthInMeter": 3210,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "4",
+      "showInReport": true,
+      "orderInReport": 106,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_2_11_birg_-_engetal",
+      "name": "11 Birg - Engetal",
+      "difficulty": "EASY",
+      "trackType": "PISTE_EASY",
+      "lengthInMeter": 3850,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "2",
+      "showInReport": true,
+      "orderInReport": 100,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_67_8_riggli",
+      "name": "8 Riggli",
+      "difficulty": "EASY",
+      "trackType": "PISTE_EASY",
+      "lengthInMeter": 1610,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "67",
+      "showInReport": false,
+      "orderInReport": 101,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_19_apollo_schiltgrat_-_gimmeln",
+      "name": "Apollo Schiltgrat - Gimmeln",
+      "trackType": "TOBOGGANING",
+      "lengthInMeter": 3100,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "19",
+      "showInReport": true,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_18_sonnenberg_-_bobrun_-_muerren",
+      "name": "Sonnenberg - Bobrun - Mürren",
+      "trackType": "TOBOGGANING",
+      "lengthInMeter": 2000,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "18",
+      "showInReport": true,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_17_allmendhubel_-_sonnenberg",
+      "name": "Allmendhubel - Sonnenberg",
+      "trackType": "TOBOGGANING",
+      "lengthInMeter": 2000,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "17",
+      "showInReport": true,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_75_21_kandahar",
+      "name": "21 Kandahar",
+      "difficulty": "HARD",
+      "trackType": "PISTE_HARD",
+      "lengthInMeter": 1160,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "75",
+      "showInReport": false,
+      "orderInReport": 146,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_74_14_muttleren",
+      "name": "14 Muttleren",
+      "difficulty": "HARD",
+      "trackType": "PISTE_HARD",
+      "lengthInMeter": 900,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "74",
+      "showInReport": false,
+      "orderInReport": 143,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_333_15b_fis",
+      "name": "15b FIS",
+      "difficulty": "HARD",
+      "trackType": "PISTE_HARD",
+      "lengthInMeter": 1160,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "333",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_331_9_buckelpiste",
+      "name": "9 Buckelpiste",
+      "difficulty": "HARD",
+      "trackType": "PISTE_HARD",
+      "lengthInMeter": 1030,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "331",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_60_12_bond",
+      "name": "12 Bond",
+      "difficulty": "HARD",
+      "trackType": "PISTE_HARD",
+      "lengthInMeter": 510,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "60",
+      "showInReport": false,
+      "orderInReport": 141,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_3_16_kanonenrohr_-_muerren",
+      "name": "16 Kanonenrohr - Mürren",
+      "difficulty": "HARD",
+      "trackType": "PISTE_HARD",
+      "lengthInMeter": 1670,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "3",
+      "showInReport": true,
+      "orderInReport": 145,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_1_10_schilthorn_abfahrt",
+      "name": "10 Schilthorn Abfahrt",
+      "difficulty": "HARD",
+      "trackType": "PISTE_HARD",
+      "lengthInMeter": 1930,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "1",
+      "showInReport": true,
+      "orderInReport": 140,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_61_9_direttissima",
+      "name": "9 Direttissima",
+      "difficulty": "HARD",
+      "trackType": "PISTE_HARD",
+      "lengthInMeter": 940,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "61",
+      "showInReport": false,
+      "orderInReport": 142,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_69_17_fis",
+      "name": "17 FIS",
+      "difficulty": "HARD",
+      "trackType": "PISTE_HARD",
+      "lengthInMeter": 1090,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "69",
+      "showInReport": false,
+      "orderInReport": 144,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_32_41_gimmeln_-_schiltgrat",
+      "name": "41 Gimmeln - Schiltgrat",
+      "trackType": "HIKING",
+      "lengthInMeter": 2500,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "32",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_31_40_muerren_-_gimmeln",
+      "name": "40 Mürren - Gimmeln",
+      "trackType": "HIKING",
+      "lengthInMeter": 1500,
+      "status": "OPEN",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "31",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_30_42_muerren_-_sonnenberg_allmendhubel",
+      "name": "42 Mürren - Sonnenberg Allmendhubel",
+      "trackType": "HIKING",
+      "lengthInMeter": 1500,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "30",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_29_45_muerren_-_gimmelwald",
+      "name": "45 Mürren - Gimmelwald",
+      "trackType": "HIKING",
+      "lengthInMeter": 1000,
+      "status": "OPEN",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "29",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_28_44_winteregg_-_gruetschalp",
+      "name": "44 Winteregg - Grütschalp",
+      "trackType": "HIKING",
+      "lengthInMeter": 2500,
+      "status": "OPEN",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "28",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_27_44_muerren_-_winteregg",
+      "name": "44 Mürren - Winteregg",
+      "trackType": "HIKING",
+      "lengthInMeter": 2500,
+      "status": "OPEN",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "27",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_25_43_panoramaweg_muerren",
+      "name": "43 Panoramaweg Mürren",
+      "trackType": "HIKING",
+      "lengthInMeter": 1000,
+      "status": "OPEN",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "25",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_76_22_suppen_/_rad",
+      "name": "22 Suppen / Rad",
+      "difficulty": "MEDIUM",
+      "trackType": "PISTE_MEDIUM",
+      "lengthInMeter": 1030,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "76",
+      "showInReport": false,
+      "orderInReport": 126,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_334_23b_finel",
+      "name": "23b Finel",
+      "difficulty": "MEDIUM",
+      "trackType": "PISTE_MEDIUM",
+      "lengthInMeter": 2050,
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "334",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_72_24_gimmeln",
+      "name": "24 Gimmeln",
+      "difficulty": "MEDIUM",
+      "trackType": "PISTE_MEDIUM",
+      "lengthInMeter": 2950,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "72",
+      "showInReport": false,
+      "orderInReport": 124,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_track_68_15_bietenhorn",
+      "name": "15 Bietenhorn",
+      "difficulty": "MEDIUM",
+      "trackType": "PISTE_MEDIUM",
+      "lengthInMeter": 1540,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "68",
+      "showInReport": true,
+      "orderInReport": 121,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_66_13_stellifluh",
+      "name": "13 Stellifluh",
+      "difficulty": "MEDIUM",
+      "trackType": "PISTE_MEDIUM",
+      "lengthInMeter": 260,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "66",
+      "showInReport": true,
+      "orderInReport": 120,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_62_1_winteregg_-_oberberg",
+      "name": "1 Winteregg - Oberberg",
+      "difficulty": "MEDIUM",
+      "trackType": "PISTE_MEDIUM",
+      "lengthInMeter": 1540,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "62",
+      "showInReport": false,
+      "orderInReport": 128,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_7_3_winteregg_-_lauterbrunnen",
+      "name": "3 Winteregg - Lauterbrunnen",
+      "difficulty": "MEDIUM",
+      "trackType": "PISTE_MEDIUM",
+      "lengthInMeter": 8990,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "7",
+      "showInReport": true,
+      "orderInReport": 129,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_5_5_allmendhubel_-_muerren_(palacerun)",
+      "name": "5 Allmendhubel - Mürren (Palacerun)",
+      "difficulty": "MEDIUM",
+      "trackType": "PISTE_MEDIUM",
+      "lengthInMeter": 2310,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "5",
+      "showInReport": true,
+      "orderInReport": 127,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_track_71_25_finel",
+      "name": "25 Finel",
+      "difficulty": "MEDIUM",
+      "trackType": "PISTE_MEDIUM",
+      "lengthInMeter": 1860,
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaTrackId": "71",
+      "showInReport": false,
+      "orderInReport": 125,
+      "isTrackData": true
+    }
+  ],
+  "lifts": [
+    {
+      "id": "muerren_schilthorn_lift_18_gimmeln",
+      "name": "Gimmeln",
+      "liftType": "SKI_LIFT",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "18",
+      "showInReport": true,
+      "orderInReport": 231,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_17_riggli",
+      "name": "Riggli",
+      "liftType": "CHAIR_LIFT_4_SEATS",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "17",
+      "showInReport": true,
+      "orderInReport": 226,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_16_allmendhubel",
+      "name": "Allmendhubel",
+      "liftType": "SKI_LIFT",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "16",
+      "showInReport": true,
+      "orderInReport": 230,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_15_winteregg",
+      "name": "Winteregg",
+      "liftType": "CHAIR_LIFT_4_SEATS",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "15",
+      "showInReport": true,
+      "orderInReport": 225,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_14_muttleren",
+      "name": "Muttleren",
+      "liftType": "CHAIR_LIFT_2_SEATS",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "14",
+      "showInReport": true,
+      "orderInReport": 222,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_13_maulerhubel",
+      "name": "Maulerhubel",
+      "liftType": "CHAIR_LIFT_2_SEATS",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "13",
+      "showInReport": true,
+      "orderInReport": 221,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_12_kandahar",
+      "name": "Kandahar",
+      "liftType": "CHAIR_LIFT_2_SEATS",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "12",
+      "showInReport": true,
+      "orderInReport": 220,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_11_schiltgrat",
+      "name": "Schiltgrat",
+      "liftType": "CHAIR_LIFT_4_SEATS",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "11",
+      "showInReport": true,
+      "orderInReport": 224,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_10_muerren_-_allmendhubel",
+      "name": "Mürren - Allmendhubel",
+      "liftType": "FUNICULAR",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "10",
+      "showInReport": true,
+      "orderInReport": 203,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_9_birg_-_schilthorn",
+      "name": "Birg - Schilthorn",
+      "liftType": "AERIAL_TRAMWAY",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "9",
+      "showInReport": true,
+      "orderInReport": 214,
+      "isSkiLift": false,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_8_muerren_-_birg",
+      "name": "Mürren - Birg",
+      "liftType": "AERIAL_TRAMWAY",
+      "status": "CLOSED",
+      "info": "",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "8",
+      "showInReport": true,
+      "orderInReport": 213,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_7_gimmelwald_-_muerren",
+      "name": "Gimmelwald - Mürren",
+      "liftType": "AERIAL_TRAMWAY",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "7",
+      "showInReport": false,
+      "orderInReport": 212,
+      "isSkiLift": false,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_6_stechelberg_-_gimmelwald",
+      "name": "Stechelberg - Gimmelwald",
+      "liftType": "AERIAL_TRAMWAY",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "6",
+      "showInReport": true,
+      "orderInReport": 211,
+      "isSkiLift": false,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_5_stechelberg_-_schilthorn",
+      "name": "Stechelberg - Schilthorn",
+      "liftType": "AERIAL_TRAMWAY",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "5",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isSkiLift": false,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_lift_4_winteregg_-_muerren",
+      "name": "Winteregg - Mürren",
+      "liftType": "FUNICULAR",
+      "status": "OPEN",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "4",
+      "showInReport": false,
+      "orderInReport": 202,
+      "isSkiLift": false,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_3_gruetschalp_-_winteregg",
+      "name": "Grütschalp - Winteregg",
+      "liftType": "FUNICULAR",
+      "status": "OPEN",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "3",
+      "showInReport": false,
+      "orderInReport": 201,
+      "isSkiLift": false,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_2_lauterbrunnen_-_gruetschalp",
+      "name": "Lauterbrunnen - Grütschalp",
+      "liftType": "AERIAL_TRAMWAY",
+      "status": "OPEN",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "2",
+      "showInReport": false,
+      "orderInReport": 210,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_1_lauterbrunnen_-_muerren",
+      "name": "Lauterbrunnen - Mürren",
+      "liftType": "FUNICULAR",
+      "status": "OPEN",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "1",
+      "showInReport": true,
+      "orderInReport": 200,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_19_almiboden",
+      "name": "Almiboden",
+      "liftType": "CHAIR_LIFT_2_SEATS",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "19",
+      "showInReport": true,
+      "orderInReport": 223,
+      "isSkiLift": true,
+      "isTrackData": true
+    },
+    {
+      "id": "muerren_schilthorn_lift_34_sehr_gross",
+      "name": "sehr gross",
+      "liftType": "AVALANCHE_INFO",
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "34",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isSkiLift": false,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_lift_31_maessig",
+      "name": "mässig",
+      "liftType": "AVALANCHE_INFO",
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "31",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isSkiLift": false,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_lift_33_gross",
+      "name": "gross",
+      "liftType": "AVALANCHE_INFO",
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "33",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isSkiLift": false,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_lift_32_erheblich",
+      "name": "erheblich",
+      "liftType": "AVALANCHE_INFO",
+      "status": "CLOSED",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "32",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isSkiLift": false,
+      "isTrackData": false
+    },
+    {
+      "id": "muerren_schilthorn_lift_30_gering",
+      "name": "gering",
+      "liftType": "AVALANCHE_INFO",
+      "status": "UNAVAILABLE",
+      "sismediaResortId": "2",
+      "sismediaLiftId": "30",
+      "showInReport": false,
+      "orderInReport": 0,
+      "isSkiLift": false,
+      "isTrackData": false
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "muerren_schilthorn_restaurant_10_winteregg",
+      "name": "Winteregg",
+      "restaurantType": "RESTAURANT",
+      "status": "CLOSED"
+    },
+    {
+      "id": "muerren_schilthorn_restaurant_9_suppenalp",
+      "name": "Suppenalp",
+      "restaurantType": "RESTAURANT",
+      "status": "CLOSED"
+    },
+    {
+      "id": "muerren_schilthorn_restaurant_8_sonnenberg",
+      "name": "Sonnenberg",
+      "restaurantType": "RESTAURANT",
+      "status": "CLOSED"
+    },
+    {
+      "id": "muerren_schilthorn_restaurant_7_schiltgrathuesi",
+      "name": "Schiltgrathüsi",
+      "restaurantType": "RESTAURANT",
+      "status": "CLOSED"
+    },
+    {
+      "id": "muerren_schilthorn_restaurant_6_schilthornhuette",
+      "name": "Schilthornhütte",
+      "restaurantType": "RESTAURANT",
+      "status": "CLOSED"
+    },
+    {
+      "id": "muerren_schilthorn_restaurant_5_schilthorn_-_piz_gloria",
+      "name": "Schilthorn - Piz Gloria",
+      "restaurantType": "RESTAURANT",
+      "status": "CLOSED"
+    },
+    {
+      "id": "muerren_schilthorn_restaurant_4_gimmeln",
+      "name": "Gimmeln",
+      "restaurantType": "RESTAURANT",
+      "status": "CLOSED"
+    },
+    {
+      "id": "muerren_schilthorn_restaurant_3_birg_selfservice",
+      "name": "Birg Selfservice",
+      "restaurantType": "RESTAURANT",
+      "status": "OPEN"
+    },
+    {
+      "id": "muerren_schilthorn_restaurant_1_allmendhubel",
+      "name": "Allmendhubel",
+      "restaurantType": "RESTAURANT",
+      "status": "CLOSED"
+    }
+  ]
+}

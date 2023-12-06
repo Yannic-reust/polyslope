@@ -17,6 +17,13 @@ function Restaurants() {
     icon: <ResturantSVG className={NAV_ICON_CLASSES} />,
   };
 
+  const barsText = {
+    title: "Bars",
+    text: "(2/12 geöffnet)",
+    open: false,
+    icon: <BarSVG className={NAV_ICON_CLASSES} />,
+  };
+
   return (
     <>
       <div id="restaurants">
@@ -28,30 +35,22 @@ function Restaurants() {
         <div className="">
           <ContentSection
             item={restaurantText}
-            icon={restaurantText.icon}
             data={restaurant}
             camera={false}
             title={"Berg Restaurats"}
           />
         </div>
       </div>
-      {/* <div id="bars">
+      <div id="bars">
         <div className="">
-          {items.map((item, index) => (
-            <div key={index}>
-              <ContentSection
-                item={{
-                  title: "Bars",
-                  text: "(1/55 km geöffnet)",
-                  open: false,
-                  icon: <BarSVG className={NAV_ICON_CLASSES} />,
-                }}
-                camera={false}
-              />
-            </div>
-          ))}
+          <ContentSection
+            item={barsText}
+            data={restaurant}
+            camera={false}
+            title={"Bars"}
+          />
         </div>
-      </div> */}
+      </div>
     </>
   );
 }

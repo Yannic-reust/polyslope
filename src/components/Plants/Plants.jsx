@@ -50,7 +50,7 @@ function Plants() {
         <div>
           {items.map((item, index) => (
             <div key={index}>
-              <ContentSection item={item} icon={item.icon} camera={true}/>
+              <ContentSection item={item} icon={item.icon} camera={true} data={[]} title={"asd"}/>
             </div>
           ))}
         </div>

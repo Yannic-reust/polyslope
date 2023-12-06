@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { setRestaurants } from "../store/restaurant/restaurantState";
+import { setLift } from "../store/lift/liftState";
 import { useDispatch } from "react-redux";
 
 const useAPIData = () => {
@@ -12,8 +13,10 @@ const useAPIData = () => {
           "https://www.jungfrau.ch/api/resort/v01/winter/overview"
         );
         const newData = await response.json();
-
+        console.log(newData.data.resorts[2].lifts)
         dispatch(setRestaurants(newData.data.resorts[2].restaurants));
+        dispatch(setLift(newData.data.resorts[2].lifts));
+
       } catch (error) {
         const existingDataResponse = await fetch(
           "../../public/backup_data.json"

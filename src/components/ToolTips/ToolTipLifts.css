@@ -1,0 +1,30 @@
+.contentLift {
+    transform: translate3d(-50%, -150%, 0);
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    background-color: #1A65A6;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 180px;
+    width: auto;
+    white-space: nowrap;
+}
+
+.contentLift::before {
+    content: "";
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 36px;
+    z-index: 1;
+    height: 18px;
+    width: 2px;
+    background-color: #1A65A6;
+}
+.lineLift::before{
+    top: 140px;
+    height: 52px;
+}

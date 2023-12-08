@@ -1,0 +1,35 @@
+.contentHuts {
+    transform: translate3d(-50%, -150%, 0);
+    text-align: center;
+    border-radius: 5px;
+    text-shadow:
+    -1px -1px 0 white,  
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 80px;
+    width: auto;
+    white-space: nowrap;
+}
+
+.contentHuts::before {
+    content: "";
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 40px;
+    left: 50%;
+    z-index: 1;
+    height: 12px;
+    width: 2px;
+    background-color: #ffffff;
+}
+
+
+.lineHuts::before{
+    top: 90px;
+    height: 52px;
+}

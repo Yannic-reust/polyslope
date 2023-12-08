@@ -64,7 +64,6 @@ ContentSection.propTypes = {
   item: PropTypes.object.isRequired,
   camera: PropTypes.bool.isRequired,
   data: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default ContentSection;

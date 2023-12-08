@@ -17,9 +17,6 @@ function Plants() {
   const [ mediumTracks, setMediumTracks] = useState([])
   const [ hardTracks, setHardTracks] = useState([])
 
-  console.log(track)
-
-
   useEffect(() => {
     const result = {
       EASY: [],

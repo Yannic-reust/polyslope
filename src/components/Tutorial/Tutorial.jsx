@@ -11,7 +11,7 @@ const Tutorial = () => {
         
         <div className={`w-screen h-screen bg-slate-300 backdrop-blur grid place-items-center ${menuState == 4 ? "hidden" : "block"}`}>
 
-            <div className="w-[450px] h-[350px] grid items-center bg-white/70"
+            <div className="max-w-[450px] w-[95%] h-[350px] grid items-center bg-white/70"
                  style={{gridTemplateRows: "2fr 10fr 2fr 2fr"}}>
                 <p className="justify-self-end px-4 font-thin text-xs text-black cursor-pointer"
                         style={{fontSize: "0.9em"}}

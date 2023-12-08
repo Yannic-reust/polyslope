@@ -21,7 +21,7 @@ export default function Restaurants(props) {
         <mesh name="restaurant-mesh_5" geometry={nodes['restaurant-mesh_5'].geometry} material={materials.fundament} />
       </group>
 
-      <group name="Bistro_Birg" position={[-519.538, 2628.053, 1120.713]} rotation={[-Math.PI, 0.014, -Math.PI]} scale={3}>
+      <group name="Bistro_Birg" position={[-503.996, 2628.053, 1101.381]} rotation={[-Math.PI, 0.737, -Math.PI]} scale={3}>
         <Html >
           <ToolTipRestaurant RestaurantName="Schilthornhütte 1" OpeningHours="8:30 - 17:00"/>
         </Html>

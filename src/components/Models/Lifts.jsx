@@ -3,6 +3,8 @@ import { useGLTF } from '@react-three/drei'
 import lifts from "../../assets/gltf/lifts.glb";
 import ToolTipLifts from '../ToolTips/ToolTipLifts';
 import { Html } from "@react-three/drei"
+import { useCursor, Outlines, AccumulativeShadows, RandomizedLight, OrbitControls, Bounds, Environment } from '@react-three/drei'
+import { Selection, Select, EffectComposer, Outline } from '@react-three/postprocessing'
 
 export const LiftType = {
   Gondola: 'Gondel',
@@ -17,57 +19,80 @@ export default function Lifts(props) {
 
   return (
     <group {...props} dispose={null}>
-      <group name="Schiltgrad" position={[1254.171, 1945.201, 1642.685]}>
-        <Html>
-          <ToolTipLifts lift={{ name: "Schiltgrad", type: LiftType.Chair, capacity: "4", length: "1522 m" }} />
-        </Html>
-        <group name="Connection_Schiltgrad" position={[-1254.171, -1945.201, -1642.685]}>
-          <group name="Cable-Bottom009" position={[2033.391, 1582.532, 1692.852]} />
-          <group name="Cable-Top009" position={[721.021, 2064.886, 1608.361]} />
-          <mesh name="Cable009" geometry={nodes.Cable009.geometry} material={materials['Material.016']} position={[1254.171, 1945.201, 1642.685]} />
+        <group name="Schiltgrad" position={[1254.171, 1945.201, 1642.685]}>
+          <Html>
+            <ToolTipLifts lift={{ name: "Schiltgrad", type: LiftType.Chair, capacity: "4", length: "1522 m" }} />
+          </Html>
+          <group name="Connection_Schiltgrad" position={[-1254.171, -1945.201, -1642.685]}>
+            <group name="Cable-Bottom009" position={[2033.391, 1582.532, 1692.852]} />
+            <group name="Cable-Top009" position={[721.021, 2064.886, 1608.361]} />
+            <Select enabled={true}>
+            <mesh name="Cable009" geometry={nodes.Cable009.geometry} material={materials['Material.016']} position={[1254.171, 1945.201, 1642.685]} />
+            </Select>
+          </group>
+          <group name="Schiltgrad_Bottom" position={[793.847, -379.49, 50.833]} rotation={[-3.097, 0.098, -2.971]} scale={2}>
+            <mesh name="stop-mesh" geometry={nodes['stop-mesh'].geometry} material={materials.silver_dark} />
+            <mesh name="stop-mesh_1" geometry={nodes['stop-mesh_1'].geometry} material={materials['black.002']} />
+            <mesh name="stop-mesh_2" geometry={nodes['stop-mesh_2'].geometry} material={materials['silver.002']} />
+            <mesh name="stop-mesh_3" geometry={nodes['stop-mesh_3'].geometry} material={materials.red} />
+          </group>
+          <group name="Schiltgrad_Top" position={[-552.375, 108.844, -37.55]} rotation={[0.107, -0.104, -0.159]} scale={2}>
+            <mesh name="stop-mesh" geometry={nodes['stop-mesh'].geometry} material={materials.silver_dark} />
+            <mesh name="stop-mesh_1" geometry={nodes['stop-mesh_1'].geometry} material={materials['black.002']} />
+            <mesh name="stop-mesh_2" geometry={nodes['stop-mesh_2'].geometry} material={materials['silver.002']} />
+            <mesh name="stop-mesh_3" geometry={nodes['stop-mesh_3'].geometry} material={materials.red} />
+          </group>
+          <group name="Tower_Single_Schiltgrad_1" position={[368.197, -203.725, 31.802]} rotation={[0, -0.087, -0.249]} scale={2}>
+            <mesh name="tower-single-mesh" geometry={nodes['tower-single-mesh'].geometry} material={materials['silver.007']} />
+            <mesh name="tower-single-mesh_1" geometry={nodes['tower-single-mesh_1'].geometry} material={materials['black.005']} />
+            <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
+          </group>
+          <group name="Tower_Single_Schiltgrad_2" position={[118.699, -77.126, 15.638]} rotation={[0, -0.087, -0.249]} scale={2}>
+            <mesh name="tower-single-mesh" geometry={nodes['tower-single-mesh'].geometry} material={materials['silver.007']} />
+            <mesh name="tower-single-mesh_1" geometry={nodes['tower-single-mesh_1'].geometry} material={materials['black.005']} />
+            <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
+          </group>
+          <group name="Tower_Single_Schiltgrad_3" position={[-123.795, 23.243, 0.211]} rotation={[0, -0.087, -0.087]} scale={2}>
+            <mesh name="tower-single-mesh" geometry={nodes['tower-single-mesh'].geometry} material={materials['silver.007']} />
+            <mesh name="tower-single-mesh_1" geometry={nodes['tower-single-mesh_1'].geometry} material={materials['black.005']} />
+            <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
+          </group>
+          <group name="Tower_Single_Schiltgrad_4" position={[-320.026, 70.947, -12.221]} rotation={[0, -0.062, -0.046]} scale={2}>
+            <mesh name="tower-single-mesh" geometry={nodes['tower-single-mesh'].geometry} material={materials['silver.007']} />
+            <mesh name="tower-single-mesh_1" geometry={nodes['tower-single-mesh_1'].geometry} material={materials['black.005']} />
+            <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
+          </group>
         </group>
-        <group name="Schiltgrad_Bottom" position={[793.847, -379.49, 50.833]} rotation={[-3.097, 0.098, -2.971]} scale={2}>
-          <mesh name="stop-mesh" geometry={nodes['stop-mesh'].geometry} material={materials.silver_dark} />
-          <mesh name="stop-mesh_1" geometry={nodes['stop-mesh_1'].geometry} material={materials['black.002']} />
-          <mesh name="stop-mesh_2" geometry={nodes['stop-mesh_2'].geometry} material={materials['silver.002']} />
-          <mesh name="stop-mesh_3" geometry={nodes['stop-mesh_3'].geometry} material={materials.red} />
-        </group>
-        <group name="Schiltgrad_Top" position={[-552.375, 108.844, -37.55]} rotation={[0.107, -0.104, -0.159]} scale={2}>
-          <mesh name="stop-mesh" geometry={nodes['stop-mesh'].geometry} material={materials.silver_dark} />
-          <mesh name="stop-mesh_1" geometry={nodes['stop-mesh_1'].geometry} material={materials['black.002']} />
-          <mesh name="stop-mesh_2" geometry={nodes['stop-mesh_2'].geometry} material={materials['silver.002']} />
-          <mesh name="stop-mesh_3" geometry={nodes['stop-mesh_3'].geometry} material={materials.red} />
-        </group>
-        <group name="Tower_Single_Schiltgrad_1" position={[368.197, -203.725, 31.802]} rotation={[0, -0.087, -0.249]} scale={2}>
-          <mesh name="tower-single-mesh" geometry={nodes['tower-single-mesh'].geometry} material={materials['silver.007']} />
-          <mesh name="tower-single-mesh_1" geometry={nodes['tower-single-mesh_1'].geometry} material={materials['black.005']} />
-          <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
-        </group>
-        <group name="Tower_Single_Schiltgrad_2" position={[118.699, -77.126, 15.638]} rotation={[0, -0.087, -0.249]} scale={2}>
-          <mesh name="tower-single-mesh" geometry={nodes['tower-single-mesh'].geometry} material={materials['silver.007']} />
-          <mesh name="tower-single-mesh_1" geometry={nodes['tower-single-mesh_1'].geometry} material={materials['black.005']} />
-          <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
-        </group>
-        <group name="Tower_Single_Schiltgrad_3" position={[-123.795, 23.243, 0.211]} rotation={[0, -0.087, -0.087]} scale={2}>
-          <mesh name="tower-single-mesh" geometry={nodes['tower-single-mesh'].geometry} material={materials['silver.007']} />
-          <mesh name="tower-single-mesh_1" geometry={nodes['tower-single-mesh_1'].geometry} material={materials['black.005']} />
-          <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
-        </group>
-        <group name="Tower_Single_Schiltgrad_4" position={[-320.026, 70.947, -12.221]} rotation={[0, -0.062, -0.046]} scale={2}>
-          <mesh name="tower-single-mesh" geometry={nodes['tower-single-mesh'].geometry} material={materials['silver.007']} />
-          <mesh name="tower-single-mesh_1" geometry={nodes['tower-single-mesh_1'].geometry} material={materials['black.005']} />
-          <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
-        </group>
-      </group>
       <group name="Gimmeln" position={[1000.522, 1915.129, 2011.707]}>
         <Html>
           <ToolTipLifts lift={{ name: "Gimmeln", type: LiftType.Drag, capacity: "2", length: "1100 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Gimmeln" position={[-1000.522, -1915.129, -2011.707]}>
-          <mesh name="Cable002" geometry={nodes.Cable002.geometry} material={materials['Material.008']} position={[1000.522, 1915.129, 2011.707]} />
+          <mesh name="Cable002" geometry={nodes.Cable002.geometry} material={materials['Material.008']} position={[1000.522, 1915.129, 2011.707]} >
+          <Outlines
+            toneMapped={false}
+            polygonOffset
+            polygonOffsetFactor={0}
+            transparent
+            opacity={1}
+            color="white"
+            angle={Math.PI}
+            thickness={4}
+          />
+          </mesh>
         </group>
         <mesh name="Gimmeln_Bottom" geometry={nodes.Gimmeln_Bottom.geometry} material={materials['silver.003']} position={[331.159, -174.702, 340.568]} rotation={[3.056, 0.764, -2.956]} scale={2}>
           <group name="Cable-Bottom002" position={[0.294, 10.682, -0.068]} rotation={[-3.082, -0.766, -2.966]} scale={0.5} />
+          <Outlines
+            toneMapped={false}
+            polygonOffset
+            polygonOffsetFactor={1}
+            transparent
+            opacity={1}
+            color="white"
+            angle={Math.PI}
+            thickness={2}
+          />
         </mesh>
         <mesh name="Gimmeln_Top" geometry={nodes.Gimmeln_Top.geometry} material={materials['silver.003']} position={[-337.375, 133.764, -348.63]} rotation={[0.186, -0.782, -0.225]} scale={2}>
           <group name="Cable-Top002" position={[0.294, 10.704, -0.061]} rotation={[-0.447, 0.687, 0.464]} scale={0.5} />

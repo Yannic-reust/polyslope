@@ -1,9 +1,13 @@
 import "./ToolTipLifts.css";
 import { useState } from "react";
-import PlantsSVG from "../../assets/icons/cable-car.svg?react";
+import CableCarSVG from "../../assets/icons/cable-car.svg?react";
+import DragLiftSVG from "../../assets/icons/draglift.svg?react";
+import GondolaSVG from "../../assets/icons/gondola.svg?react";
+import TramLiftSVG from "../../assets/icons/tramlift.svg?react";
+import ChairLiftSVG from "../../assets/icons/chairlift.svg?react";
 import { LiftType } from "../Models/Lifts";
 
-// function ToolTipLifts({ dataLiftName, OpeningHours, lastDescent })
+// https://www.skiresort.ch/skigebiet/schilthorn-muerrenlauterbrunnen/liftebahnen/
 
 function ToolTipLifts({ lift }) {
   const ICON_CLASSES = "w-4 h-auto fill-white";
@@ -16,13 +20,17 @@ function ToolTipLifts({ lift }) {
   const getPlantIcon = (liftType) => {
     switch(liftType) {
       case LiftType.Gondola:
-        return <PlantsSVG className={ICON_CLASSES} />
+        return <GondolaSVG className={ICON_CLASSES} />
+      case LiftType.CableCar:
+        return <CableCarSVG className={ICON_CLASSES} />
       case LiftType.Chair:
-        return <PlantsSVG className={ICON_CLASSES} />
+        return <ChairLiftSVG className={"translate-x-[2px] " + ICON_CLASSES} />
+      case LiftType.Tram:
+        return <TramLiftSVG className={ICON_CLASSES} />
       case LiftType.Drag:
-        return <PlantsSVG className={ICON_CLASSES} />
+        return <DragLiftSVG className={"translate-x-[1px] " + ICON_CLASSES} />
       default:
-        return <PlantsSVG className={ICON_CLASSES} />
+        return <ChairLiftSVG className={ICON_CLASSES} />
     }
   }
 
@@ -36,12 +44,10 @@ function ToolTipLifts({ lift }) {
         {open && (
           <div>
             { lift.hours && <div className="flex flex-col text-white ">
-              <p className="text-p-xs text-center">Öffnungszeiten:</p>
-              <p className="text-p-xs text-center">{lift.hours}</p>
+              <p className="text-p-xs text-center">Betriebszeiten: {lift.hours}</p>
             </div> }
             { lift.lastDescent && <div className="flex flex-col text-white ">
-              <p className="text-p-xs text-center">Letzte Talfahrt:</p>
-              <p className="text-p-xs text-center">{lift.lastDescent}</p>
+              <p className="text-p-xs text-center">Letzte Talfahrt: {lift.lastDescent}</p>
             </div> }
             { lift.capacity && <div className="flex flex-col text-white ">
               <p className="text-p-xs text-center">Kapazität: {lift.capacity}</p>

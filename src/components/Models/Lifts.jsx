@@ -6,20 +6,20 @@ import { Html } from "@react-three/drei"
 
 export const LiftType = {
   Gondola: 'Gondel',
+  CableCar: 'Kabine',
   Chair: "Sessellift",
+  Tram: "Standseilbahn",
   Drag: "Schlepplift"
 }
 
 export default function Lifts(props) {
   const { nodes, materials } = useGLTF(lifts)
 
-  
-
   return (
     <group {...props} dispose={null}>
       <group name="Schiltgrad" position={[1254.171, 1945.201, 1642.685]}>
         <Html>
-          <ToolTipLifts lift={{ name: "Schiltgrad", type: LiftType.Drag, capacity: "4", length: "1522 m" }} />
+          <ToolTipLifts lift={{ name: "Schiltgrad", type: LiftType.Chair, capacity: "4", length: "1522 m" }} />
         </Html>
         <group name="Connection_Schiltgrad" position={[-1254.171, -1945.201, -1642.685]}>
           <group name="Cable-Bottom009" position={[2033.391, 1582.532, 1692.852]} />
@@ -60,6 +60,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Gimmeln" position={[1000.522, 1915.129, 2011.707]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Gimmeln", type: LiftType.Drag, capacity: "2", length: "1100 m", hours: "09:00 - 16:30" }} />
+        </Html>
         <group name="Connection_Gimmeln" position={[-1000.522, -1915.129, -2011.707]}>
           <mesh name="Cable002" geometry={nodes.Cable002.geometry} material={materials['Material.008']} position={[1000.522, 1915.129, 2011.707]} />
         </group>
@@ -71,6 +74,9 @@ export default function Lifts(props) {
         </mesh>
       </group>
       <group name="Riggli" position={[-223.132, 2473.788, 604.987]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Demo", type: LiftType.Chair, capacity: "4", length: "1522 m" }} />
+        </Html>
         <group name="Connection_Riggli" position={[223.132, -2473.788, -604.987]}>
           <group name="Cable-Bottom006" position={[-50.918, 2331.259, 312.306]} />
           <group name="Cable-Top006" position={[-479.212, 2610.586, 1039.556]} />
@@ -95,6 +101,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Muttleren" position={[225.145, 2298.642, 322.65]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Demo", type: LiftType.Chair, capacity: "4", length: "1522 m" }} />
+        </Html>
         <group name="Connection_Muttleren" position={[-225.145, -2298.642, -322.65]}>
           <group name="Cable-Bottom007" position={[364.428, 2196.587, 525.701]} />
           <group name="Cable-Top007" position={[85.862, 2400.697, 119.6]} />
@@ -114,6 +123,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Kandahar" position={[769.546, 2272.899, 260.332]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Demo", type: LiftType.Chair, capacity: "4", length: "1522 m" }} />
+        </Html>
         <group name="Connection_Kandahar" position={[-769.546, -2272.899, -260.332]}>
           <group name="Cable-Bottom008" position={[983.886, 2156.163, 317.211]} />
           <group name="Cable-Top008" position={[118.185, 2394.448, 86.796]} />
@@ -138,6 +150,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Mürren-Allmendhubel" position={[2108.395, 1737.734, 1079.673]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Mürren-Allmendhubel", type: LiftType.Tram, capacity: "65", length: "551 m", hours: "09:00 - 17:00" }} />
+        </Html>
         <group name="Connection_Mürren-Allmendhubel" position={[-2108.395, -1737.734, -1079.673]}>
           <group name="Cable-Bottom001" position={[2221.532, 1616.309, 1237.213]} />
           <group name="Cable-Top001" position={[1995.259, 1859.158, 922.134]} />
@@ -157,6 +172,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Allmendhubel" position={[1913.083, 1872.925, 835.692]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Allmendhubel", type: LiftType.Drag, capacity: "1", length: "239 m", hours: "09:00 - 16:30" }} />
+        </Html>
         <group name="Connection_Allmendhubel" position={[-1913.083, -1872.925, -835.692]}>
           <group name="Cable-Bottom015" position={[2038.584, 1849.471, 822.441]} />
           <group name="Cable-Top015" position={[1787.581, 1896.379, 848.943]} />
@@ -166,6 +184,9 @@ export default function Lifts(props) {
         <mesh name="Allmendhubel_Top" geometry={nodes.Allmendhubel_Top.geometry} material={materials['silver.003']} position={[-126.083, 1.898, 13.356]} rotation={[0, 0.078, 0]} scale={2} />
       </group>
       <group name="Allmiboden" position={[1854.261, 1832.072, 719.743]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Demo", type: LiftType.Chair, capacity: "4", length: "1522 m" }} />
+        </Html>
         <group name="Connection_Allmidboden" position={[-1854.261, -1832.072, -719.743]}>
           <group name="Cable-Bottom004" position={[1906.819, 1768.217, 636.226]} />
           <group name="Cable-Top004" position={[1801.704, 1873.397, 803.26]} />
@@ -190,6 +211,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Maulerhubel" position={[1884.768, 1869.85, 335.395]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Demo", type: LiftType.Chair, capacity: "4", length: "1522 m" }} />
+        </Html>
         <group name="Connection_Maulerhubel" position={[-1884.768, -1869.85, -335.395]}>
           <group name="Cable-Bottom003" position={[1957.09, 1767.881, 596.766]} />
           <group name="Cable-Top003" position={[1841.948, 1896.765, 179.28]} />
@@ -214,6 +238,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Winteregg" position={[2127.418, 1770.693, -469.038]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Winteregg", type: LiftType.Chair, capacity: "4", length: "1386 m", hours: "09:00 - 16:30" }} />
+        </Html>
         <group name="Connection_Winteregg" position={[-2127.418, -1770.693, 469.038]}>
           <group name="Cable-Bottom005" position={[2421.388, 1542.816, -1038.767]} />
           <group name="Cable-Top005" position={[1838.519, 1894.801, 90.8]} />
@@ -238,6 +265,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Lauterbrunnen-Grütschalp" position={[2668.008, 1106.142, -2902.455]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Lauterbrunnen-Grütschalp", type: LiftType.Gondola, capacity: "100", length: "1432 m", hours: "09:00 - 16:30" }} />
+        </Html>
         <group name="Connection_Lauterbrunnen-Grütschalp" position={[-2668.008, -1106.142, 2902.455]}>
           <group name="Cable-Bottom010" position={[3287.64, 762.449, -3046.012]} />
           <group name="Cable-Top010" position={[2048.377, 1449.835, -2758.896]} />
@@ -264,6 +294,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Gimmelwald-Mürren" position={[2179.761, 1467.188, 2160.75]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Gimmelwald-Mürren", type: LiftType.Gondola, capacity: "100", length: "1198 m", hours: "08:30 - 16:30" }} />
+        </Html>
         <group name="Connection_Gimmelwald-Mürren" position={[-2179.761, -1467.188, -2160.75]}>
           <group name="Cable-Bottom012" position={[2255.797, 1337.189, 2742.378]} />
           <group name="Cable-Top012" position={[2103.726, 1597.186, 1579.122]} />
@@ -290,6 +323,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Mürren-Birg" position={[812.659, 2119.946, 1316.6]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Mürren-Birg", type: LiftType.Gondola, capacity: "75", length: "2780 m", hours: "09:00 - 16:30" }} />
+        </Html>
         <group name="Connection_Mürren-Birg" position={[-812.659, -2119.946, -1316.6]}>
           <group name="Cable-Bottom013" position={[2067, 1604.069, 1541.511]} />
           <group name="Cable-Top013" position={[-441.682, 2635.822, 1091.689]} />
@@ -316,6 +352,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Birg-Schilthorn" position={[-1392.33, 2783.364, 1380.52]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Birg-Schilthorn", type: LiftType.Gondola, capacity: "100", length: "1766 m", hours: "08:30 - 16:30" }} />
+        </Html>
         <group name="Connection_Birg-Schilthorn" position={[1392.33, -2783.364, -1380.52]}>
           <group name="Cable-Bottom014" position={[-603.522, 2636.906, 1124.383]} />
           <group name="Cable-Top014" position={[-2181.137, 2929.823, 1636.656]} />
@@ -336,6 +375,9 @@ export default function Lifts(props) {
         </group>
       </group>
       <group name="Stechelberg-Gimmelwald" position={[2599.527, 1083.709, 2283.661]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Stechelberg-Gimmelwald", type: LiftType.Gondola, capacity: "100", length: "1188 m", hours: "08:30 - 16:30" }} />
+        </Html>
         <group name="Connection_Stechelberg-Gimmelwald" position={[-2599.527, -1083.709, -2283.661]}>
           <group name="Cable-Bottom011" position={[2900.822, 827.203, 1852.812]} />
           <group name="Cable-Top011" position={[2298.233, 1326.147, 2714.51]} />

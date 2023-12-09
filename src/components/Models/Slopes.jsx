@@ -1,9 +1,14 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import slopes from "../../assets/gltf/slopes/slopes-transformed.glb";
+import {  useSelector } from 'react-redux';
+
 
 export default function Slopes(props) {
-   const { nodes, materials } = useGLTF(slopes)
+
+  const slope = useSelector((state) => state.slopesActive.value);
+
+  const { nodes, materials } = useGLTF(slopes)
 
    const BLUE_SLOPE_MATERIAL = <meshStandardMaterial color='#0c6eb4' opacity={0.8} transparent emissive="#0d3572" emissiveIntensity={8} toneMapped={false} />
    const RED_SLOPE_MATERIAL = <meshStandardMaterial color='#e4021c' opacity={0.8} transparent emissive="#f8161a" emissiveIntensity={8} toneMapped={false} />
@@ -14,34 +19,36 @@ export default function Slopes(props) {
 
   return (
    <group position={[0,0 + moveUp,0]} {...props} dispose={null}>
-
-      <group name="black-slopes">
-        <mesh name="slope-9" geometry={nodes['slope-9'].geometry} material={nodes['slope-9'].material} position={[-599.927, 2481.36, 886.121]} rotation={[0, 1.078, 0]} >
-          { BLACK_SLOPE_MATERIAL }
-        </mesh>
-        <mesh name="slope-10" geometry={nodes['slope-10'].geometry} material={nodes['slope-10'].material} position={[-1726.256, 2595.291, 1278.754]} rotation={[0, 1.078, 0]} >
-          { BLACK_SLOPE_MATERIAL }
-        </mesh>
-        <mesh name="slope-12" geometry={nodes['slope-12'].geometry} material={nodes['slope-12'].material} position={[-780.699, 2481.467, 974.611]} rotation={[0, 1.078, 0]} >
-          { BLACK_SLOPE_MATERIAL }
-        </mesh>
-        <mesh name="slope-14" geometry={nodes['slope-14'].geometry} material={nodes['slope-14'].material} position={[135.335, 2258.611, 328.573]} rotation={[0, 1.078, 0]} >
-          { BLACK_SLOPE_MATERIAL }
-        </mesh>
-        <mesh name="slope-16" geometry={nodes['slope-16'].geometry} material={nodes['slope-16'].material} position={[1210.173, 2001.254, 472.02]} rotation={[0, 1.078, 0]} >
-          { BLACK_SLOPE_MATERIAL }
-        </mesh>
-        <mesh name="slope-17" geometry={nodes['slope-17'].geometry} material={nodes['slope-17'].material} position={[576.66, 2284.289, -59.193]} rotation={[0, 1.078, 0]} >
-          { BLACK_SLOPE_MATERIAL }
-        </mesh>
-        <mesh name="slope-21" geometry={nodes['slope-21'].geometry} material={nodes['slope-21'].material} position={[1418.846, 1808.084, 1433.175]} rotation={[0, 1.078, 0]} >
-          { BLACK_SLOPE_MATERIAL }
-        </mesh>
-        <mesh name="slope-inferno" geometry={nodes['slope-inferno'].geometry} material={nodes['slope-inferno'].material} position={[-647.795, 2445.253, 408.311]} rotation={[0, 1.078, 0]} >
-          { BLACK_SLOPE_MATERIAL }
-        </mesh>
-      </group>  
-
+      {slope.includes("Schwarz") ? (
+            <group name="black-slopes">
+            <mesh name="slope-9" geometry={nodes['slope-9'].geometry} material={nodes['slope-9'].material} position={[-599.927, 2481.36, 886.121]} rotation={[0, 1.078, 0]} >
+              { BLACK_SLOPE_MATERIAL }
+            </mesh>
+            <mesh name="slope-10" geometry={nodes['slope-10'].geometry} material={nodes['slope-10'].material} position={[-1726.256, 2595.291, 1278.754]} rotation={[0, 1.078, 0]} >
+              { BLACK_SLOPE_MATERIAL }
+            </mesh>
+            <mesh name="slope-12" geometry={nodes['slope-12'].geometry} material={nodes['slope-12'].material} position={[-780.699, 2481.467, 974.611]} rotation={[0, 1.078, 0]} >
+              { BLACK_SLOPE_MATERIAL }
+            </mesh>
+            <mesh name="slope-14" geometry={nodes['slope-14'].geometry} material={nodes['slope-14'].material} position={[135.335, 2258.611, 328.573]} rotation={[0, 1.078, 0]} >
+              { BLACK_SLOPE_MATERIAL }
+            </mesh>
+            <mesh name="slope-16" geometry={nodes['slope-16'].geometry} material={nodes['slope-16'].material} position={[1210.173, 2001.254, 472.02]} rotation={[0, 1.078, 0]} >
+              { BLACK_SLOPE_MATERIAL }
+            </mesh>
+            <mesh name="slope-17" geometry={nodes['slope-17'].geometry} material={nodes['slope-17'].material} position={[576.66, 2284.289, -59.193]} rotation={[0, 1.078, 0]} >
+              { BLACK_SLOPE_MATERIAL }
+            </mesh>
+            <mesh name="slope-21" geometry={nodes['slope-21'].geometry} material={nodes['slope-21'].material} position={[1418.846, 1808.084, 1433.175]} rotation={[0, 1.078, 0]} >
+              { BLACK_SLOPE_MATERIAL }
+            </mesh>
+            <mesh name="slope-inferno" geometry={nodes['slope-inferno'].geometry} material={nodes['slope-inferno'].material} position={[-647.795, 2445.253, 408.311]} rotation={[0, 1.078, 0]} >
+              { BLACK_SLOPE_MATERIAL }
+            </mesh>
+          </group>  
+          ) :""}
+     
+     {slope.includes("Gelb") ? (
       <group name="yelllow-slopes">
         <mesh name="slope-27" geometry={nodes['slope-27'].geometry} material={nodes['slope-27'].material} position={[844.627, 1793.474, 2268.418]} rotation={[0, 1.078, 0]} >
           { YELLOW_SLOPE_MATERIAL }
@@ -50,7 +57,8 @@ export default function Slopes(props) {
           { YELLOW_SLOPE_MATERIAL }
         </mesh>
       </group>
-
+    ) :""}
+    {slope.includes("Rot") ? (
       <group name="yelllow-slopes">
         <mesh name="slope-1" geometry={nodes['slope-1'].geometry} material={nodes['slope-1'].material} position={[2188.16, 1774.553, -143.673]} rotation={[0, 1.078, 0]} >
           { RED_SLOPE_MATERIAL }
@@ -80,7 +88,8 @@ export default function Slopes(props) {
           { RED_SLOPE_MATERIAL }
         </mesh>
       </group>
-
+    ) :""}
+    {slope.includes("Blau") ? (
       <group name="yelllow-slopes">
         <mesh name="slope-2" geometry={nodes['slope-2'].geometry} material={nodes['slope-2'].material} position={[2391.337, 1658.338, -414.322]} rotation={[0, 1.078, 0]} >
           { BLUE_SLOPE_MATERIAL }
@@ -107,6 +116,7 @@ export default function Slopes(props) {
           { BLUE_SLOPE_MATERIAL }
         </mesh>
       </group>
+       ) :""}
     </group>
   )
 }

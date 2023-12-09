@@ -1,7 +1,6 @@
 import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import WeatherTodayDetail from "../WeatherTodayDetail/WeatherTodayDetail";
 import WeatherTile from "../WeatherTile/WeatherTile";
-import SunnySVG from "../../assets/iconsWeather/weather-sun.svg?react";
 import useDayData from "./useDayData";
 import { useState, useEffect } from "react";
 
@@ -42,8 +41,6 @@ function Weather() {
         setCurrentData(result.current);
         sliceArray(result);
         setIcons(result.daily.weather_code);
-
-        
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -59,8 +56,8 @@ function Weather() {
           title="Wetter"
           text="Informieren Sie sich über das aktuelle Wetter im Skigebiet Mürren - Schilthorn."
         />
-        <div className="grid grid-cols-1 tablet:grid-cols-6 gap-4">
-          <div className="bg-white/20 grid-cols-6 tablet:col-span-2 ">
+        <div className="grid grid-cols-6 gap-4">
+          <div className="bg-white/20  col-span-2 ">
             {slicedData && (
               <WeatherTile
                 idx={0}
@@ -70,19 +67,19 @@ function Weather() {
               />
             )}
           </div>
-          <div className="bg-white/20 tablet:col-span-4 p-8">
+          <div className="bg-white/20  col-span-4 p-8">
             {currentData && <WeatherTodayDetail weather={currentData} />}
           </div>
         </div>
         {slicedData && (
-          <div className="grid grid-cols-2 tablet:grid-cols-6 gap-4 mt-4">
+          <div className="grid grid-cols-6 gap-4 mt-4">
             {arr.map((item) => (
               <div className="bg-white/20  col-span-1 " key={item}>
                 <WeatherTile
-                  idx={index + 1}
-                  data={slicedData[index]}
-                  day={daysArray[index]}
-                  weatherCode={icons[index + 1]}
+                  idx={item}
+                  data={slicedData[item]}
+                  day={daysArray[item - 1]}
+                  weatherCode={icons[item]}
                 />
               </div>
             ))}

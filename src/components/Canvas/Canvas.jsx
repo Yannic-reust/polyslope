@@ -3,14 +3,9 @@ import { OrbitControls, Detailed } from '@react-three/drei';
 
 //component imports
 import Light from "./Light";
-import LandscapeLow from "../Landscapes/LandscapeLow";
-import LandscapeHigh from "../Landscapes/LandscapeHigh";
-import LandscapeMed from "../Landscapes/LandscapeMed";
-import Trees from "../Models/Trees";
-import Restaurants from "../Models/Restaurants";
-import Lifts from "../Models/Lifts";
-import Slopes from "../Models/Slopes";
-import Huts from "../Models/Huts";
+import LandscapeLow from "./LandscapeLow";
+import LandscapeMedium from "./LandscapeMedium";
+import LandscapeHigh from "./LandscapeHigh";
 
 
 const Canvas = () => {
@@ -27,20 +22,14 @@ const Canvas = () => {
                 <Light distance={8000}/>
                 <Detailed distances={[0, 4500, 6000]}>
                     <LandscapeHigh />
-                    <LandscapeMed />
+                    <LandscapeMedium />
                     <LandscapeLow />
                 </Detailed>
-                <Restaurants />
-                <Lifts />
-                <Trees />
-                <Slopes />
-                <Huts />
                 <OrbitControls 
                     minDistance={300} 
                     maxDistance={20000}
                     minPolarAngle={Math.PI * 0.2}
                     maxPolarAngle={Math.PI * 0.45}
-                    target={[0,0,-637.425]} // changed y position since scene is not in center
                 />
             </R3fCanvas>
         </div>

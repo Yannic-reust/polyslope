@@ -18,7 +18,7 @@ const Light = ({distance}) => {
     const [angle, setAngle] = useState(0);
 
     useFrame(() => {
-        // setAngle(angle - 0.005);
+        setAngle(angle - 0.005);
     })
 
     //calculate light position based of current time and sun position
@@ -28,16 +28,20 @@ const Light = ({distance}) => {
     let angle = -((360 / 24) * time);
     angle = 0;
     */
-    let lightX = Math.sin(angle) * distance;
-    let lightY = Math.cos(angle) * distance;
+    let lightX = -Math.sin(angle) * distance;
+    let lightY = -Math.cos(angle) * distance;
 
 
 
     return ( 
         <>
             <directionalLight 
+                ref={directionalLightRef}
+                position={[lightX, lightY, 0]}
+            />
+            <directionalLight 
                 position={[0, 500, 0]}
-                intensity={2}
+                intensity={0.4}
                 castShadow={false}
             />
             <Sun position={[lightX, lightY, 0]}/>

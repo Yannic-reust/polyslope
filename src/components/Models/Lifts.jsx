@@ -4,11 +4,23 @@ import lifts from "../../assets/gltf/lifts.glb";
 import ToolTipLifts from '../ToolTips/ToolTipLifts';
 import { Html } from "@react-three/drei"
 
+export const LiftType = {
+  Gondola: 'Gondel',
+  Chair: "Sessellift",
+  Drag: "Schlepplift"
+}
+
 export default function Lifts(props) {
   const { nodes, materials } = useGLTF(lifts)
+
+  
+
   return (
     <group {...props} dispose={null}>
       <group name="Schiltgrad" position={[1254.171, 1945.201, 1642.685]}>
+        <Html>
+          <ToolTipLifts lift={{ name: "Schiltgrad", type: LiftType.Drag, capacity: "4", length: "1522 m" }} />
+        </Html>
         <group name="Connection_Schiltgrad" position={[-1254.171, -1945.201, -1642.685]}>
           <group name="Cable-Bottom009" position={[2033.391, 1582.532, 1692.852]} />
           <group name="Cable-Top009" position={[721.021, 2064.886, 1608.361]} />

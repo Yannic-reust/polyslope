@@ -1,6 +1,4 @@
-import { toggleIntro } from "../../store/intro/introState";
-import { useDispatch } from "react-redux";
-function Intro() {
+function Audio() {
   return (
     <>
       <div>
@@ -28,4 +26,4 @@ function Intro() {
   );
 }
 
-export default Intro;
+export default Audio;

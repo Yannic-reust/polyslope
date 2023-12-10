@@ -1,4 +1,18 @@
+import "./Sun.css";
+import { setSun } from "../../store/sun/sunState";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+
 function Sun() {
+  const dispatch = useDispatch();
+
+  const [rangeValue, setRangeValue] = useState(3);
+
+  const handleRangeChange = (event) => {
+    setRangeValue(event.target.value);
+    dispatch(setSun(event.target.value ));
+  };
+
   return (
     <>
       <div>
@@ -8,10 +22,33 @@ function Sun() {
           zu finden und so eine optimale Routenplanung machen zu können.
         </p>
 
-        <input
-          type="range"
-          className="mt-8 w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-        />
+        <div className="relative mb-8 mt-8 flex items-center ">
+          <div className="vertical-line" />
+          <input
+            type="range"
+            value={rangeValue}
+            onChange={handleRangeChange}
+            min="0"
+            max="4"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+          />
+          <span className="text-sm text-gray-500 dark:text-gray-400 absolute start-0 -bottom-6">
+            08:00
+          </span>
+          <span className="text-sm text-gray-500 dark:text-gray-400 absolute start-1/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">
+            11:00
+          </span>
+          <span className="text-sm text-gray-500 dark:text-gray-400 absolute start-2/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">
+            14:00
+          </span>
+          <span className="text-sm text-gray-500 dark:text-gray-400 absolute  start-3/4  -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">
+            17:00
+          </span>
+          <span className="text-sm text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">
+            20:00
+          </span>
+          <div className="vertical-line" />
+        </div>
       </div>
     </>
   );

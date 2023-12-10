@@ -9,7 +9,6 @@ export const animations = createSlice({
   reducers: {
     toggleAnimation: (state) => {
       state.value = !state.value
-      console.log(state.value)
     },
    
   },

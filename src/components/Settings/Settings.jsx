@@ -3,8 +3,13 @@ import Panoramic from "../SettingsComponents/Panoramic";
 import Slopes from "../SettingsComponents/Slopes";
 import Sun from "../SettingsComponents/Sun";
 import Performance from "../SettingsComponents/Performance";
+import Intro from "../SettingsComponents/Intro";
 
-function Restaurants() {
+
+function Settings() {
+
+
+
   return (
     <>
       <div>
@@ -19,8 +24,11 @@ function Restaurants() {
           <Slopes />
         </div>
         <div className="mt-8">
-          <Panoramic />
+          <Intro />
         </div>
+        {/* <div className="mt-8">
+          <Panoramic />
+        </div> */}
         <div className="mt-8">
           <Performance />
         </div>
@@ -29,4 +37,4 @@ function Restaurants() {
   );
 }
 
-export default Restaurants;
+export default Settings;

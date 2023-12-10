@@ -5,6 +5,7 @@ import Sun from "../SettingsComponents/Sun";
 import Performance from "../SettingsComponents/Performance";
 import Intro from "../SettingsComponents/Intro";
 import Audio from "../SettingsComponents/Audio";
+import Animation from "../SettingsComponents/Animation";
 
 
 function Settings() {
@@ -30,12 +31,15 @@ function Settings() {
         <div className="mt-8">
           <Audio />
         </div>
+        <div className="mt-8">
+          <Animation />
+        </div>
         {/* <div className="mt-8">
           <Panoramic />
         </div> */}
-        <div className="mt-8">
+        {/* <div className="mt-8">
           <Performance />
-        </div>
+        </div> */}
       </div>
     </>
   );

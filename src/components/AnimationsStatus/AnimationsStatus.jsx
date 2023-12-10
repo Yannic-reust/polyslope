@@ -13,7 +13,6 @@ const AnimationsStatus = () => {
     if (!isInitialRender.current) {
       showMessage();
       setAnimationStatus(!status);
-      console.log("Data changed:", status);
     } else {
       isInitialRender.current = false;
     }

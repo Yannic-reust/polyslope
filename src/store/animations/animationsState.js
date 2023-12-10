@@ -9,16 +9,9 @@ export const animations = createSlice({
   reducers: {
     toggleAnimation: (state) => {
       state.value = !state.value
+      console.log(state.value)
     },
-    increment: (state) => {
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
+   
   },
 })
 

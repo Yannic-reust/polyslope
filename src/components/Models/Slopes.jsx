@@ -60,7 +60,8 @@ export default function Slopes(props) {
           rotation={[0, 1.078, 0]}
         >
           <Html>
-            <BadgeSlopes BadgeNumber={50} BageColor="#3E3E44" />
+          
+           <BadgeSlopes BadgeNumber={50} BageColor="#3E3E44"/>
           </Html>
           <mesh
             geometry={nodes["slope-9"].geometry}

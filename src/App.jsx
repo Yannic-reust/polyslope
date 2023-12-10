@@ -8,10 +8,13 @@ import AnimationsStatus from "./components/AnimationsStatus/AnimationsStatus";
 import Canvas from "./components/Canvas/Canvas";
 import Tutorial from "./components/Tutorial/Tutorial";
 
-
+import useAPIData from "./services/useAPIData";
 
 function App() {
   const dispatch = useDispatch();
+
+  useAPIData();
+  
   return (
     <>
         <SideBar />

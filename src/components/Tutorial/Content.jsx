@@ -27,8 +27,8 @@ const Content = ({ stage }) => {
             {stage == 1 && <MouseLeftSVG className="h-[75%] self-start"/>}
             {stage == 2 && <MouseCenterSVG className="h-[75%] self-start"/>}
             {stage == 3 && <MouseRightSVG className="h-[75%] self-start"/>}
-            {stage < 4 && <h3 className="text-black text-h-md">{titleArray[stage]}</h3>}
-            {stage < 4 && <p className="text-black">{textArray[stage]}</p>}
+            {stage < 4 && <h3 className="text-black text-h-md text-center">{titleArray[stage]}</h3>}
+            {stage < 4 && <p className="text-black text-center">{textArray[stage]}</p>}
         </div>
      );
 }

@@ -4,6 +4,7 @@ import Slopes from "../SettingsComponents/Slopes";
 import Sun from "../SettingsComponents/Sun";
 import Performance from "../SettingsComponents/Performance";
 import Intro from "../SettingsComponents/Intro";
+import Audio from "../SettingsComponents/Audio";
 
 
 function Settings() {
@@ -25,6 +26,9 @@ function Settings() {
         </div>
         <div className="mt-8">
           <Intro />
+        </div>
+        <div className="mt-8">
+          <Audio />
         </div>
         {/* <div className="mt-8">
           <Panoramic />

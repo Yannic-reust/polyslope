@@ -9,7 +9,7 @@ function Restaurants() {
     <>
       <div>
         <ContentIntroduction
-          title="Einstellungen und Filter"
+          title="Einstellungen"
           text="Hier finden Sie unterschiedliche Optionen um Eigenschaften der Skimap zu verändern."
         />
         <div >

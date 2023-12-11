@@ -1,9 +1,5 @@
 import { Canvas as R3fCanvas } from "@react-three/fiber";
 import { OrbitControls, Detailed } from '@react-three/drei';
-import { Selection, Select, EffectComposer, Outline } from '@react-three/postprocessing'
-import { BlendFunction, Resizer, KernelSize } from 'postprocessing'
-import { Bloom } from '@react-three/postprocessing'
-// import { BlurPass, Resizer, KernelSize, Resolution } from 'postprocessing'
 
 //component imports
 import Light from "./Light";
@@ -21,7 +17,6 @@ const Canvas = () => {
     return ( 
         <div className="absolute canvas-container h-screen w-screen bg-darkblue z-[-1]">
             <R3fCanvas 
-                // gl={{ logarithmicDepthBuffer: false, localClippingEnabled: true }}
                 camera={{
                     near: 5, // stops flickering when viewed from distance
                     far: 50000,
@@ -37,14 +32,8 @@ const Canvas = () => {
                     <LandscapeLow />
                 </Detailed>
                 <Restaurants />
-                <Selection>
-                    <EffectComposer multisampling={8} autoClear={false}>
-                    <Outline blur visibleEdgeColor={"white"} edgeStrength={100} />
-                    {/* <Outline selectionLayer={10} xRay={false} blur visibleEdgeColor="white" edgeStrength={20} /> */}
-                    </EffectComposer>
-                    <Lifts />
-                    <Slopes />    
-                </Selection>
+                <Lifts />
+                <Slopes />  
                 <Trees />
                 <Huts />
                 <OrbitControls 

@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import slopes from "../../assets/gltf/slopes/slopes-transformed.glb";
-import { Selection, Select, EffectComposer, Outline } from '@react-three/postprocessing'
 
 export default function Slopes(props) {
    const { nodes, materials } = useGLTF(slopes)
@@ -17,11 +16,9 @@ export default function Slopes(props) {
    <group position={[0,0 + moveUp,0]} {...props} dispose={null}>
 
       <group name="black-slopes">
-        <Select enabled={true}>
         <mesh name="slope-9" geometry={nodes['slope-9'].geometry} material={nodes['slope-9'].material} position={[-599.927, 2481.36, 886.121]} rotation={[0, 1.078, 0]} >
           { BLACK_SLOPE_MATERIAL }
         </mesh>
-        </Select>
         <mesh name="slope-10" geometry={nodes['slope-10'].geometry} material={nodes['slope-10'].material} position={[-1726.256, 2595.291, 1278.754]} rotation={[0, 1.078, 0]} >
           { BLACK_SLOPE_MATERIAL }
         </mesh>

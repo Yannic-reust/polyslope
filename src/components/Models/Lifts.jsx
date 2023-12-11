@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import lifts from "../../assets/gltf/lifts.glb";
 import ToolTipLifts from '../ToolTips/ToolTipLifts';
-import { Html } from "@react-three/drei"
+import { Html, Edges } from "@react-three/drei"
 import { useCursor, Outlines, AccumulativeShadows, RandomizedLight, OrbitControls, Bounds, Environment } from '@react-three/drei'
 import { Selection, Select, EffectComposer, Outline } from '@react-three/postprocessing'
 
@@ -14,8 +14,13 @@ export const LiftType = {
   Drag: "Schlepplift"
 }
 
+// hover outline: https://codesandbox.io/p/sandbox/faucets-select-highlight-8flefh?file=/src/App.js:14,22-14,79
+
 export default function Lifts(props) {
   const { nodes, materials } = useGLTF(lifts)
+  const [hovered, hover] = useState()
+
+  useCursor(hovered)
 
   return (
     <group {...props} dispose={null}>
@@ -26,9 +31,7 @@ export default function Lifts(props) {
           <group name="Connection_Schiltgrad" position={[-1254.171, -1945.201, -1642.685]}>
             <group name="Cable-Bottom009" position={[2033.391, 1582.532, 1692.852]} />
             <group name="Cable-Top009" position={[721.021, 2064.886, 1608.361]} />
-            <Select enabled={true}>
             <mesh name="Cable009" geometry={nodes.Cable009.geometry} material={materials['Material.016']} position={[1254.171, 1945.201, 1642.685]} />
-            </Select>
           </group>
           <group name="Schiltgrad_Bottom" position={[793.847, -379.49, 50.833]} rotation={[-3.097, 0.098, -2.971]} scale={2}>
             <mesh name="stop-mesh" geometry={nodes['stop-mesh'].geometry} material={materials.silver_dark} />
@@ -63,7 +66,7 @@ export default function Lifts(props) {
             <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
           </group>
         </group>
-      <group name="Gimmeln" position={[1000.522, 1915.129, 2011.707]}>
+      <group onPointerOver={(e) => (e.stopPropagation(), hover(true))} name="Gimmeln" position={[1000.522, 1915.129, 2011.707]}>
         <Html>
           <ToolTipLifts lift={{ name: "Gimmeln", type: LiftType.Drag, capacity: "2", length: "1100 m", hours: "09:00 - 16:30" }} />
         </Html>
@@ -74,7 +77,7 @@ export default function Lifts(props) {
             polygonOffset
             polygonOffsetFactor={0}
             transparent
-            opacity={1}
+            opacity={hovered * 1}
             color="white"
             angle={Math.PI}
             thickness={4}

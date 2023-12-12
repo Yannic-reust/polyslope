@@ -3,7 +3,6 @@ import WeatherTodayDetail from "../WeatherTodayDetail/WeatherTodayDetail";
 import WeatherTile from "../WeatherTile/WeatherTile";
 import useDayData from "./useDayData";
 import { useState, useEffect } from "react";
-//import SunnySVG from "../../assets/icons/sun.svg?react";
 
 function Weather() {
   const [slicedData, setSlicedData] = useState(null);
@@ -16,7 +15,7 @@ function Weather() {
 
   const sliceArray = (data) => {
     if (data && data.hourly && data.hourly.temperature_2m) {
-      const txempData = data.hourly.temperature_2m;
+      const tempData = data.hourly.temperature_2m;
 
       const slicedArrays = [];
       for (let i = 0; i < tempData.length; i += 24) {
@@ -49,6 +48,7 @@ function Weather() {
 
     fetchData();
   }, []);
+
   return (
     <>
       <div>
@@ -56,8 +56,8 @@ function Weather() {
           title="Wetter"
           text="Informieren Sie sich über das aktuelle Wetter im Skigebiet Mürren - Schilthorn."
         />
-        <div className="grid grid-cols-6 gap-4">
-          <div className="bg-white/20  col-span-2 ">
+        <div className="grid grid-cols-1 tablet:grid-cols-6 gap-4">
+          <div className="bg-white/20 grid-cols-6 tablet:col-span-2 ">
             {slicedData && (
               <WeatherTile
                 idx={0}
@@ -67,12 +67,12 @@ function Weather() {
               />
             )}
           </div>
-          <div className="bg-white/20  col-span-4 p-8">
+          <div className="bg-white/20 tablet:col-span-4 p-8">
             {currentData && <WeatherTodayDetail weather={currentData} />}
           </div>
         </div>
         {slicedData && (
-          <div className="grid grid-cols-6 gap-4 mt-4">
+          <div className="grid grid-cols-2 tablet:grid-cols-6 gap-4 mt-4">
             {arr.map((item) => (
               <div className="bg-white/20  col-span-1 " key={item}>
                 <WeatherTile

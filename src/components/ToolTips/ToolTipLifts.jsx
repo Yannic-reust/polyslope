@@ -9,12 +9,13 @@ import { LiftType } from "../Models/Lifts";
 
 // https://www.skiresort.ch/skigebiet/schilthorn-muerrenlauterbrunnen/liftebahnen/
 
-function ToolTipLifts({ lift }) {
+function ToolTipLifts({ handle, lift }) {
   const ICON_CLASSES = "w-4 h-auto fill-white";
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
     setOpen(!open);
+    handle(lift.name)
   };
 
   const getPlantIcon = (liftType) => {
@@ -36,7 +37,7 @@ function ToolTipLifts({ lift }) {
 
   return (
     <>
-      <div className={`contentLift ${open ? "lineLift" : ""}`} onClick={toggleOpen}>
+      <div className={`contentLift select-none ${open ? "lineLift" : ""}`} onClick={toggleOpen}>
         <div className="flex">
           {!open && getPlantIcon(lift.type ?? '')}
           {open && <p className="ml-2 text-p-lg text-white">{lift.name ?? ''}</p>}

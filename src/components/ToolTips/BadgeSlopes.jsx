@@ -5,7 +5,7 @@ function BadgeSlopes({ BadgeNumber, BageColor }) {
   return (
     <>
       <div className={`circle bg-[${BageColor}]`}   style={{backgroundColor: `${BageColor}`}}>
-        <p className="circle__content text-white  ">{BadgeNumber}</p>
+        <p className="circle__content select-none text-white  ">{BadgeNumber}</p>
       </div>
     </>
   );

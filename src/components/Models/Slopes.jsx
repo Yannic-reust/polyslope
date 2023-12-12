@@ -3,7 +3,6 @@ import { useGLTF } from "@react-three/drei";
 import slopes from "../../assets/gltf/slopes/slopes-transformed.glb";
 import { Html } from "@react-three/drei";
 import BadgeSlopes from "../ToolTips/BadgeSlopes";
-import "./Slopes.css";
 
 export default function Slopes(props) {
   const { nodes, materials } = useGLTF(slopes);

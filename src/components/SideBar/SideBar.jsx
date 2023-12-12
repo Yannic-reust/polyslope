@@ -6,6 +6,7 @@ import FoodSVG from "../../assets/icons/food.svg?react";
 import WheatherSVG from "../../assets/iconsWeather/weather-sunny-cloudy.svg?react";
 import FilterSVG from "../../assets/icons/filter.svg?react";
 import InfoSVG from "../../assets/icons/info.svg?react";
+import CloseSVG from "../../assets/icons/close.svg?react";
 
 import Plants from "../Plants/Plants";
 import Restaurants from "../Restaurants/Restaurants";
@@ -31,7 +32,7 @@ const SideBar = () => {
 
     return ( 
         <div className="fixed hidden tablet:flex w-screen h-screen pointer-events-none">
-            <div onClick={ () => setOpen(false) } className={`w-full h-screen z-[100] ${open ? "pointer-events-auto" : "pointer-events-none"}`}></div>
+            <div onClick={ () => setOpen(false) } className={`w-full h-screen z-[100] ${open ? "pointer-events-none" : "pointer-events-none"}`}></div>
             <aside className={`flex w-[900px] right-0 top-0 h-screen pointer-events-auto backdrop-blur backdrop-brightness-90 bg-darkblue/80 transition-all duration-500 ease-in-out ${open ? "translate-x-0" : "translate-x-[800px]"}`}>
                 <nav className="w-[100px] pt-10 pb-10 flex flex-col h-full bg-white/20 z-[999]">
                 <div className="flex flex-col space-y-5 items-center flex-grow-0 justify-start flex-1">
@@ -54,6 +55,8 @@ const SideBar = () => {
                     <NavItem icon={<InfoSVG className={NAV_ICON_CLASSES} />} title="About" togglePage={togglePage} page={page} open={open} />
                 </div>
                 </nav>
+
+                <CloseSVG onClick={ () => setOpen(false) } className={`absolute cursor-pointer top-10 right-10 fill-white w-6 max-h-6`} />
 
                 <div className="content w-[800px] p-10 overflow-auto">
                     { page === 'About' &&  <About /> }

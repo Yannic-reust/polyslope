@@ -25,7 +25,7 @@ const Canvas = () => {
                     maxDistance: 300000
                 }}
             >
-                <Light distance={8000}/>
+                <Light />
                 <Detailed distances={[0, 4500, 6000]}>
                     <LandscapeHigh />
                     <LandscapeMed />

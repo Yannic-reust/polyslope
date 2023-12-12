@@ -10,6 +10,7 @@ import InfoSVG from "../../assets/icons/info.svg?react";
 import Plants from "../Plants/Plants";
 import Restaurants from "../Restaurants/Restaurants";
 import Weather from "../Weather/Weather";
+import Settings from "../Settings/Settings";
 
 const SideBar = () => {
     const [ page, setPage ] = useState('');
@@ -46,7 +47,7 @@ const SideBar = () => {
                 </div>
 
                 <div className="flex justify-center items-center flex-grow">
-                    <NavItem icon={<FilterSVG className={NAV_ICON_CLASSES} />} title="Filter" togglePage={togglePage} page={page} open={open} />
+                    <NavItem icon={<FilterSVG className={NAV_ICON_CLASSES} />} title="Settings" togglePage={togglePage} page={page} open={open} />
                 </div>
 
                 <div className="flex items-end justify-center">
@@ -59,6 +60,7 @@ const SideBar = () => {
                     { page === 'Plants' &&  <Plants /> }
                     { page === 'Restaurants' &&  <Restaurants /> }
                     { page === 'Weather' &&  <Weather /> }
+                    { page === 'Settings' &&  <Settings /> }
                 </div>
               
 

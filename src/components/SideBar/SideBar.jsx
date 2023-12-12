@@ -55,7 +55,7 @@ const SideBar = () => {
                 </div>
                 </nav>
 
-                <div className="content w-[800px] p-10">
+                <div className="content w-[800px] p-10 overflow-auto">
                     { page === 'About' &&  <About /> }
                     { page === 'Plants' &&  <Plants /> }
                     { page === 'Restaurants' &&  <Restaurants /> }

@@ -60,6 +60,7 @@ export default function Slopes(props) {
     ) :""}
     {slope.includes("Rot") ? (
       <group name="yelllow-slopes">
+
         <mesh name="slope-1" geometry={nodes['slope-1'].geometry} material={nodes['slope-1'].material} position={[2188.16, 1774.553, -143.673]} rotation={[0, 1.078, 0]} >
           { RED_SLOPE_MATERIAL }
         </mesh>
@@ -88,9 +89,11 @@ export default function Slopes(props) {
           { RED_SLOPE_MATERIAL }
         </mesh>
       </group>
+
     ) :""}
     {slope.includes("Blau") ? (
       <group name="yelllow-slopes">
+
         <mesh name="slope-2" geometry={nodes['slope-2'].geometry} material={nodes['slope-2'].material} position={[2391.337, 1658.338, -414.322]} rotation={[0, 1.078, 0]} >
           { BLUE_SLOPE_MATERIAL }
         </mesh>

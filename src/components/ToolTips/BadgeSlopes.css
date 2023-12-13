@@ -1,19 +1,26 @@
 .circle {
     display: inline-table;
     vertical-align: middle;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     transform: translate3d(-50%, -50%, 0);
     text-align: left;
     cursor: pointer;
 }
+.openBadge {
+    width: auto;
+    height: auto;
+    padding: 16px;
 
+    border-radius: 8px;
+
+    white-space: nowrap;
+}
 .circle__content {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-  
 }
 
 .contentLift {

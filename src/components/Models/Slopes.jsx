@@ -1,16 +1,25 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import slopes from "../../assets/gltf/slopes/slopes-transformed.glb";
 import { Html } from "@react-three/drei";
 import BadgeSlopes from "../ToolTips/BadgeSlopes";
+import { useSelector } from "react-redux";
 
 export default function Slopes(props) {
   const { nodes, materials } = useGLTF(slopes);
 
-  const ColorBlackSlope = "#3F3F45"
-  const ColorRedSlope = "#F66771"
-  const ColorBlueSlope = "#58AFF5"
-  const ColorYellowSlope = "#F6C76E"
+  const [activeSlope, setActiveSlope] = useState(""); // which ToolTip is open
+
+  const handleOpen = (name) => {
+    setActiveSlope(name);
+  };
+
+  const tracks = useSelector((state) => state.track.value);
+
+  const ColorBlackSlope = "#3F3F45";
+  const ColorRedSlope = "#F66771";
+  const ColorBlueSlope = "#58AFF5";
+  const ColorYellowSlope = "#F6C76E";
 
   const BLUE_SLOPE_MATERIAL = (
     <meshStandardMaterial
@@ -65,8 +74,15 @@ export default function Slopes(props) {
           position={[-599.927, 2481.36, 886.121]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={9} BageColor={ColorBlackSlope} />
+          <Html zIndexRange={[activeSlope == 9 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={9}
+              BageColor={ColorBlackSlope}
+              Length={tracks[14].lengthInMeter}
+              Status={tracks[14].status}
+              Name={tracks[14].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-9"].geometry}
@@ -81,8 +97,15 @@ export default function Slopes(props) {
           rotation={[0, 1.078, 0]}
           name="slope-10"
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={10} BageColor={ColorBlackSlope} />
+          <Html zIndexRange={[activeSlope == 10 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={10}
+              BageColor={ColorBlackSlope}
+              Length={tracks[17].lengthInMeter}
+              Status={tracks[17].status}
+              Name={tracks[17].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-10"].geometry}
@@ -96,8 +119,15 @@ export default function Slopes(props) {
           position={[-780.699, 2481.467, 974.611]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={12} BageColor={ColorBlackSlope} />
+          <Html zIndexRange={[activeSlope == 12 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={12}
+              BageColor={ColorBlackSlope}
+              Length={tracks[15].lengthInMeter}
+              Status={tracks[15].status}
+              Name={tracks[15].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-12"].geometry}
@@ -111,8 +141,15 @@ export default function Slopes(props) {
           rotation={[0, 1.078, 0]}
           name="slope-14"
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={14} BageColor={ColorBlackSlope} />
+          <Html zIndexRange={[activeSlope == 14 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={14}
+              BageColor={ColorBlackSlope}
+              Length={tracks[12].lengthInMeter}
+              Status={tracks[12].status}
+              Name={tracks[12].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-14"].geometry}
@@ -126,8 +163,15 @@ export default function Slopes(props) {
           position={[1210.173, 2001.254, 472.02]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={16} BageColor={ColorBlackSlope} />
+          <Html zIndexRange={[activeSlope == 16 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={16}
+              BageColor={ColorBlackSlope}
+              Length={tracks[16].lengthInMeter}
+              Status={tracks[16].status}
+              Name={tracks[16].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-16"].geometry}
@@ -141,8 +185,15 @@ export default function Slopes(props) {
           position={[576.66, 2284.289, -59.193]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={17} BageColor={ColorBlackSlope} />
+          <Html zIndexRange={[activeSlope == 17 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={17}
+              BageColor={ColorBlackSlope}
+              Length={tracks[19].lengthInMeter}
+              Status={tracks[19].status}
+              Name={tracks[19].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-17"].geometry}
@@ -156,8 +207,15 @@ export default function Slopes(props) {
           position={[1418.846, 1808.084, 1433.175]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={21} BageColor={ColorBlackSlope} />
+          <Html zIndexRange={[activeSlope == 21 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={21}
+              BageColor={ColorBlackSlope}
+              Length={tracks[11].lengthInMeter}
+              Status={tracks[11].status}
+              Name={tracks[11].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-21"].geometry}
@@ -171,8 +229,15 @@ export default function Slopes(props) {
           position={[-647.795, 2445.253, 408.311]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={"i"} BageColor="#FFDA00" />
+          <Html zIndexRange={[activeSlope == "i" ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={"i"}
+              BageColor="#686868"
+              Length={0}
+              Status={tracks[22].status}
+              Name={tracks[22].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-inferno"].geometry}
@@ -189,8 +254,18 @@ export default function Slopes(props) {
           position={[844.627, 1793.474, 2268.418]}
           rotation={[0, 1.078, 0]}
         >
-          <Html name="slope-1">
-            <BadgeSlopes BadgeNumber={27} BageColor={ColorYellowSlope} />
+          <Html
+            zIndexRange={[activeSlope == 27 ? 100000000 : 16777271, 0]}
+            name="slope-1"
+          >
+            <BadgeSlopes
+              BadgeNumber={27}
+              BageColor={ColorYellowSlope}
+              Length={tracks[9].lengthInMeter}
+              Status={tracks[9].status}
+              Name={tracks[9].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-27"].geometry}
@@ -204,8 +279,18 @@ export default function Slopes(props) {
           position={[1374.516, 1869.451, 1642.696]}
           rotation={[0, 1.078, 0]}
         >
-          <Html name="slope-1">
-            <BadgeSlopes BadgeNumber={"F"} BageColor={ColorYellowSlope} />
+          <Html
+            zIndexRange={[activeSlope == "F" ? 100000000 : 16777271, 0]}
+            name="slope-1"
+          >
+            <BadgeSlopes
+              BadgeNumber={"F"}
+              BageColor={ColorYellowSlope}
+              Length={tracks[10].lengthInMeter}
+              Status={tracks[10].status}
+              Name={tracks[10].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-finel"].geometry}
@@ -222,8 +307,15 @@ export default function Slopes(props) {
           position={[2188.16, 1774.553, -143.673]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={1} BageColor={ColorRedSlope} />
+          <Html zIndexRange={[activeSlope == 1 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={1}
+              BageColor={ColorRedSlope}
+              Length={tracks[37].lengthInMeter}
+              Status={tracks[37].status}
+              Name={tracks[37].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-1"].geometry}
@@ -238,8 +330,15 @@ export default function Slopes(props) {
           position={[2311.795, 1274.006, -2798.783]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={3} BageColor={ColorRedSlope}  />
+          <Html zIndexRange={[activeSlope == 3 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={3}
+              BageColor={ColorRedSlope}
+              Length={tracks[38].lengthInMeter}
+              Status={tracks[38].status}
+              Name={tracks[38].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-3"].geometry}
@@ -253,8 +352,15 @@ export default function Slopes(props) {
           position={[2188.886, 1741.278, 700.105]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={5} BageColor={ColorRedSlope}  />
+          <Html zIndexRange={[activeSlope == 5 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={5}
+              BageColor={ColorRedSlope}
+              Length={tracks[39].lengthInMeter}
+              Status={tracks[39].status}
+              Name={tracks[39].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-5"].geometry}
@@ -268,8 +374,15 @@ export default function Slopes(props) {
           position={[15.422, 2269.788, 406.245]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={13} BageColor={ColorRedSlope}  />
+          <Html zIndexRange={[activeSlope == 13 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={13}
+              BageColor={ColorRedSlope}
+              Length={tracks[36].lengthInMeter}
+              Status={tracks[36].status}
+              Name={tracks[36].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-13"].geometry}
@@ -283,8 +396,15 @@ export default function Slopes(props) {
           position={[526.266, 2256.403, 142.729]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={15} BageColor={ColorRedSlope}  />
+          <Html zIndexRange={[activeSlope == 15 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={15}
+              BageColor={ColorRedSlope}
+              Length={tracks[13].lengthInMeter}
+              Status={tracks[13].status}
+              Name={tracks[13].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-15"].geometry}
@@ -298,8 +418,15 @@ export default function Slopes(props) {
           position={[1120.861, 1808.589, 1298.642]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={22} BageColor={ColorRedSlope}  />
+          <Html zIndexRange={[activeSlope == 22 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={22}
+              BageColor={ColorRedSlope}
+              Length={tracks[32].lengthInMeter}
+              Status={tracks[32].status}
+              Name={tracks[32].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-22"].geometry}
@@ -313,8 +440,15 @@ export default function Slopes(props) {
           position={[929.924, 1882.627, 2044.65]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={24} BageColor={ColorRedSlope}  />
+          <Html zIndexRange={[activeSlope == 24 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={24}
+              BageColor={ColorRedSlope}
+              Length={tracks[34].lengthInMeter}
+              Status={tracks[34].status}
+              Name={tracks[34].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-24"].geometry}
@@ -328,8 +462,15 @@ export default function Slopes(props) {
           position={[1505.302, 1788.034, 1801.27]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={25} BageColor={ColorRedSlope}  />
+          <Html zIndexRange={[activeSlope == 25 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={25}
+              BageColor={ColorRedSlope}
+              Length={tracks[40].lengthInMeter}
+              Status={tracks[40].status}
+              Name={tracks[40].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-25"].geometry}
@@ -343,8 +484,15 @@ export default function Slopes(props) {
           position={[1651.508, 1685.584, 1979.709]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={26} BageColor={ColorRedSlope}  />
+          <Html zIndexRange={[activeSlope == 26 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={26}
+              BageColor={ColorRedSlope}
+              Length={tracks[0].lengthInMeter}
+              Status={tracks[0].status}
+              Name={tracks[0].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-26"].geometry}
@@ -361,8 +509,15 @@ export default function Slopes(props) {
           position={[2391.337, 1658.338, -414.322]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={2} BageColor={ColorBlueSlope}  />
+          <Html zIndexRange={[activeSlope == 2 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={2}
+              BageColor={ColorBlueSlope}
+              Length={tracks[5].lengthInMeter}
+              Status={tracks[5].status}
+              Name={tracks[5].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-2"].geometry}
@@ -371,29 +526,20 @@ export default function Slopes(props) {
             {BLUE_SLOPE_MATERIAL}
           </mesh>
         </group>
-        <group
-          name="slope-2"
-          position={[2391.337, 1658.338, -414.322]}
-          rotation={[0, 1.078, 0]}
-        >
-          <Html>
-            <BadgeSlopes BadgeNumber={2} BageColor={ColorBlueSlope} />
-          </Html>
-          <mesh
-            geometry={nodes["slope-2"].geometry}
-            material={nodes["slope-2"].material}
-          >
-            {BLUE_SLOPE_MATERIAL}
-          </mesh>
-        </group>
-
         <group
           name="slope-4"
           position={[1982.713, 1818.805, 363.415]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={4} BageColor={ColorBlueSlope} />
+          <Html zIndexRange={[activeSlope == 4 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={4}
+              BageColor={ColorBlueSlope}
+              Length={tracks[3].lengthInMeter}
+              Status={tracks[3].status}
+              Name={tracks[3].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-4"].geometry}
@@ -408,8 +554,15 @@ export default function Slopes(props) {
           position={[1738.145, 1665.918, 1472.633]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={6} BageColor={ColorBlueSlope} />
+          <Html zIndexRange={[activeSlope == 6 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={6}
+              BageColor={ColorBlueSlope}
+              Length={tracks[6].lengthInMeter}
+              Status={tracks[6].status}
+              Name={tracks[6].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-6"].geometry}
@@ -424,8 +577,15 @@ export default function Slopes(props) {
           position={[1541.271, 1744.299, 1169.914]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={7} BageColor={ColorBlueSlope} />
+          <Html zIndexRange={[activeSlope == 7 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={7}
+              BageColor={ColorBlueSlope}
+              Length={tracks[2].lengthInMeter}
+              Status={tracks[2].status}
+              Name={tracks[2].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-7"].geometry}
@@ -440,8 +600,15 @@ export default function Slopes(props) {
           position={[-220.102, 2355.949, 294.359]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={8} BageColor={ColorBlueSlope} />
+          <Html zIndexRange={[activeSlope == 8 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={8}
+              BageColor={ColorBlueSlope}
+              Length={tracks[8].lengthInMeter}
+              Status={tracks[8].status}
+              Name={tracks[8].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-8"].geometry}
@@ -456,8 +623,15 @@ export default function Slopes(props) {
           position={[769.058, 1857.64, 1181.604]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={20} BageColor={ColorBlueSlope} />
+          <Html zIndexRange={[activeSlope == 20 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={20}
+              BageColor={ColorBlueSlope}
+              Length={tracks[5].lengthInMeter}
+              Status={tracks[5].status}
+              Name={tracks[5].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-20"].geometry}
@@ -472,8 +646,15 @@ export default function Slopes(props) {
           position={[989.343, 1909.422, 1866.41]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={23} BageColor={ColorBlueSlope} />
+          <Html zIndexRange={[activeSlope == 23 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={23}
+              BageColor={ColorBlueSlope}
+              Length={tracks[1].lengthInMeter}
+              Status={tracks[1].status}
+              Name={tracks[1].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-23"].geometry}
@@ -488,8 +669,15 @@ export default function Slopes(props) {
           position={[-966.101, 2486.136, 966.423]}
           rotation={[0, 1.078, 0]}
         >
-          <Html>
-            <BadgeSlopes BadgeNumber={11} BageColor={ColorBlueSlope} />
+          <Html zIndexRange={[activeSlope == 11 ? 100000000 : 16777271, 0]}>
+            <BadgeSlopes
+              BadgeNumber={11}
+              BageColor={ColorBlueSlope}
+              Length={tracks[7].lengthInMeter}
+              Status={tracks[7].status}
+              Name={tracks[7].name}
+              handle={handleOpen}
+            />
           </Html>
           <mesh
             geometry={nodes["slope-11"].geometry}

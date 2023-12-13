@@ -1,20 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import slopes from "../../assets/gltf/slopes/slopes-transformed.glb";
 import { Html } from "@react-three/drei";
 import BadgeSlopes from "../ToolTips/BadgeSlopes";
 import { useSelector } from "react-redux";
+import { track } from "../../store/track/trackState";
 
 export default function Slopes(props) {
   const { nodes, materials } = useGLTF(slopes);
-
   const [activeSlope, setActiveSlope] = useState(""); // which ToolTip is open
 
   const handleOpen = (name) => {
     setActiveSlope(name);
   };
 
-  const tracks = useSelector((state) => state.track.value);
+  let tracks = useSelector((state) => state.track.value);
 
   const ColorBlackSlope = "#3F3F45";
   const ColorRedSlope = "#F66771";
@@ -78,9 +78,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={9}
               BageColor={ColorBlackSlope}
-              Length={tracks[14].lengthInMeter}
-              Status={tracks[14].status}
-              Name={tracks[14].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 9)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 9)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 9)].name}
               handle={handleOpen}
             />
           </Html>
@@ -101,9 +101,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={10}
               BageColor={ColorBlackSlope}
-              Length={tracks[17].lengthInMeter}
-              Status={tracks[17].status}
-              Name={tracks[17].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 10)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 10)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 10)].name}
               handle={handleOpen}
             />
           </Html>
@@ -123,9 +123,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={12}
               BageColor={ColorBlackSlope}
-              Length={tracks[15].lengthInMeter}
-              Status={tracks[15].status}
-              Name={tracks[15].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 12)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 12)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 12)].name}
               handle={handleOpen}
             />
           </Html>
@@ -145,9 +145,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={14}
               BageColor={ColorBlackSlope}
-              Length={tracks[12].lengthInMeter}
-              Status={tracks[12].status}
-              Name={tracks[12].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 14)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 14)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 14)].name}
               handle={handleOpen}
             />
           </Html>
@@ -167,9 +167,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={16}
               BageColor={ColorBlackSlope}
-              Length={tracks[16].lengthInMeter}
-              Status={tracks[16].status}
-              Name={tracks[16].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 16)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 16)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 16)].name}
               handle={handleOpen}
             />
           </Html>
@@ -189,9 +189,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={17}
               BageColor={ColorBlackSlope}
-              Length={tracks[19].lengthInMeter}
-              Status={tracks[19].status}
-              Name={tracks[19].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 17)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 17)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 17)].name}
               handle={handleOpen}
             />
           </Html>
@@ -211,9 +211,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={21}
               BageColor={ColorBlackSlope}
-              Length={tracks[11].lengthInMeter}
-              Status={tracks[11].status}
-              Name={tracks[11].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 21)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 21)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 21)].name}
               handle={handleOpen}
             />
           </Html>
@@ -233,9 +233,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={"i"}
               BageColor="#686868"
-              Length={0}
-              Status={tracks[22].status}
-              Name={tracks[22].name}
+              Length={tracks[tracks.findIndex(track => track.name == "Inferno")].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.name == "Inferno")].status}
+              Name={tracks[tracks.findIndex(track => track.name == "Inferno")].name}
               handle={handleOpen}
             />
           </Html>
@@ -261,9 +261,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={27}
               BageColor={ColorYellowSlope}
-              Length={tracks[9].lengthInMeter}
-              Status={tracks[9].status}
-              Name={tracks[9].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 27)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 27)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 27)].name}
               handle={handleOpen}
             />
           </Html>
@@ -286,9 +286,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={"F"}
               BageColor={ColorYellowSlope}
-              Length={tracks[10].lengthInMeter}
-              Status={tracks[10].status}
-              Name={tracks[10].name}
+              Length={tracks[tracks.findIndex(track => track.name == "23b Finel")].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.name == "23b Finel")].status}
+              Name={tracks[tracks.findIndex(track => track.name == "23b Finel")].name}
               handle={handleOpen}
             />
           </Html>
@@ -311,9 +311,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={1}
               BageColor={ColorRedSlope}
-              Length={tracks[37].lengthInMeter}
-              Status={tracks[37].status}
-              Name={tracks[37].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 1)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 1)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 1)].name}
               handle={handleOpen}
             />
           </Html>
@@ -334,9 +334,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={3}
               BageColor={ColorRedSlope}
-              Length={tracks[38].lengthInMeter}
-              Status={tracks[38].status}
-              Name={tracks[38].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 3)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 3)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 3)].name}
               handle={handleOpen}
             />
           </Html>
@@ -356,9 +356,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={5}
               BageColor={ColorRedSlope}
-              Length={tracks[39].lengthInMeter}
-              Status={tracks[39].status}
-              Name={tracks[39].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 5)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 5)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 5)].name}
               handle={handleOpen}
             />
           </Html>
@@ -378,9 +378,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={13}
               BageColor={ColorRedSlope}
-              Length={tracks[36].lengthInMeter}
-              Status={tracks[36].status}
-              Name={tracks[36].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 13)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 13)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 13)].name}
               handle={handleOpen}
             />
           </Html>
@@ -400,9 +400,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={15}
               BageColor={ColorRedSlope}
-              Length={tracks[13].lengthInMeter}
-              Status={tracks[13].status}
-              Name={tracks[13].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 15)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 15)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 15)].name}
               handle={handleOpen}
             />
           </Html>
@@ -422,9 +422,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={22}
               BageColor={ColorRedSlope}
-              Length={tracks[32].lengthInMeter}
-              Status={tracks[32].status}
-              Name={tracks[32].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 22)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 22)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 22)].name}
               handle={handleOpen}
             />
           </Html>
@@ -444,9 +444,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={24}
               BageColor={ColorRedSlope}
-              Length={tracks[34].lengthInMeter}
-              Status={tracks[34].status}
-              Name={tracks[34].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 24)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 24)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 24)].name}
               handle={handleOpen}
             />
           </Html>
@@ -466,9 +466,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={25}
               BageColor={ColorRedSlope}
-              Length={tracks[40].lengthInMeter}
-              Status={tracks[40].status}
-              Name={tracks[40].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 25)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 25)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 25)].name}
               handle={handleOpen}
             />
           </Html>
@@ -488,9 +488,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={26}
               BageColor={ColorRedSlope}
-              Length={tracks[0].lengthInMeter}
-              Status={tracks[0].status}
-              Name={tracks[0].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 26)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 26)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 26)].name}
               handle={handleOpen}
             />
           </Html>
@@ -513,9 +513,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={2}
               BageColor={ColorBlueSlope}
-              Length={tracks[5].lengthInMeter}
-              Status={tracks[5].status}
-              Name={tracks[5].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 2)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 2)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 2)].name}
               handle={handleOpen}
             />
           </Html>
@@ -535,9 +535,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={4}
               BageColor={ColorBlueSlope}
-              Length={tracks[3].lengthInMeter}
-              Status={tracks[3].status}
-              Name={tracks[3].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 4)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 4)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 4)].name}
               handle={handleOpen}
             />
           </Html>
@@ -558,9 +558,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={6}
               BageColor={ColorBlueSlope}
-              Length={tracks[6].lengthInMeter}
-              Status={tracks[6].status}
-              Name={tracks[6].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 6)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 6)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 6)].name}
               handle={handleOpen}
             />
           </Html>
@@ -581,9 +581,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={7}
               BageColor={ColorBlueSlope}
-              Length={tracks[2].lengthInMeter}
-              Status={tracks[2].status}
-              Name={tracks[2].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 7)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 7)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 7)].name}
               handle={handleOpen}
             />
           </Html>
@@ -604,9 +604,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={8}
               BageColor={ColorBlueSlope}
-              Length={tracks[8].lengthInMeter}
-              Status={tracks[8].status}
-              Name={tracks[8].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 8)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 8)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 8)].name}
               handle={handleOpen}
             />
           </Html>
@@ -627,9 +627,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={20}
               BageColor={ColorBlueSlope}
-              Length={tracks[5].lengthInMeter}
-              Status={tracks[5].status}
-              Name={tracks[5].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 20)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 20)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 20)].name}
               handle={handleOpen}
             />
           </Html>
@@ -650,9 +650,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={23}
               BageColor={ColorBlueSlope}
-              Length={tracks[1].lengthInMeter}
-              Status={tracks[1].status}
-              Name={tracks[1].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 23)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 23)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 23)].name}
               handle={handleOpen}
             />
           </Html>
@@ -673,9 +673,9 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={11}
               BageColor={ColorBlueSlope}
-              Length={tracks[7].lengthInMeter}
-              Status={tracks[7].status}
-              Name={tracks[7].name}
+              Length={tracks[tracks.findIndex(track => track.mappedNumber == 11)].lengthInMeter}
+              Status={tracks[tracks.findIndex(track => track.mappedNumber == 11)].status}
+              Name={tracks[tracks.findIndex(track => track.mappedNumber == 11)].name}
               handle={handleOpen}
             />
           </Html>

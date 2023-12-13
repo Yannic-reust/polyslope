@@ -11,10 +11,8 @@
 .openBadge {
     width: auto;
     height: auto;
-    padding: 16px;
-
+    padding: 8px;
     border-radius: 8px;
-
     white-space: nowrap;
 }
 .circle__content {

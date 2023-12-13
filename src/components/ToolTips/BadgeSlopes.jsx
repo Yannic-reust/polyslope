@@ -10,6 +10,23 @@ function BadgeSlopes({ BadgeNumber, BageColor,Length,Status,Name,handle }) {
     handle(BadgeNumber)
   };
 
+  const PlantStatus = {
+    OPEN: "offen",
+    CLOSED: "geschlossen",
+    UNAVAILABLE: "unbekannt",
+  }
+
+  function convertStatus(status) {
+    switch(status) {
+      case "CLOSED":
+        return PlantStatus.CLOSED
+      case "OPEN":
+        return PlantStatus.OPEN
+      default:
+        return PlantStatus.UNAVAILABLE
+    }
+  }
+
   return (
     <>
       <div
@@ -28,12 +45,12 @@ function BadgeSlopes({ BadgeNumber, BageColor,Length,Status,Name,handle }) {
         )}
 
         {open && (
-          <div>
-            <p className="font-semibold"> {Name}</p>
-            <p>
-              Status: {Status}
+          <div className="select-none">
+            <p className="font-semibold text-center text-p-md"> {Name}</p>
+            <p className="text-center text-p-xs">
+              Status: {convertStatus(Status)}
             </p>
-            <p>Length: {Length}m</p>
+            <p className="text-center text-p-xs">Länge: {Length}m</p>
           </div>
         )}
       </div>

@@ -16,7 +16,7 @@ function ToolTipRestaurant({ RestaurantName, OpeningHours }) {
         <div className="flex">
           {!open && <FoodSVG className={ICON_CLASSES} />}
           {open && (
-            <p className="ml-2 text-p-lg text-white">{RestaurantName}</p>
+            <p className="text-p-md font-semibold text-center text-white">{RestaurantName}</p>
           )}
         </div>
         {open && (

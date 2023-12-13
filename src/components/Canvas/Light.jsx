@@ -1,5 +1,3 @@
-import { DirectionalLightHelper } from "three";
-import { useHelper } from '@react-three/drei';
 import { useRef, useState } from "react";
 import { useFrame } from '@react-three/fiber'
 
@@ -15,10 +13,12 @@ const Light = ({distance}) => {
     useHelper(directionalLightRef, DirectionalLightHelper, 50, "white");
     */
 
-    const [angle, setAngle] = useState(0);
+    const [angle, setAngle] = useState(2);
 
     useFrame(() => {
-        // setAngle(angle - 0.005);
+        if (angle > 0) {
+            setAngle(angle - 0.005);
+        }
     })
 
     //calculate light position based of current time and sun position
@@ -36,11 +36,23 @@ const Light = ({distance}) => {
     return ( 
         <>
             <directionalLight 
-                position={[0, 500, 0]}
+                position={[lightX, lightY, 0]}
                 intensity={2}
-                castShadow={false}
+                shadow-mapSize={4096}
+                castShadow
+                shadow-camera-left={-4500}
+                shadow-camera-right={4500}
+                shadow-camera-top={4500}
+                shadow-camera-bottom={-4500}
+                shadow-camera-far={15000}
             />
-            <Sun position={[lightX, lightY, 0]}/>
+            <directionalLight 
+                position={[0, distance, 0]} 
+                intensity={0.5}
+                color="#e8f0a5"
+            />
+            <ambientLight intensity={0.1} />
+            <Sun position={[lightX, lightY, -650]}/>
         </>
      );
 }

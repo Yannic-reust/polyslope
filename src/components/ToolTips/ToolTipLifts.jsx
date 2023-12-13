@@ -2,12 +2,13 @@ import "./ToolTipLifts.css";
 import { useState } from "react";
 import PlantsSVG from "../../assets/icons/cable-car.svg?react";
 
-function ToolTipLifts({ LiftName, OpeningHours, lastDescent }) {
+function ToolTipLifts({ LiftName, OpeningHours, lastDescent, setFocusObject, meshRef }) {
   const ICON_CLASSES = "w-4 h-auto fill-white";
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
     setOpen(!open);
+    setFocusObject(meshRef);
   };
 
   return (

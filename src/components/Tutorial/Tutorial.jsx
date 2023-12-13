@@ -3,6 +3,7 @@ import { toggleIntro } from "../../store/intro/introState";
 import { useDispatch,useSelector } from "react-redux";
 
 import Content from "./Content";
+import { toggleMusic } from "../../store/music/musicState";
 
 const Tutorial = () => {
   const [menuState, setMenuState] = useState(0);
@@ -13,6 +14,7 @@ const Tutorial = () => {
   function increaseMenu(e) {
     if (e == 4) {
       dispatch(toggleIntro());
+      dispatch(toggleMusic());
       setMenuState(0);
     } else {
       setMenuState(e);
@@ -32,7 +34,7 @@ const Tutorial = () => {
         <p
           className="justify-self-end px-4 font-thin text-xs text-black cursor-pointer"
           style={{ fontSize: "0.9em" }}
-          onClick={() => dispatch(toggleIntro())}
+          onClick={() => dispatch(toggleIntro()) && dispatch(toggleMusic())}
         >
           Überspringen
         </p>

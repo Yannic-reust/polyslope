@@ -6,18 +6,18 @@ import sunReducer from './sun/sunState'
 import restaurantReducer from './restaurant/restaurantState'
 import liftReducer from './lift/liftState'
 import trackReducer from './track/trackState'
+import musicReducer from './music/musicState'
 
 export default configureStore({
   reducer: {
     animation: animationsReducer,
-
     slopesActive: slopesActiveReducer,
     intro: introReducer,
     sun: sunReducer,
-
     restaurant: restaurantReducer,
     lift: liftReducer,
     track: trackReducer,
+    music: musicReducer,
 
   },
 })

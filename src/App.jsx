@@ -31,15 +31,16 @@ function App() {
 
   return (
     <>
-      <SideBar />
-      <TabBar />
-      <Canvas />
-      <div
+     <div
         className="ml-8 absolute tablet:bottom-8 top-8 tablet:top-auto right-8 tablet:right-auto"
         onClick={() => mute()}
       >
         <MusicBadge />
       </div>
+      <SideBar />
+      <TabBar />
+      <Canvas />
+     
 
       <Tutorial />
 

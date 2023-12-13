@@ -6,8 +6,8 @@ export default function Trees(props) {
   const { nodes, materials } = useGLTF(trees)
   return (
     <group {...props} dispose={null}>
-      <instancedMesh args={[nodes.SM_Tree_fir001.geometry, materials['dark_green.008'], 3349]} instanceMatrix={nodes.SM_Tree_fir001.instanceMatrix} />
-      <instancedMesh args={[nodes.SM_Tree_fir001_1.geometry, materials['wood_dark.006'], 3349]} instanceMatrix={nodes.SM_Tree_fir001_1.instanceMatrix} />
+      <instancedMesh args={[nodes.SM_Tree_fir001.geometry, materials['dark_green.008'], 3334]} instanceMatrix={nodes.SM_Tree_fir001.instanceMatrix} />
+      <instancedMesh args={[nodes.SM_Tree_fir001_1.geometry, materials['wood_dark.006'], 3334]} instanceMatrix={nodes.SM_Tree_fir001_1.instanceMatrix} />
     </group>
   )
 }

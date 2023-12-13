@@ -17,14 +17,10 @@
 .contentLift::before {
     content: "";
     position: absolute;
-    transform: translate(50%, -50%);
-    top: 36px;
+    transform: translateY(100%);
+    bottom: 0;
     z-index: 1;
-    height: 18px;
+    height: 50%;
     width: 2px;
     background-color: #1A65A6;
-}
-.lineLift::before{
-    top: 140px;
-    height: 52px;
 }

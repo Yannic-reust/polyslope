@@ -22,7 +22,7 @@ const Canvas = () => {
                     far: 50000,
                     position: [5500, 6000, 0],
                     minDistance: 3000,
-                    maxDistance: 300000
+                    maxDistance: 300000,
                 }}
             >
                 <Light />
@@ -33,8 +33,8 @@ const Canvas = () => {
                 </Detailed>
                 <Restaurants />
                 <Lifts />
+                <Slopes />  
                 <Trees />
-                <Slopes />
                 <Huts />
                 <OrbitControls 
                     minDistance={300} 

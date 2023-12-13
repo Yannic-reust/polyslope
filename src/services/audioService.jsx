@@ -4,6 +4,7 @@ import { Howl } from 'howler';
 class AudioService {
   constructor() {
     this.sound = null;
+    this.muteSound = false;
   }
 
   initialize = (tracks) => {
@@ -28,6 +29,12 @@ class AudioService {
   stop = () => {
     if (this.sound) {
       this.sound.stop();
+    }
+  };
+  mute = () => {
+    if (this.sound) {
+      this.sound.mute(!this.muteSound);
+      this.muteSound = !this.muteSound
     }
   };
 

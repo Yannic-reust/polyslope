@@ -7,6 +7,7 @@ import restaurantReducer from './restaurant/restaurantState'
 import liftReducer from './lift/liftState'
 import trackReducer from './track/trackState'
 import musicReducer from './music/musicState'
+import volumeReducer from './volume/volumeState'
 
 export default configureStore({
   reducer: {
@@ -18,6 +19,7 @@ export default configureStore({
     lift: liftReducer,
     track: trackReducer,
     music: musicReducer,
+    volume: volumeReducer,
 
   },
 })

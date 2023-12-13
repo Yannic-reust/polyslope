@@ -1,17 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import slopes from "../../assets/gltf/slopes/slopes-transformed.glb";
 import { Html } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import BadgeSlopes from "../ToolTips/BadgeSlopes";
 import { useSelector } from "react-redux";
 import { track } from "../../store/track/trackState";
 
+import {
+  Outline,
+  Selection,
+  EffectComposer,
+  Select,
+} from "@react-three/postprocessing";
+
 export default function Slopes(props) {
   const { nodes, materials } = useGLTF(slopes);
+
   const [activeSlope, setActiveSlope] = useState(""); // which ToolTip is open
 
   const handleOpen = (name) => {
-    setActiveSlope(name);
+    if (activeSlope === name) {
+      setActiveSlope("");
+    } else {
+      setActiveSlope(name);
+    }
   };
 
   let tracks = useSelector((state) => state.track.value);
@@ -63,6 +76,21 @@ export default function Slopes(props) {
     />
   );
 
+  function SlopeComp({ geometry, material, hovered, slopeMat }) {
+    return (
+      <Selection>
+        <EffectComposer autoClear={false}>
+          <Outline blur edgeStrength={10} />
+        </EffectComposer>
+        <Select enabled={hovered}>
+          <mesh geometry={geometry} material={material}>
+            {slopeMat}
+          </mesh>
+        </Select>
+      </Selection>
+    );
+  }
+
   const moveUp = 5; // to remove z-fighting
 
   return (
@@ -78,18 +106,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={9}
               BageColor={ColorBlackSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 9)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 9)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 9)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 9)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 9)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 9)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-9"].geometry}
             material={nodes["slope-9"].material}
-          >
-            {BLACK_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == 9}
+            slopeMat={BLACK_SLOPE_MATERIAL}
+          />
         </group>
 
         <group
@@ -101,18 +138,28 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={10}
               BageColor={ColorBlackSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 10)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 10)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 10)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 10)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 10)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 10)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+
+          <SlopeComp
             geometry={nodes["slope-10"].geometry}
             material={nodes["slope-10"].material}
-          >
-            {BLACK_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == 10}
+            slopeMat={BLACK_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-12"
@@ -123,18 +170,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={12}
               BageColor={ColorBlackSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 12)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 12)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 12)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 12)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 12)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 12)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-12"].geometry}
             material={nodes["slope-12"].material}
-          >
-            {BLACK_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == 12}
+            slopeMat={BLACK_SLOPE_MATERIAL}
+          />
         </group>
         <group
           position={[135.335, 2258.611, 328.573]}
@@ -145,18 +201,28 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={14}
               BageColor={ColorBlackSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 14)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 14)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 14)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 14)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 14)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 14)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+
+          <SlopeComp
             geometry={nodes["slope-14"].geometry}
             material={nodes["slope-14"].material}
-          >
-            {BLACK_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == 14}
+            slopeMat={BLACK_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-16"
@@ -167,18 +233,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={16}
               BageColor={ColorBlackSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 16)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 16)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 16)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 16)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 16)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 16)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-16"].geometry}
             material={nodes["slope-16"].material}
-          >
-            {BLACK_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == 16}
+            slopeMat={BLACK_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-17"
@@ -189,18 +264,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={17}
               BageColor={ColorBlackSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 17)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 17)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 17)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 17)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 17)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 17)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-17"].geometry}
             material={nodes["slope-17"].material}
-          >
-            {BLACK_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == 17}
+            slopeMat={BLACK_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-21"
@@ -211,18 +295,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={21}
               BageColor={ColorBlackSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 21)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 21)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 21)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 21)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 21)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 21)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-21"].geometry}
             material={nodes["slope-21"].material}
-          >
-            {BLACK_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == 21}
+            slopeMat={BLACK_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-inferno"
@@ -233,18 +326,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={"i"}
               BageColor="#686868"
-              Length={tracks[tracks.findIndex(track => track.name == "Inferno")].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.name == "Inferno")].status}
-              Name={tracks[tracks.findIndex(track => track.name == "Inferno")].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.name == "Inferno")]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.name == "Inferno")]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.name == "Inferno")]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-inferno"].geometry}
             material={nodes["slope-inferno"].material}
-          >
-            {BLACK_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "i"}
+            slopeMat={BLACK_SLOPE_MATERIAL}
+          />
         </group>
       </group>
       {/* yellow slopes */}
@@ -261,18 +363,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={27}
               BageColor={ColorYellowSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 27)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 27)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 27)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 27)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 27)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 27)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-27"].geometry}
             material={nodes["slope-27"].material}
-          >
-            {YELLOW_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "27"}
+            slopeMat={YELLOW_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-finel"
@@ -286,18 +397,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={"F"}
               BageColor={ColorYellowSlope}
-              Length={tracks[tracks.findIndex(track => track.name == "23b Finel")].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.name == "23b Finel")].status}
-              Name={tracks[tracks.findIndex(track => track.name == "23b Finel")].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.name == "23b Finel")]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.name == "23b Finel")]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.name == "23b Finel")]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-finel"].geometry}
             material={nodes["slope-finel"].material}
-          >
-            {YELLOW_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "F"}
+            slopeMat={YELLOW_SLOPE_MATERIAL}
+          />
         </group>
       </group>
       {/* red slopes */}
@@ -311,18 +431,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={1}
               BageColor={ColorRedSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 1)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 1)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 1)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 1)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 1)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 1)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-1"].geometry}
             material={nodes["slope-1"].material}
-          >
-            {RED_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "1"}
+            slopeMat={RED_SLOPE_MATERIAL}
+          />
         </group>
 
         <group
@@ -334,18 +463,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={3}
               BageColor={ColorRedSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 3)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 3)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 3)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 3)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 3)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 3)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-3"].geometry}
             material={nodes["slope-3"].material}
-          >
-            {RED_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "3"}
+            slopeMat={RED_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-5"
@@ -356,18 +494,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={5}
               BageColor={ColorRedSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 5)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 5)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 5)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 5)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 5)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 5)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-5"].geometry}
             material={nodes["slope-5"].material}
-          >
-            {RED_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "5"}
+            slopeMat={RED_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-13"
@@ -378,18 +525,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={13}
               BageColor={ColorRedSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 13)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 13)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 13)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 13)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 13)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 13)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-13"].geometry}
             material={nodes["slope-13"].material}
-          >
-            {RED_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "13"}
+            slopeMat={RED_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-15"
@@ -400,18 +556,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={15}
               BageColor={ColorRedSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 15)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 15)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 15)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 15)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 15)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 15)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-15"].geometry}
             material={nodes["slope-15"].material}
-          >
-            {RED_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "15"}
+            slopeMat={RED_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-22"
@@ -422,18 +587,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={22}
               BageColor={ColorRedSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 22)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 22)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 22)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 22)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 22)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 22)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-22"].geometry}
             material={nodes["slope-22"].material}
-          >
-            {RED_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "22"}
+            slopeMat={RED_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-24"
@@ -444,18 +618,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={24}
               BageColor={ColorRedSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 24)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 24)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 24)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 24)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 24)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 24)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-24"].geometry}
             material={nodes["slope-24"].material}
-          >
-            {RED_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "24"}
+            slopeMat={RED_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-25"
@@ -466,18 +649,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={25}
               BageColor={ColorRedSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 25)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 25)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 25)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 25)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 25)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 25)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-25"].geometry}
             material={nodes["slope-25"].material}
-          >
-            {RED_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "25"}
+            slopeMat={RED_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-26"
@@ -488,18 +680,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={26}
               BageColor={ColorRedSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 26)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 26)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 26)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 26)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 26)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 26)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-26"].geometry}
             material={nodes["slope-26"].material}
-          >
-            {RED_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "26"}
+            slopeMat={RED_SLOPE_MATERIAL}
+          />
         </group>
       </group>
       {/* blue slopes */}
@@ -513,18 +714,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={2}
               BageColor={ColorBlueSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 2)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 2)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 2)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 2)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 2)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 2)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-2"].geometry}
             material={nodes["slope-2"].material}
-          >
-            {BLUE_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "2"}
+            slopeMat={BLUE_SLOPE_MATERIAL}
+          />
         </group>
         <group
           name="slope-4"
@@ -535,18 +745,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={4}
               BageColor={ColorBlueSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 4)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 4)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 4)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 4)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 4)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 4)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-4"].geometry}
             material={nodes["slope-4"].material}
-          >
-            {BLUE_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "4"}
+            slopeMat={BLUE_SLOPE_MATERIAL}
+          />
         </group>
 
         <group
@@ -558,18 +777,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={6}
               BageColor={ColorBlueSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 6)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 6)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 6)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 6)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 6)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 6)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-6"].geometry}
             material={nodes["slope-6"].material}
-          >
-            {BLUE_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "6"}
+            slopeMat={BLUE_SLOPE_MATERIAL}
+          />
         </group>
 
         <group
@@ -581,18 +809,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={7}
               BageColor={ColorBlueSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 7)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 7)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 7)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 7)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 7)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 7)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-7"].geometry}
             material={nodes["slope-7"].material}
-          >
-            {BLUE_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "7"}
+            slopeMat={BLUE_SLOPE_MATERIAL}
+          />
         </group>
 
         <group
@@ -604,18 +841,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={8}
               BageColor={ColorBlueSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 8)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 8)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 8)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 8)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 8)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 8)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-8"].geometry}
             material={nodes["slope-8"].material}
-          >
-            {BLUE_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "8"}
+            slopeMat={BLUE_SLOPE_MATERIAL}
+          />
         </group>
 
         <group
@@ -627,18 +873,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={20}
               BageColor={ColorBlueSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 20)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 20)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 20)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 20)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 20)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 20)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-20"].geometry}
             material={nodes["slope-20"].material}
-          >
-            {BLUE_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "20"}
+            slopeMat={BLUE_SLOPE_MATERIAL}
+          />
         </group>
 
         <group
@@ -650,18 +905,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={23}
               BageColor={ColorBlueSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 23)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 23)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 23)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 23)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 23)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 23)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-23"].geometry}
             material={nodes["slope-23"].material}
-          >
-            {BLUE_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "23"}
+            slopeMat={BLUE_SLOPE_MATERIAL}
+          />
         </group>
 
         <group
@@ -673,18 +937,27 @@ export default function Slopes(props) {
             <BadgeSlopes
               BadgeNumber={11}
               BageColor={ColorBlueSlope}
-              Length={tracks[tracks.findIndex(track => track.mappedNumber == 11)].lengthInMeter}
-              Status={tracks[tracks.findIndex(track => track.mappedNumber == 11)].status}
-              Name={tracks[tracks.findIndex(track => track.mappedNumber == 11)].name}
+              Length={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 11)]
+                  .lengthInMeter
+              }
+              Status={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 11)]
+                  .status
+              }
+              Name={
+                tracks[tracks.findIndex((track) => track.mappedNumber == 11)]
+                  .name
+              }
               handle={handleOpen}
             />
           </Html>
-          <mesh
+          <SlopeComp
             geometry={nodes["slope-11"].geometry}
             material={nodes["slope-11"].material}
-          >
-            {BLUE_SLOPE_MATERIAL}
-          </mesh>
+            hovered={activeSlope == "11"}
+            slopeMat={BLUE_SLOPE_MATERIAL}
+          />
         </group>
       </group>
     </group>

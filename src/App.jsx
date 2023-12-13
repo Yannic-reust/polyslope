@@ -35,7 +35,7 @@ function App() {
       <TabBar />
       <Canvas />
       <div
-        className="ml-8 absolute bottom-8 hidden tablet:inline"
+        className="ml-8 absolute tablet:bottom-8 top-8 tablet:top-auto right-8 tablet:right-auto"
         onClick={() => mute()}
       >
         <MusicBadge />

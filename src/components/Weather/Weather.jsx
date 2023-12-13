@@ -2,7 +2,9 @@ import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import WeatherTodayDetail from "../WeatherTodayDetail/WeatherTodayDetail";
 import WeatherTile from "../WeatherTile/WeatherTile";
 import useDayData from "./useDayData";
+import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import { snowData } from "../../store/snowData/snowDataState";
 
 function Weather() {
   const [slicedData, setSlicedData] = useState(null);
@@ -10,6 +12,8 @@ function Weather() {
   const [icons, setIcons] = useState(null);
 
   const arr = [1, 2, 3, 4, 5, 6];
+
+  const snowData = useSelector((state) => state.snowData.value);
 
   const { daysArray } = useDayData();
 
@@ -54,8 +58,19 @@ function Weather() {
       <div>
         <ContentIntroduction
           title="Wetter"
-          text="Informieren Sie sich über das aktuelle Wetter im Skigebiet Mürren - Schilthorn."
+          text="Informieren Sie sich über das aktuelle Wetter und den Schneezustand im Skigebiet Mürren - Schilthorn."
         />
+
+        <div className="mb-8">
+          <ul>
+            <li>Lawinenwarnstufe: {snowData.avalancheRisk.level } ({snowData.avalancheRisk.name})</li>
+            <li>Neuschnee seit 24h: {snowData.peakSnow.last24hInCm} cm</li>
+            <li>Schneehöhe Berg: {snowData.peakSnow.heightInCm} cm</li>
+            <li>Schneehöhe Tal: {snowData.valleySnow.heightInCm} cm</li>
+            <li>Schneequalität: {snowData.peakSnow.condition}</li>
+          </ul>
+        </div>
+
         <div className="grid grid-cols-1 tablet:grid-cols-6 gap-4">
           <div className="bg-white/20 grid-cols-6 tablet:col-span-2 ">
             {slicedData && (

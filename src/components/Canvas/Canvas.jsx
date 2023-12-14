@@ -1,5 +1,6 @@
-import { Canvas as R3fCanvas } from "@react-three/fiber";
+import { Canvas as R3fCanvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Detailed } from '@react-three/drei';
+import { useEffect } from "react";
 
 //component imports
 import Light from "./Light";
@@ -12,9 +13,11 @@ import Lifts from "../Models/Lifts";
 import Slopes from "../Models/Slopes";
 import Huts from "../Models/Huts";
 import EasterEgg from "../Models/EasterEgg";
+import Loading from "./Loading";
 
 
-const Canvas = () => {
+const Canvas = ({setLoading}) => {
+
     return ( 
         <div className="absolute canvas-container h-screen w-screen bg-darkblue z-[-1]">
             <R3fCanvas 
@@ -49,6 +52,7 @@ const Canvas = () => {
                     maxPolarAngle={Math.PI * 0.45}
                     target={[0,0,-637.425]} // changed y position since scene is not in center
                 />
+                <Loading setLoading={setLoading} />
             </R3fCanvas>
         </div>
      );

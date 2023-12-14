@@ -10,10 +10,14 @@ import audioService from "./services/audioService";
 import { toggleVolume } from "./store/volume/volumeState";
 import { useSelector, useDispatch } from "react-redux";
 
+import { useState } from "react";
+import Loading from "./components/Loading/Loading";
+
 function App() {
   useAPIData();
 
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
 
   const musicStatus = useSelector((state) => state.music.value);
 
@@ -37,9 +41,10 @@ function App() {
       >
         <MusicBadge />
       </div>
+      <Loading loading={loading} />
       <SideBar />
       <TabBar />
-      <Canvas />
+      <Canvas setLoading={(bool) => setLoading(bool)}/>
      
 
       <Tutorial />

@@ -9,13 +9,14 @@ import { LiftType } from "../Models/Lifts";
 
 // https://www.skiresort.ch/skigebiet/schilthorn-muerrenlauterbrunnen/liftebahnen/
 
-function ToolTipLifts({ handle, lift }) {
+function ToolTipLifts({ handle, lift,setFocusObject, meshRef  }) {
   const ICON_CLASSES = "w-4 h-auto fill-white";
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
     setOpen(!open);
     handle(lift.name)
+    setFocusObject(meshRef);
   };
 
   const getPlantIcon = (liftType) => {

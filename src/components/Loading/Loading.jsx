@@ -18,8 +18,7 @@ const Loading = ({loading}) => {
 
     return ( 
         <div className={`w-screen h-screen absolute grid place-items-center bg-white z-[10000] ${loading ? "block" : "hidden"}`} >
-            <div className="w-max h-max grid place-items-center">
-                {/*<img src={LoadingGIF} alt="Loading GIF" />*/}
+            <div className="tablet:w-max h-max grid place-items-center">
                 <img onLoad={rotate} className="transition-all ease-linear duration-[10000ms] max-w-[50%] pr-[35px]" ref={ref} src={LoadingIMG} alt="Loading GIF" />
                 <p className="text-black w-full text-center mt-[20px]">Loading...</p>
             </div>

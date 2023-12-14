@@ -13,6 +13,7 @@ import Lifts from "../Models/Lifts";
 import Slopes from "../Models/Slopes";
 import Huts from "../Models/Huts";
 import EasterEgg from "../Models/EasterEgg";
+import Loading from "./Loading";
 
 
 const Canvas = ({setLoading}) => {

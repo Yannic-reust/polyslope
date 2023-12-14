@@ -32,7 +32,6 @@ function Weather() {
       case "HARD":
       case "HARD_POWDER":
       case "HARD_WET":
-      case "HARD_WET":
       case "HARD_ASPIC":
         return SnowConditions.HARD
       case "WET":

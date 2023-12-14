@@ -1,0 +1,26 @@
+.contentRestaurant {
+    transform: translate3d(-50%, -150%, 0);
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    background-color: #4e82b5;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 180px;
+    width: auto;
+    white-space: nowrap;
+}
+
+.contentRestaurant::before {
+    content: "";
+    position: absolute;
+    transform: translateY(100%);
+    bottom: 0;
+    z-index: 1;
+    height: 50%;
+    width: 2px;
+    background-color: #4e82b5;
+}

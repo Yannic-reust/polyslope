@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
-import About from "../About/About";
-import NavItem from "../SideBar/NavItem";
 import CableCarSVG from "../../assets/icons/cable-car.svg?react";
 import FoodSVG from "../../assets/icons/food.svg?react";
 import WheatherSVG from "../../assets/iconsWeather/weather-sunny-cloudy.svg?react";
 import FilterSVG from "../../assets/icons/filter.svg?react";
 import InfoSVG from "../../assets/icons/info.svg?react";
 import MenuSVG from "../../assets/icons/menu-lined.svg?react"
+import CloseSVG from "../../assets/icons/close.svg?react";
+
+import About from "../About/About";
 import NavItemMobile from "./NavItemMobile";
 import Plants from "../Plants/Plants";
 import Restaurants from "../Restaurants/Restaurants";
 import InsideNav from "./InsideNav";
 import Weather from "../Weather/Weather";
+import Settings from "../Settings/Settings";
 
 const TabBar = () => {
     const [ page, setPage ] = useState('');
@@ -24,7 +26,7 @@ const TabBar = () => {
 
     const menuItems = [
         {
-            title: "Plants",
+            title: "Anlagen",
             icon: <CableCarSVG className={NAV_ICON_CLASSES} />,
         },
         {
@@ -32,15 +34,15 @@ const TabBar = () => {
             icon: <FoodSVG className={NAV_ICON_CLASSES} />,
         },
         {
-            title: "Weather",
+            title: "Wetter",
             icon: <WheatherSVG className={NAV_ICON_CLASSES} />,
         },
         {
-            title: "More",
+            title: "Mehr",
             icon: <MenuSVG className={NAV_ICON_CLASSES} />,
             childItems: [
-                { title: "Filter", icon: <FilterSVG className={INSIDE_NAV_ICON_CLASSES} /> },
-                { title: "About", icon: <InfoSVG className={INSIDE_NAV_ICON_CLASSES} /> },
+                { title: "Einstellungen", icon: <FilterSVG className={INSIDE_NAV_ICON_CLASSES} /> },
+                { title: "Info", icon: <InfoSVG className={INSIDE_NAV_ICON_CLASSES} /> },
             ]
         },
       ];
@@ -81,8 +83,9 @@ const TabBar = () => {
     return ( 
         <div className={`fixed visible tablet:hidden flex flex-col w-screen h-screen pointer-events-none`}>
 
-            <div className={`flex flex-shrink-0 items-center justify-center h-16 w-full font-karmina bg-darkblue border-b border-white transition duration-300 ease-in-out ${ open ? "visible opacity-100" : "invisible opacity-0" }`}>
+            <div className={`flex flex-shrink-0 items-center justify-center h-16 w-full pointer-events-auto font-karmina bg-darkblue border-b border-white transition duration-300 ease-in-out ${ open ? "visible opacity-100" : "invisible opacity-0" }`}>
                 <h2 className="text-h-sm text-center">{ page }</h2>
+                <CloseSVG onClick={ () => setOpen(false) } className={`absolute cursor-pointer right-5 fill-white w-5 max-h-5`} />
             </div>
 
             <div className={`content w-full h-full overflow-y-scroll mb-20 pointer-events-auto p-5 backdrop-blur backdrop-brightness-90 bg-darkblue/80 transition duration-300 ease-in-out ${ open ? "visible opacity-100" : "invisible opacity-0" } `}>
@@ -96,13 +99,15 @@ const TabBar = () => {
                 }
 
                 { /* main content */ }
-                { page === 'Plants' && <Plants /> }
+                { page === 'Anlagen' && <Plants /> }
                 { page === 'Restaurants' && <Restaurants /> }
-                { page === 'Weather' && <Weather /> }   
+                { page === 'Wetter' && <Weather /> }   
 
                 { /* more content */ }
-                { page === 'More' && subPage === 'Filter' && <h1>Filter</h1> }
+
+                { page === 'More' && subPage === 'Filter' && <Settings /> }
                 { page === 'More' && subPage === 'About' && <About /> }
+
 
             </div>
 

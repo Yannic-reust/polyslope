@@ -105,8 +105,8 @@ const TabBar = () => {
 
                 { /* more content */ }
 
-                { page === 'More' && subPage === 'Filter' && <Settings /> }
-                { page === 'More' && subPage === 'About' && <About /> }
+                { page === 'Mehr' && subPage === 'Einstellungen' && <Settings /> }
+                { page === 'Mehr' && subPage === 'Info' && <About /> }
 
 
             </div>

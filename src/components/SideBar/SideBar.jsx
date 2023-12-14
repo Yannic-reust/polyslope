@@ -13,7 +13,7 @@ import Restaurants from "../Restaurants/Restaurants";
 import Weather from "../Weather/Weather";
 import Settings from "../Settings/Settings";
 
-const SideBar = () => {
+const SideBar = ({setFocusFromOutside}) => {
     const [ page, setPage ] = useState('');
     const [ open, setOpen ] = useState(false)
 
@@ -60,7 +60,7 @@ const SideBar = () => {
 
                 <div className="content w-[800px] p-10 overflow-auto">
                     { page === 'Info' &&  <About /> }
-                    { page === 'Anlagen' &&  <Plants /> }
+                    { page === 'Anlagen' &&  <Plants setFocusFromOutside={setFocusFromOutside} /> }
                     { page === 'Restaurants' &&  <Restaurants /> }
                     { page === 'Wetter' &&  <Weather /> }
                     { page === 'Einstellungen' &&  <Settings /> }

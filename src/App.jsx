@@ -9,11 +9,16 @@ import useAPIData from "./services/useAPIData";
 import audioService from "./services/audioService";
 import { toggleVolume } from "./store/volume/volumeState";
 import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
 
 import { useState } from "react";
 import Loading from "./components/Loading/Loading";
 
 function App() {
+const [focusFromOutside, setFocusFromOutside] = useState("");
+
+
+
   useAPIData();
 
   const dispatch = useDispatch();
@@ -22,7 +27,7 @@ function App() {
   const musicStatus = useSelector((state) => state.music.value);
 
   if (musicStatus == true) {
-    const tracks = ["./music/Calmness.mp3", "./music/SnowySilence.mp3"];
+    const tracks = [ "./music/SnowySilence.mp3","./music/Calmness.mp3"];
     audioService.initialize(tracks);
     audioService.play();
   } else {
@@ -41,10 +46,15 @@ function App() {
       >
         <MusicBadge />
       </div>
-      <Loading loading={loading} />
-      <SideBar />
+
+      <SideBar setFocusFromOutside={(obj) => setFocusFromOutside(obj)}/>
       <TabBar />
-      <Canvas setLoading={(bool) => setLoading(bool)}/>
+      <Canvas  focusFromOutside={focusFromOutside} setLoading={(bool) => setLoading(bool)}/>
+
+      <Loading loading={loading} />
+
+    
+
      
 
       <Tutorial />

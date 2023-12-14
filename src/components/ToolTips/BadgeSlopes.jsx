@@ -2,12 +2,13 @@ import "./BadgeSlopes.css";
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-function BadgeSlopes({ BadgeNumber, BageColor,Length,Status,Name,handle }) {
+function BadgeSlopes({ BadgeNumber, BageColor,Length,Status,Name,handle,setFocusObject, meshRef }) {
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
     setOpen(!open);
     handle(BadgeNumber)
+    setFocusObject(meshRef);
   };
 
   const PlantStatus = {

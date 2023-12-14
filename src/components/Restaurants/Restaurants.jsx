@@ -6,7 +6,7 @@ import ResturantSVG from "../../assets/icons/food.svg?react";
 import { useSelector } from "react-redux";
 import useCalcStatus from "../../services/useCalcStatus";
 
-function Restaurants() {
+function Restaurants({setFocusFromOutside}) {
   const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
 
   const restaurant = useSelector((state) => state.restaurant.value);
@@ -38,6 +38,7 @@ function Restaurants() {
             data={[{title:"", data:restaurant}]}
             camera={false}
             title={"Berg Restaurats"}
+            setFocusFromOutside={setFocusFromOutside}
           />
         </div>
       </div>

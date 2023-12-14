@@ -84,7 +84,6 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
         }}
         shadows
       >
-        <Trees />
 
         <CameraControls
           ref={controlerRef}
@@ -129,7 +128,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
         />
         <Trees allowShadow={allowShadow} />
         <Slopes
-          allowShadow={allowShadow}
+         
           refsToUse={slopesRefs}
           setFocusObject={(obj) => changeFocusObject(obj)}
         />

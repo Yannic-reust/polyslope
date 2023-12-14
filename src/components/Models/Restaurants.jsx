@@ -6,7 +6,7 @@ import ToolTipRestaurant from "../ToolTips/ToolTipRestaurant";
 
 export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
 
-  const restaurantShadow = true
+  const restaurantShadow = allowShadow.buildings;
   const [activeMesh, setActiveMesh] = useState(null);
   const { nodes, materials } = useGLTF(restaurants);
 

@@ -4,7 +4,9 @@ import { useFrame } from '@react-three/fiber'
 import { useRef, useState } from "react";
 
 
-const Light = () => {
+const Light = ({distance}) => {
+    const directionalLightRef = useRef();
+
     const [angle, setAngle] = useState(2);
     const state = useSelector((state) => state.sun.value);
 
@@ -18,19 +20,17 @@ const Light = () => {
         }
     })
    
-    let lightX = Math.sin(angle) * 500;
-    let lightY = Math.cos(angle) * 500;
+    let lightX = Math.sin(angle) * distance;
+    let lightY = Math.cos(angle) * distance;
 
     return ( 
         <>
 
-<directionalLight 
-               
+            <directionalLight 
                 position={[lightX, lightY, 0]}
                 intensity={2}
-                castShadow={false}
                 shadow-mapSize={4096}
-                
+                castShadow
                 shadow-camera-left={-4500}
                 shadow-camera-right={4500}
                 shadow-camera-top={4500}
@@ -39,12 +39,11 @@ const Light = () => {
             />
             <Sun position={[lightX, lightY, 0]}/>
             <directionalLight 
-                position={[0, 500, 0]} 
+                position={[0, distance, 0]} 
                 intensity={0.5}
                 color="#e8f0a5"
             />
             <ambientLight intensity={0.1} />
-            <Sun position={[lightX, lightY, -650]}/>
             {/* <directionalLight 
                 position={[lightPositionX[state], lightPositionY[state], 0]}
                 intensity={1}

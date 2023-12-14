@@ -1,7 +1,7 @@
 import "./Restaurants.css";
 import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import ContentSection from "../ContentSection/ContentSection";
-import ResturantSVG from "../../assets/icons/food.svg?react";
+import RestaurantsSVG from "../../assets/icons/food.svg?react";
 //import BarSVG from "../../assets/icons/beer.svg?react";
 import { useSelector } from "react-redux";
 import useCalcStatus from "../../services/useCalcStatus";
@@ -12,10 +12,10 @@ function Restaurants({setFocusFromOutside}) {
   const restaurant = useSelector((state) => state.restaurant.value);
   
   const restaurantText = {
-    title: "Resturants",
+    title: "Restaurants",
     text: `(${useCalcStatus(restaurant).openCount}/9 geöffnet)`,
     open: false,
-    icon: <ResturantSVG className={NAV_ICON_CLASSES} />,
+    icon: <RestaurantsSVG className={NAV_ICON_CLASSES} />,
   };
 
  /* const barsText = {

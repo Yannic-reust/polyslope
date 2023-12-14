@@ -11,6 +11,9 @@ import { toggleVolume } from "./store/volume/volumeState";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 
+import { useState } from "react";
+import Loading from "./components/Loading/Loading";
+
 function App() {
 const [focusFromOutside, setFocusFromOutside] = useState("");
 
@@ -19,6 +22,7 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
   useAPIData();
 
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
 
   const musicStatus = useSelector((state) => state.music.value);
 
@@ -42,9 +46,15 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
       >
         <MusicBadge />
       </div>
+
       <SideBar setFocusFromOutside={(obj) => setFocusFromOutside(obj)}/>
       <TabBar />
-      <Canvas  focusFromOutside={focusFromOutside}/>
+      <Canvas  focusFromOutside={focusFromOutside} setLoading={(bool) => setLoading(bool)}/>
+
+      <Loading loading={loading} />
+
+    
+
      
 
       <Tutorial />

@@ -1,12 +1,6 @@
-
 import { Canvas as R3fCanvas } from "@react-three/fiber";
-import { CameraControls, Detailed, OrbitControls } from "@react-three/drei";
+import { CameraControls, Detailed } from "@react-three/drei";
 import { useRef, useState } from "react";
-
-import { Canvas as R3fCanvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Detailed } from '@react-three/drei';
-import { useEffect } from "react";
-
 
 //component imports
 import SetUpControls from "./SetUpControls";
@@ -18,11 +12,10 @@ import Trees from "../Models/Trees";
 import Restaurants from "../Models/Restaurants";
 import Lifts from "../Models/Lifts";
 import Slopes from "../Models/Slopes";
-import Huts from "../Models/Huts";
+
 import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
 import Loading from "./Loading";
-
 
 //stores initial camera position to reset camera after focusing on an object
 const initialCameraPos = {
@@ -34,9 +27,7 @@ const initialCameraPos = {
   targetZ: -650,
 };
 
-
-const Canvas = ({ focusFromOutside,setLoading }) => {
-
+const Canvas = ({ focusFromOutside, setLoading }) => {
   //shadow settings
   const allowShadow = {
     trees: true,
@@ -148,11 +139,10 @@ const Canvas = ({ focusFromOutside,setLoading }) => {
           refList={refList}
           setFocusObject={(obj) => changeFocusObject(obj)}
         />
-  <Loading setLoading={setLoading} />
+        <Loading setLoading={setLoading} />
       </R3fCanvas>
     </div>
   );
 };
 
 export default Canvas;
-

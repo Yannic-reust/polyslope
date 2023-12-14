@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useFrame } from "@react-three/fiber";
 
 let fromOutside = false;
 
@@ -16,54 +15,72 @@ const FocusOnObject = ({
   }, [focusObject]);
 
   useEffect(() => {
-    fromOutside = true;
 
-    if (focusFromOutside == "Gimmeln") {
-      setFocusObject(refList.lifts[0]);
+    switch (focusFromOutside) {
+      case "Gimmeln":
+        setFocusObject(refList.lifts[0]);
+        fromOutside = true;
+        break;
+      case "Riggili":
+        setFocusObject(refList.lifts[1]);
+        fromOutside = true;
+        break;
+      case "Muttleren":
+        setFocusObject(refList.lifts[2]);
+        fromOutside = true;
+        break;
+      case "Kandahar":
+        setFocusObject(refList.lifts[3]);
+        fromOutside = true;
+        break;
+      case "Mürren - Allmendhubel":
+        setFocusObject(refList.lifts[4]);
+        fromOutside = true;
+        break;
+      case "Allmendhubel":
+        setFocusObject(refList.lifts[5]);
+        fromOutside = true;
+        break;
+      case "Almiboden":
+        setFocusObject(refList.lifts[6]);
+        fromOutside = true;
+        break;
+      case "Maulerhubel":
+        setFocusObject(refList.lifts[7]);
+        fromOutside = true;
+        break;
+      case "Winteregg":
+        setFocusObject(refList.lifts[8]);
+        fromOutside = true;
+        break;
+      case "Lauterbrunnen - Grütschalp":
+        setFocusObject(refList.lifts[9]);
+        fromOutside = true;
+        break;
+      case "Gimmelwald - Mürren":
+        setFocusObject(refList.lifts[10]);
+        fromOutside = true;
+        break;
+      case "Mürren - Birg":
+        setFocusObject(refList.lifts[11]);
+        fromOutside = true;
+        break;
+      case "Birg - Schilthorn":
+        setFocusObject(refList.lifts[12]);
+        fromOutside = true;
+        break;
+      case "Stechelberg - Gimmelwald":
+        setFocusObject(refList.lifts[13]);
+        fromOutside = true;
+        break;
+      case "Schiltgrat":
+        setFocusObject(refList.lifts[14]);
+        fromOutside = true;
+        break;
+     
+      
     }
-    if (focusFromOutside == "Riggili") {
-      setFocusObject(refList.lifts[1]);
-    }
-    if (focusFromOutside == "Muttleren") {
-      setFocusObject(refList.lifts[2]);
-    }
-    if (focusFromOutside == "Kandahar") {
-      setFocusObject(refList.lifts[3]);
-    }
-    if (focusFromOutside == "Mürren - Allmendhubel") {
-      setFocusObject(refList.lifts[4]);
-    }
-    if (focusFromOutside == "Allmendhubel") {
-      setFocusObject(refList.lifts[5]);
-    }
-    if (focusFromOutside == "Almiboden") {
-      setFocusObject(refList.lifts[6]);
-    }
-    if (focusFromOutside == "Maulerhubel") {
-      setFocusObject(refList.lifts[7]);
-    }
-    if (focusFromOutside == "Winteregg") {
-      setFocusObject(refList.lifts[8]);
-    }
-    if (focusFromOutside == "Lauterbrunnen - Grütschalp") {
-      setFocusObject(refList.lifts[9]);
-    }
-    if (focusFromOutside == "Gimmelwald - Mürren") {
-      setFocusObject(refList.lifts[10]);
-    }
-    if (focusFromOutside == "Mürren - Birg") {
-      setFocusObject(refList.lifts[11]);
-    }
-    if (focusFromOutside == "Birg - Schilthorn") {
-      setFocusObject(refList.lifts[12]);
-    }
-    if (focusFromOutside == "Stechelberg - Gimmelwald") {
-      setFocusObject(refList.lifts[13]);
-    }
-    if (focusFromOutside == "Schiltgrat") {
-      setFocusObject(refList.lifts[14]);
-    }
-   
+  
   }, [focusFromOutside]);
 
   //Focus camera on selected object

@@ -70,6 +70,8 @@ export default function Slopes(
   const moveUp = 5; // to remove z-fighting
 
   return (
+    <>
+    {tracks.length !== 0 && 
     <group position={[0, 0 + moveUp, 0]} {...props} dispose={null}>
       {slope.includes("Schwarz") ? (
         <group name="black-slopes">
@@ -1034,7 +1036,9 @@ export default function Slopes(
         ""
       )}
     </group>
-  );
+}</>);
+  
 }
 
 useGLTF.preload(slopes);
+

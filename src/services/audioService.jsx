@@ -10,6 +10,7 @@ class AudioService {
   initialize = (tracks) => {
     this.sound = new Howl({
       src: tracks,
+      loop: true,
       // Other options like volume, loop, etc.
     });
   };

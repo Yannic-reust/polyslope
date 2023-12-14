@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import lifts from "../../assets/gltf/lifts.glb";
 import ToolTipLifts from '../ToolTips/ToolTipLifts';
@@ -12,30 +12,28 @@ export const LiftType = {
   Drag: "Schlepplift"
 }
 
-export default function Lifts({allowShadow, refsToUse, setFocusObject}) {
+export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFromOutside }) {
   
   
   const liftShadow = allowShadow.buildings;
 
-
+  
 
   const { nodes, materials } = useGLTF(lifts)
   const [activeLift, setActiveLift] = useState(""); // which ToolTip is open
 
   // sets the active lift to open ToolTip
-  const handleOpen = (name,meshRef) => {
+  const handleOpen = (name) => {
     setActiveLift(name)
-    
 
   }
-
-
+  
  
   return (
     <group dispose={null}>
         <group ref={refsToUse[0]} name="Schiltgrad" position={[1254.171, 1945.201, 1642.685]}>
           <Html zIndexRange={[activeLift == "Schiltgrad" ? 100000000 : 16777271, 0]} >
-            <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[0]} lift={{ name: "Schiltgrad", type: LiftType.Chair, capacity: "4", length: "1522 m", hours: "09:00 - 16:30" }} />
+            <ToolTipLifts handle={handleOpen}  meshRef={refsToUse[0]} lift={{ name: "Schiltgrad", type: LiftType.Chair, capacity: "4", length: "1522 m", hours: "09:00 - 16:30" }} />
           </Html>
           <group name="Connection_Schiltgrad" position={[-1254.171, -1945.201, -1642.685]}>
             <group name="Cable-Bottom009" position={[2033.391, 1582.532, 1692.852]} />
@@ -77,7 +75,7 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject}) {
         </group>
       <group name="Gimmeln" ref={refsToUse[1]}  position={[1000.522, 1915.129, 2011.707]}>
         <Html zIndexRange={[activeLift == "Gimmeln" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[1]} lift={{ name: "Gimmeln", type: LiftType.Drag, capacity: "2", length: "1100 m", hours: "09:00 - 16:30" }} />
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside} setFocusObject={setFocusObject} meshRef={refsToUse[1]} lift={{ name: "Gimmeln", type: LiftType.Drag, capacity: "2", length: "1100 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Gimmeln" position={[-1000.522, -1915.129, -2011.707]}>
           <mesh name="Cable002" geometry={nodes.Cable002.geometry} material={materials['Material.008']} position={[1000.522, 1915.129, 2011.707]} />

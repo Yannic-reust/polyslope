@@ -26,7 +26,8 @@ const initialCameraPos = {
   targetZ: -650,
 };
 
-const Canvas = () => {
+const Canvas = ({ focusFromOutside }) => {
+
   //shadow settings
   const allowShadow = {
     trees: true,
@@ -37,7 +38,7 @@ const Canvas = () => {
   //focusObject, accepts ref of an element
   const [focusObject, setFocusObject] = useState(null);
   //focusFromOutside probably have to hardcode a refrence from the buildings and lifts ref to a sting
-  const [focusFromOutside, setFocusFromOutside] = useState(null);
+
   //if focus object already applied, remove focus object
   function changeFocusObject(obj) {
     if (obj == focusObject) {
@@ -65,7 +66,6 @@ const Canvas = () => {
     restaurants: restaurantRefs,
     lifts: liftRefs,
     slopes: slopesRefs,
-   
   };
 
   return (
@@ -97,10 +97,12 @@ const Canvas = () => {
           rotateSpeed={1}
         />
         <FocusOnObject
+          setFocusObject={(obj) => changeFocusObject(obj)}
           focusObject={focusObject}
           focusFromOutside={focusFromOutside}
           controls={controlerRef}
           initialCameraPos={initialCameraPos}
+          refList={refList}
         />
         <Light distance={9000} />
         <Detailed distances={[0, 4500, 6000]}>
@@ -122,6 +124,7 @@ const Canvas = () => {
           allowShadow={allowShadow}
           refsToUse={liftRefs}
           setFocusObject={(obj) => changeFocusObject(obj)}
+          focusFromOutside={focusFromOutside}
         />
         <Trees allowShadow={allowShadow} />
         <Slopes
@@ -133,7 +136,6 @@ const Canvas = () => {
           controls={controlerRef}
           initialCameraPos={initialCameraPos}
           focusObject={focusObject}
-          focusFromOutside={focusFromOutside}
           refList={refList}
           setFocusObject={(obj) => changeFocusObject(obj)}
         />

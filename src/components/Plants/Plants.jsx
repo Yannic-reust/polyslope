@@ -7,7 +7,7 @@ import useCalcStatus from "../../services/useCalcStatus";
 import { useSelector } from "react-redux";
 import { useState,useEffect } from "react";
 
-function Plants() {
+function Plants({setFocusFromOutside}) {
   const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
 
   const lift = useSelector((state) => state.lift.value);
@@ -62,7 +62,7 @@ function Plants() {
             item={liftsText}
             data={[{title:"Bergbahnen", data: lift}]}
             camera={false}
-         
+            setFocusFromOutside={setFocusFromOutside}
             height={520}
           />
         </div>

@@ -9,8 +9,13 @@ import useAPIData from "./services/useAPIData";
 import audioService from "./services/audioService";
 import { toggleVolume } from "./store/volume/volumeState";
 import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
 
 function App() {
+const [focusFromOutside, setFocusFromOutside] = useState("");
+
+
+
   useAPIData();
 
   const dispatch = useDispatch();
@@ -37,9 +42,9 @@ function App() {
       >
         <MusicBadge />
       </div>
-      <SideBar />
+      <SideBar setFocusFromOutside={(obj) => setFocusFromOutside(obj)}/>
       <TabBar />
-      <Canvas />
+      <Canvas  focusFromOutside={focusFromOutside}/>
      
 
       <Tutorial />

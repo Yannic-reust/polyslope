@@ -38,7 +38,7 @@ function Plants({setFocusFromOutside}) {
 
     const liftsText = {
     title: "Anlagen",
-    text: `(${useCalcStatus(lift).openCount}/19 geöffnet)`,
+    text: `(${useCalcStatus(lift).openCount}/14 geöffnet)`,
     open: false,
     icon: <CableCarVG className={NAV_ICON_CLASSES} />,
   };

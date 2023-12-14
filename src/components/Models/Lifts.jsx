@@ -31,9 +31,9 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
  
   return (
     <group dispose={null}>
-        <group ref={refsToUse[0]} name="Schiltgrad" position={[1254.171, 1945.201, 1642.685]}>
-          <Html zIndexRange={[activeLift == "Schiltgrad" ? 100000000 : 16777271, 0]} >
-            <ToolTipLifts handle={handleOpen}  meshRef={refsToUse[0]} lift={{ name: "Schiltgrad", type: LiftType.Chair, capacity: "4", length: "1522 m", hours: "09:00 - 16:30" }} />
+        <group ref={refsToUse[0]} name="Schiltgrat" position={[1254.171, 1945.201, 1642.685]}>
+          <Html zIndexRange={[activeLift == "Schiltgrat" ? 100000000 : 16777271, 0]} >
+            <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside} setFocusObject={setFocusObject}  meshRef={refsToUse[0]} lift={{ name: "Schiltgrat", type: LiftType.Chair, capacity: "4", length: "1522 m", hours: "09:00 - 16:30" }} />
           </Html>
           <group name="Connection_Schiltgrad" position={[-1254.171, -1945.201, -1642.685]}>
             <group name="Cable-Bottom009" position={[2033.391, 1582.532, 1692.852]} />
@@ -75,7 +75,7 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
         </group>
       <group name="Gimmeln" ref={refsToUse[1]}  position={[1000.522, 1915.129, 2011.707]}>
         <Html zIndexRange={[activeLift == "Gimmeln" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside} setFocusObject={setFocusObject} meshRef={refsToUse[1]} lift={{ name: "Gimmeln", type: LiftType.Drag, capacity: "2", length: "1100 m", hours: "09:00 - 16:30" }} />
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside} setFocusObject={setFocusObject}  meshRef={refsToUse[1]} lift={{ name: "Gimmeln", type: LiftType.Drag, capacity: "2", length: "1100 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Gimmeln" position={[-1000.522, -1915.129, -2011.707]}>
           <mesh name="Cable002" geometry={nodes.Cable002.geometry} material={materials['Material.008']} position={[1000.522, 1915.129, 2011.707]} />
@@ -89,7 +89,7 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
       </group>
       <group name="Riggli" ref={refsToUse[2]}  position={[-223.132, 2473.788, 604.987]}>
         <Html zIndexRange={[activeLift == "Riggli" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[2]} lift={{ name: "Riggli", type: LiftType.Chair, capacity: "4", length: "1001 m", hours: "09:00 - 16:30" }} />
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside} setFocusObject={setFocusObject}  meshRef={refsToUse[2]} lift={{ name: "Riggli", type: LiftType.Chair, capacity: "4", length: "1001 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Riggli" position={[223.132, -2473.788, -604.987]}>
           <group name="Cable-Bottom006" position={[-50.918, 2331.259, 312.306]} />
@@ -116,7 +116,7 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
       </group>
       <group name="Muttleren" ref={refsToUse[3]}  position={[225.145, 2298.642, 322.65]}>
         <Html zIndexRange={[activeLift == "Muttleren" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[3]} lift={{ name: "Muttleren", type: LiftType.Chair, capacity: "2", length: "563 m", hours: "09:00 - 16:30" }} />
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside} setFocusObject={setFocusObject}  meshRef={refsToUse[3]} lift={{ name: "Muttleren", type: LiftType.Chair, capacity: "2", length: "563 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Muttleren" position={[-225.145, -2298.642, -322.65]}>
           <group name="Cable-Bottom007" position={[364.428, 2196.587, 525.701]} />
@@ -138,7 +138,7 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
       </group>
       <group name="Kandahar" ref={refsToUse[4]} position={[769.546, 2272.899, 260.332]}>
         <Html zIndexRange={[activeLift == "Kandahar" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[4]} lift={{ name: "Kandahar", type: LiftType.Chair, capacity: "2", length: "1001 m", hours: "09:00 - 16:30" }} />
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[4]} lift={{ name: "Kandahar", type: LiftType.Chair, capacity: "2", length: "1001 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Kandahar" position={[-769.546, -2272.899, -260.332]}>
           <group name="Cable-Bottom008" position={[983.886, 2156.163, 317.211]} />
@@ -163,9 +163,9 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
           <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
         </group>
       </group>
-      <group name="Mürren-Allmendhubel" ref={refsToUse[5]} position={[2108.395, 1737.734, 1079.673]}>
-        <Html zIndexRange={[activeLift == "Mürren-Allmendhubel" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[5]}  lift={{ name: "Mürren-Allmendhubel", type: LiftType.Tram, capacity: "65", length: "551 m", hours: "09:00 - 17:00" }} />
+      <group name="Mürren - Allmendhubel" ref={refsToUse[5]} position={[2108.395, 1737.734, 1079.673]}>
+        <Html zIndexRange={[activeLift == "Mürren - Allmendhubel" ? 100000000 : 16777271, 0]} >
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[5]}  lift={{ name: "Mürren - Allmendhubel", type: LiftType.Tram, capacity: "65", length: "551 m", hours: "09:00 - 17:00" }} />
         </Html>
         <group name="Connection_Mürren-Allmendhubel" position={[-2108.395, -1737.734, -1079.673]}>
           <group name="Cable-Bottom001" position={[2221.532, 1616.309, 1237.213]} />
@@ -187,7 +187,7 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
       </group>
       <group name="Allmendhubel" ref={refsToUse[6]} position={[1913.083, 1872.925, 835.692]}>
         <Html zIndexRange={[activeLift == "Allmendhubel" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[6]} lift={{ name: "Allmendhubel", type: LiftType.Drag, capacity: "1", length: "239 m", hours: "09:00 - 16:30" }} />
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[6]} lift={{ name: "Allmendhubel", type: LiftType.Drag, capacity: "1", length: "239 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Allmendhubel" position={[-1913.083, -1872.925, -835.692]}>
           <group name="Cable-Bottom015" position={[2038.584, 1849.471, 822.441]} />
@@ -197,9 +197,9 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
         <mesh name="Allmendhubel_Bottom" geometry={nodes.Allmendhubel_Bottom.geometry} material={materials['silver.003']} position={[126.093, -44.952, -13.232]} rotation={[Math.PI, -0.078, Math.PI]} scale={2} />
         <mesh name="Allmendhubel_Top" geometry={nodes.Allmendhubel_Top.geometry} material={materials['silver.003']} position={[-126.083, 1.898, 13.356]} rotation={[0, 0.078, 0]} scale={2} />
       </group>
-      <group name="Allmiboden" ref={refsToUse[7]} position={[1854.261, 1832.072, 719.743]}>
-        <Html zIndexRange={[activeLift == "Stechelberg-Gimmelwald" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[7]} lift={{ name: "Stechelberg-Gimmelwald", type: LiftType.Chair, capacity: "2", length: "300 m", hours: "09:00 - 16:30" }} />
+      <group name="Almiboden" ref={refsToUse[7]} position={[1854.261, 1832.072, 719.743]}>
+        <Html zIndexRange={[activeLift == "Almiboden" ? 100000000 : 16777271, 0]} >
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[7]} lift={{ name: "Almiboden", type: LiftType.Chair, capacity: "2", length: "300 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Allmidboden" position={[-1854.261, -1832.072, -719.743]}>
           <group name="Cable-Bottom004" position={[1906.819, 1768.217, 636.226]} />
@@ -226,7 +226,7 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
       </group>
       <group name="Maulerhubel" position={[1884.768, 1869.85, 335.395]} ref={refsToUse[8]}>
         <Html zIndexRange={[activeLift == "Maulerhubel" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[8]} lift={{ name: "Maulerhubel", type: LiftType.Chair, capacity: "2", length: "519 m", hours: "09:00 - 16:30" }} />
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[8]} lift={{ name: "Maulerhubel", type: LiftType.Chair, capacity: "2", length: "519 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Maulerhubel" position={[-1884.768, -1869.85, -335.395]}>
           <group name="Cable-Bottom003" position={[1957.09, 1767.881, 596.766]} />
@@ -253,7 +253,7 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
       </group>
       <group name="Winteregg" position={[2127.418, 1770.693, -469.038]} ref={refsToUse[9]}>
         <Html zIndexRange={[activeLift == "Winteregg" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[9]} lift={{ name: "Winteregg", type: LiftType.Chair, capacity: "4", length: "1386 m", hours: "09:00 - 16:30" }} />
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[9]} lift={{ name: "Winteregg", type: LiftType.Chair, capacity: "4", length: "1386 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Winteregg" position={[-2127.418, -1770.693, 469.038]}>
           <group name="Cable-Bottom005" position={[2421.388, 1542.816, -1038.767]} />
@@ -278,9 +278,9 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
           <mesh name="tower-single-mesh_2" geometry={nodes['tower-single-mesh_2'].geometry} material={materials['dark-silver.002']} />
         </group>
       </group>
-      <group name="Lauterbrunnen-Grütschalp" position={[2668.008, 1106.142, -2902.455]} ref={refsToUse[10]}>
-        <Html zIndexRange={[activeLift == "Lauterbrunnen-Grütschalp" ? 100000000 : 16777271, 0]}  >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[10]} lift={{ name: "Lauterbrunnen-Grütschalp", type: LiftType.Gondola, capacity: "100", length: "1432 m", hours: "09:00 - 16:30" }} />
+      <group name="Lauterbrunnen - Grütschalp" position={[2668.008, 1106.142, -2902.455]} ref={refsToUse[10]}>
+        <Html zIndexRange={[activeLift == "Lauterbrunnen - Grütschalp" ? 100000000 : 16777271, 0]}  >
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[10]} lift={{ name: "Lauterbrunnen - Grütschalp", type: LiftType.Gondola, capacity: "100", length: "1432 m", hours: "09:00 - 16:30" }} />
         </Html>
         <group name="Connection_Lauterbrunnen-Grütschalp" position={[-2668.008, -1106.142, 2902.455]}>
           <group name="Cable-Bottom010" position={[3287.64, 762.449, -3046.012]} />
@@ -307,9 +307,9 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
           <mesh name="gondolastation-mesh_3" geometry={nodes['gondolastation-mesh_3'].geometry} material={materials.sliver} />
         </group>
       </group>
-      <group name="Gimmelwald-Mürren" position={[2179.761, 1467.188, 2160.75]} ref={refsToUse[11]}>
-        <Html zIndexRange={[activeLift == "Gimmelwald-Mürren" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[11]} lift={{ name: "Gimmelwald-Mürren", type: LiftType.Gondola, capacity: "100", length: "1198 m", hours: "08:30 - 16:30" }} />
+      <group name="Gimmelwald - Mürren" position={[2179.761, 1467.188, 2160.75]} ref={refsToUse[11]}>
+        <Html zIndexRange={[activeLift == "Gimmelwald - Mürren" ? 100000000 : 16777271, 0]} >
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[11]} lift={{ name: "Gimmelwald - Mürren", type: LiftType.Gondola, capacity: "100", length: "1198 m", hours: "08:30 - 16:30" }} />
         </Html>
         <group name="Connection_Gimmelwald-Mürren" position={[-2179.761, -1467.188, -2160.75]}>
           <group name="Cable-Bottom012" position={[2255.797, 1337.189, 2742.378]} />
@@ -336,9 +336,9 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
           <mesh name="gondola-mesh-flat_4" geometry={nodes['gondola-mesh-flat_4'].geometry} material={materials['white.003']} />
         </group>
       </group>
-      <group name="Mürren-Birg" position={[812.659, 2119.946, 1316.6]} ref={refsToUse[12]}>
-        <Html zIndexRange={[activeLift == "Mürren-Birg" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[12]}  lift={{ name: "Mürren-Birg", type: LiftType.Gondola, capacity: "75", length: "2780 m", hours: "08:30 - 16:30" }} />
+      <group name="Mürren - Birg" position={[812.659, 2119.946, 1316.6]} ref={refsToUse[12]}>
+        <Html zIndexRange={[activeLift == "Mürren - Birg" ? 100000000 : 16777271, 0]} >
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[12]}  lift={{ name: "Mürren - Birg", type: LiftType.Gondola, capacity: "75", length: "2780 m", hours: "08:30 - 16:30" }} />
         </Html>
         <group name="Connection_Mürren-Birg" position={[-812.659, -2119.946, -1316.6]}>
           <group name="Cable-Bottom013" position={[2067, 1604.069, 1541.511]} />
@@ -365,9 +365,9 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
           <mesh name="gondolastation-mesh_3" geometry={nodes['gondolastation-mesh_3'].geometry} material={materials.sliver} />
         </group>
       </group>
-      <group name="Birg-Schilthorn" position={[-1392.33, 2783.364, 1380.52]} ref={refsToUse[13]}>
-        <Html zIndexRange={[activeLift == "Birg-Schilthorn" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[13]}  lift={{ name: "Birg-Schilthorn", type: LiftType.Gondola, capacity: "100", length: "1766 m", hours: "08:30 - 16:30" }} />
+      <group name="Birg - Schilthorn" position={[-1392.33, 2783.364, 1380.52]} ref={refsToUse[13]}>
+        <Html zIndexRange={[activeLift == "Birg - Schilthorn" ? 100000000 : 16777271, 0]} >
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[13]}  lift={{ name: "Birg - Schilthorn", type: LiftType.Gondola, capacity: "100", length: "1766 m", hours: "08:30 - 16:30" }} />
         </Html>
         <group name="Connection_Birg-Schilthorn" position={[1392.33, -2783.364, -1380.52]}>
           <group name="Cable-Bottom014" position={[-603.522, 2636.906, 1124.383]} />
@@ -388,9 +388,9 @@ export default function Lifts({allowShadow, refsToUse, setFocusObject, focusFrom
           <mesh name="gondola-mesh-flat_4" geometry={nodes['gondola-mesh-flat_4'].geometry} material={materials['white.003']} />
         </group>
       </group>
-      <group name="Stechelberg-Gimmelwald" position={[2599.527, 1083.709, 2283.661]} ref={refsToUse[14]}>
-        <Html zIndexRange={[activeLift == "Stechelberg-Gimmelwald" ? 100000000 : 16777271, 0]} >
-          <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[14]}  lift={{ name: "Stechelberg-Gimmelwald", type: LiftType.Gondola, capacity: "100", length: "1188 m", hours: "08:30 - 16:30" }} />
+      <group name="Stechelberg - Gimmelwald" position={[2599.527, 1083.709, 2283.661]} ref={refsToUse[14]}>
+        <Html zIndexRange={[activeLift == "Stechelberg - Gimmelwald" ? 100000000 : 16777271, 0]} >
+          <ToolTipLifts handle={handleOpen} focusFromOutside={focusFromOutside}  setFocusObject={setFocusObject} meshRef={refsToUse[14]}  lift={{ name: "Stechelberg - Gimmelwald", type: LiftType.Gondola, capacity: "100", length: "1188 m", hours: "08:30 - 16:30" }} />
         </Html>
         <group name="Connection_Stechelberg-Gimmelwald" position={[-2599.527, -1083.709, -2283.661]}>
           <group name="Cable-Bottom011" position={[2900.822, 827.203, 1852.812]} />

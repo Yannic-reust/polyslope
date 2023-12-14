@@ -9,7 +9,7 @@ const AnimationsBadge = () => {
   return (
     <>
       <div
-        className="w-20 h-20 rounded-full bg-white/20 flex justify-center items-center p-4 cursor-pointer"
+        className="w-14 h-14 tablet:w-20 tablet:h-20 rounded-full bg-white/20 flex justify-center items-center p-4 cursor-pointer"
       >
         {!active && <AudioOnSVG className="w-8" />}
         {active && <AudioOffSVG className="w-8 translate-y-[-2px]" />}

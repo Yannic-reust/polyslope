@@ -32,7 +32,7 @@ function App() {
   return (
     <>
      <div
-        className="ml-8 absolute tablet:bottom-8 top-8 tablet:top-auto right-8 tablet:right-auto"
+        className="absolute top-5 right-5 tablet:ml-8 tablet:bottom-8 tablet:top-auto tablet:right-auto"
         onClick={() => mute()}
       >
         <MusicBadge />

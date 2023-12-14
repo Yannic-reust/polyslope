@@ -2,13 +2,14 @@ import "./ToolTipRestaurant.css";
 import { useState } from "react";
 import FoodSVG from "../../assets/icons/food.svg?react";
 
-function ToolTipRestaurant({ handle, restaurant }) {
+function ToolTipRestaurant({ handle, restaurant, setFocusObject, meshRef }) {
   const ICON_CLASSES = "w-3 h-auto fill-white";
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
     setOpen(!open);
     handle(restaurant.name)
+    setFocusObject(meshRef);
   };
 
   return (

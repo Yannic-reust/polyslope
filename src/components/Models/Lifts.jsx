@@ -12,7 +12,7 @@ export const LiftType = {
   Drag: "Schlepplift"
 }
 
-export default function Lifts(props) {
+export default function Lifts({allowShadow, refsToUse, setFocusObject}) {
   const { nodes, materials } = useGLTF(lifts)
   const [activeLift, setActiveLift] = useState(""); // which ToolTip is open
 
@@ -21,11 +21,19 @@ export default function Lifts(props) {
     setActiveLift(name)
   }
 
+  const liftShadow = allowShadow.buildings;
+
+
+
+
+
+
+
   return (
-    <group {...props} dispose={null}>
-        <group name="Schiltgrad" position={[1254.171, 1945.201, 1642.685]}>
+    <group  dispose={null}>
+        <group name="Schiltgrad" ref={refsToUse[0]} position={[1254.171, 1945.201, 1642.685]}>
           <Html zIndexRange={[activeLift == "Schiltgrad" ? 100000000 : 16777271, 0]} >
-            <ToolTipLifts handle={handleOpen} lift={{ name: "Schiltgrad", type: LiftType.Chair, capacity: "4", length: "1522 m", hours: "09:00 - 16:30" }} />
+            <ToolTipLifts handle={handleOpen} setFocusObject={setFocusObject} meshRef={refsToUse[0]} lift={{ name: "Schiltgrad", type: LiftType.Chair, capacity: "4", length: "1522 m", hours: "09:00 - 16:30" }} />
           </Html>
           <group name="Connection_Schiltgrad" position={[-1254.171, -1945.201, -1642.685]}>
             <group name="Cable-Bottom009" position={[2033.391, 1582.532, 1692.852]} />

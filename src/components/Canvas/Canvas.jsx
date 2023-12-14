@@ -27,7 +27,7 @@ const initialCameraPos = {
   targetZ: -650,
 };
 
-const Canvas = ({ focusFromOutside, setLoading }) => {
+const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
   //shadow settings
   const allowShadow = {
     trees: true,
@@ -103,6 +103,7 @@ const Canvas = ({ focusFromOutside, setLoading }) => {
           controls={controlerRef}
           initialCameraPos={initialCameraPos}
           refList={refList}
+          setFocusFromOutside={setFocusFromOutside}
         />
         <Light distance={9000} />
         <Detailed distances={[0, 4500, 6000]}>

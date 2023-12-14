@@ -9,6 +9,7 @@ const FocusOnObject = ({
   initialCameraPos,
   focusFromOutside,
   refList,
+  setFocusFromOutside
 }) => {
   useEffect(() => {
     focus(focusObject, fromOutside);
@@ -85,7 +86,9 @@ const FocusOnObject = ({
 
   //Focus camera on selected object
   function focus(objRef, fromOutside) {
+
     if (objRef == null) {
+      setFocusFromOutside("")
       controls.current.setLookAt(
         initialCameraPos.x,
         initialCameraPos.y,

@@ -47,7 +47,7 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
 
       <SideBar setFocusFromOutside={(obj) => setFocusFromOutside(obj)}/>
       <TabBar />
-      <Canvas  focusFromOutside={focusFromOutside} setLoading={(bool) => setLoading(bool)}/>
+      <Canvas setFocusFromOutside={(obj) =>setFocusFromOutside(obj)} focusFromOutside={focusFromOutside} setLoading={(bool) => setLoading(bool)}/>
 
       <Loading loading={loading} />
 

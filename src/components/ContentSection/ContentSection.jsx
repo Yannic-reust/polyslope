@@ -43,7 +43,7 @@ const ContentSection = ({ item, camera, data, setFocusFromOutside }) => {
                   <p className="text-xl-4 font-medium text-1xl mt-6">{item.title}</p>
                   {item.data.map((item2, index) => (
                     <div
-                      className={`flex mt-2 justify-between w-full  p-2 trasition-all  duration-500 hover:bg-white/20`}
+                      className={`flex mt-2 justify-between w-full  p-2 trasition-all  duration-500 cursor-pointer hover:bg-white/20`}
                       key={index}
                       onClick={()=>setFocus(item2.name)}
                     >

@@ -6,6 +6,7 @@ import sunReducer from './sun/sunState'
 import restaurantReducer from './restaurant/restaurantState'
 import liftReducer from './lift/liftState'
 import trackReducer from './track/trackState'
+import snowDataReducer from './snowData/snowDataState'
 
 export default configureStore({
   reducer: {
@@ -18,6 +19,7 @@ export default configureStore({
     restaurant: restaurantReducer,
     lift: liftReducer,
     track: trackReducer,
+    snowData: snowDataReducer
 
   },
 })

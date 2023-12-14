@@ -1,5 +1,5 @@
 import { Canvas as R3fCanvas } from "@react-three/fiber";
-import { CameraControls, Detailed } from '@react-three/drei';
+import { CameraControls, Detailed,OrbitControls } from '@react-three/drei';
 import { useRef, useState } from "react";
 
 //component imports
@@ -12,8 +12,9 @@ import Trees from "../Models/Trees";
 import Restaurants from "../Models/Restaurants";
 import Lifts from "../Models/Lifts";
 import Slopes from "../Models/Slopes";
+import Huts from "../Models/Huts";
+import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
-
 
 //stores initial camera position to reset camera after focusing on an object
 const initialCameraPos = {
@@ -27,6 +28,7 @@ const initialCameraPos = {
 
 const Canvas = () => {
 
+  
     //shadow settings
     const allowShadow = {
         trees: true,
@@ -55,7 +57,7 @@ const Canvas = () => {
         restaurantRefs.push(useRef());
     }
     const liftRefs = [];
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 19; i++) {
         liftRefs.push(useRef());
     }
     const refList = {
@@ -69,19 +71,27 @@ const Canvas = () => {
                 camera={{
                     near: 5, // stops flickering when viewed from distance
                     far: 50000,
+                    
+                    minDistance: 3000,
+                    maxDistance: 300000,
                     position: [initialCameraPos.x, initialCameraPos.y, initialCameraPos.z]
                 }}
                 shadows
             >
+            
+                <Trees />
+         
+               
                 <CameraControls 
                     ref={controlerRef}
                     minDistance={3000} 
                     maxDistance={20000}
                     minPolarAngle={Math.PI * 0.2}
                     maxPolarAngle={Math.PI * 0.45}
+                    target={[0,0,-637.425]} // changed y position since scene is not in center
                     enableRotate
                     rotateSpeed={1}
-                    target={[0,0,-637.425]}
+                   
                 />
                 <FocusOnObject 
                     focusObject={focusObject} 

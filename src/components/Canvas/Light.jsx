@@ -1,60 +1,55 @@
-import { useRef, useState } from "react";
-import { useFrame } from '@react-three/fiber'
-
-//component imports
+import { useSelector } from "react-redux";
 import Sun from "./Sun";
+import { useFrame } from "@react-three/fiber";
+import { useRef, useState } from "react";
+
+const Light = () => {
+  const directionalLightRef = useRef();
 
 
-const Light = ({distance}) => {
+  const [angle, setAngle] = useState(2);
 
-    const directionalLightRef = useRef();
-    /*
-    //ligth helper
-    useHelper(directionalLightRef, DirectionalLightHelper, 50, "white");
-    */
+  useFrame(() => {
+    // setAngle(angle - 0.005);
+    if (angle > 0) {
+      setAngle(angle - 0.005);
+    }
+  });
 
-    const [angle, setAngle] = useState(2);
+  let lightX = Math.sin(angle) * 500;
+  let lightY = Math.cos(angle) * 500;
 
-    useFrame(() => {
-        if (angle > 0) {
-            setAngle(angle - 0.005);
-        }
-    })
+  const state = useSelector((state) => state.sun.value);
 
-    //calculate light position based of current time and sun position
-    /*
-    let date = new Date();
-    let time = date.getHours();
-    let angle = -((360 / 24) * time);
-    angle = 0;
-    */
-    let lightX = Math.sin(angle) * distance;
-    let lightY = Math.cos(angle) * distance;
+  const lightPositionX = ["8000", "4000", "0", "-6000", "-8000"];
+  const lightPositionY = ["2000", "8000", "8000", "8000", "6000"];
 
+  return (
+    <>
+      <directionalLight
+        position={[lightX, lightY, 0]}
+        intensity={2}
+        castShadow={false}
+        shadow-mapSize={4096}
+        shadow-camera-left={-4500}
+        shadow-camera-right={4500}
+        shadow-camera-top={4500}
+        shadow-camera-bottom={-4500}
+        shadow-camera-far={15000}
+      />
+      <directionalLight
+        position={[0, lightPositionY[state], 0]}
+        intensity={0.5}
+        color="#e8f0a5"
+      />
+      <ambientLight intensity={0.1} />
+      <Sun
+        position={[lightPositionX[state], lightPositionY[state], 0]}
+        intensity={1}
+        castShadow={false}
+      />
+    </>
+  );
+};
 
-
-    return ( 
-        <>
-            <directionalLight 
-                position={[lightX, lightY, 0]}
-                intensity={2}
-                shadow-mapSize={4096}
-                castShadow
-                shadow-camera-left={-4500}
-                shadow-camera-right={4500}
-                shadow-camera-top={4500}
-                shadow-camera-bottom={-4500}
-                shadow-camera-far={15000}
-            />
-            <directionalLight 
-                position={[0, distance, 0]} 
-                intensity={0.5}
-                color="#e8f0a5"
-            />
-            <ambientLight intensity={0.1} />
-            <Sun position={[lightX, lightY, -650]}/>
-        </>
-     );
-}
- 
 export default Light;

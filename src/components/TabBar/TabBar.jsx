@@ -13,6 +13,7 @@ import Plants from "../Plants/Plants";
 import Restaurants from "../Restaurants/Restaurants";
 import InsideNav from "./InsideNav";
 import Weather from "../Weather/Weather";
+import Settings from "../Settings/Settings";
 
 const TabBar = () => {
     const [ page, setPage ] = useState('');
@@ -103,8 +104,10 @@ const TabBar = () => {
                 { page === 'Wetter' && <Weather /> }   
 
                 { /* more content */ }
-                { page === 'Mehr' && subPage === 'Einstellungen' && <h1>Filter</h1> }
-                { page === 'Mehr' && subPage === 'Info' && <About /> }
+
+                { page === 'More' && subPage === 'Filter' && <Settings /> }
+                { page === 'More' && subPage === 'About' && <About /> }
+
 
             </div>
 

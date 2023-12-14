@@ -8,6 +8,7 @@ import liftReducer from './lift/liftState'
 import trackReducer from './track/trackState'
 import musicReducer from './music/musicState'
 import volumeReducer from './volume/volumeState'
+import firstTimeReducer from './firstTime/firstTimeState'
 
 export default configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export default configureStore({
     track: trackReducer,
     music: musicReducer,
     volume: volumeReducer,
+    firstTime: firstTimeReducer,
 
   },
 })

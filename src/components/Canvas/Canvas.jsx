@@ -74,9 +74,8 @@ const Canvas = () => {
         camera={{
           near: 5, // stops flickering when viewed from distance
           far: 50000,
-
-          minDistance: 3000,
-          maxDistance: 300000,
+          minDistance: 0,
+          maxDistance: 20000,
           position: [
             initialCameraPos.x,
             initialCameraPos.y,
@@ -89,8 +88,8 @@ const Canvas = () => {
 
         <CameraControls
           ref={controlerRef}
-          minDistance={3000}
-          maxDistance={20000}
+          minDistance={1000}
+          maxDistance={10000}
           minPolarAngle={Math.PI * 0.2}
           maxPolarAngle={Math.PI * 0.45}
           target={[0, 0, -637.425]} // changed y position since scene is not in center
@@ -108,6 +107,11 @@ const Canvas = () => {
           <LandscapeHigh allowShadow={allowShadow} />
           <LandscapeMed allowShadow={allowShadow} />
           <LandscapeLow allowShadow={allowShadow} />
+        </Detailed>
+        <Detailed distances={[0, 4500, 6000]}>
+          <EasterEgg />
+          <group></group>
+          <group></group>
         </Detailed>
         <Restaurants
           setFocusObject={(obj) => changeFocusObject(obj)}

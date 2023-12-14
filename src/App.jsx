@@ -18,7 +18,7 @@ function App() {
   const musicStatus = useSelector((state) => state.music.value);
 
   if (musicStatus == true) {
-    const tracks = ["./music/Calmness.mp3", "./music/SnowySilence.mp3"];
+    const tracks = [ "./music/SnowySilence.mp3","./music/Calmness.mp3"];
     audioService.initialize(tracks);
     audioService.play();
   } else {

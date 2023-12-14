@@ -30,6 +30,14 @@ const About = () => {
                 <li>Weitere Icons: <a className="text-accent" target="_blank" href="https://iconmonstr.com/">iconmonstr</a></li>
                 <li>Wetter Daten <a className="text-accent" target="_blank" href="https://open-meteo.com/">Open-Meteo.com</a></li>
             </ul>
+
+            <p className="text-p-lg mt-4">Hast du unser Easter Egg schon entdeckt? Dafür wurden folgende 3D-Modelle verwendet.</p>
+            <ul className="text-p-lg list-disc list-inside mt-2">
+                <li><a className="text-accent" target="_blank" href="https://poly.pizza/m/3Q7goR4wcNE">Surprised Santa</a> by Matt Connors <a className="text-accent" target="_blank" href="https://creativecommons.org/licenses/by/3.0/">[CC-BY]</a> via Poly Pizza</li>
+                <li><a className="text-accent" target="_blank" href="https://poly.pizza/m/3QKT0IHKALm">Santa Hat</a> by <a className="text-accent" target="_blank" href="https://poly.pizza/u/Joe%20Dorman">Joe Dorman</a> <a className="text-accent" target="_blank" href="https://creativecommons.org/licenses/by/3.0/">[CC-BY]</a> via Poly Pizza</li>
+                <li><a className="text-accent" target="_blank" href="https://poly.pizza/m/aVl3UrWiDg1">Snowman</a> by <a className="text-accent" target="_blank" href="https://poly.pizza/u/jeremy">jeremy</a> <a className="text-accent" target="_blank" href="https://creativecommons.org/licenses/by/3.0/">[CC-BY]</a> via Poly Pizza</li>
+                <li><a className="text-accent" target="_blank" href="https://poly.pizza/m/0lhfGJvD4dl">skis</a> by <a className="text-accent" target="_blank" href="https://poly.pizza/u/apelab">apelab</a> <a className="text-accent" target="_blank" href="https://creativecommons.org/licenses/by/3.0/">[CC-BY]</a> via Poly Pizza</li>
+            </ul>
         </div>
      );
 }

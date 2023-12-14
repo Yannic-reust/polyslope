@@ -76,13 +76,13 @@ export default function Slopes(props) {
     />
   );
 
-  function SlopeComp({ geometry, material, hovered, slopeMat }) {
+  function SlopeComp({ geometry, material, slopeMat }) {
     return (
       <Selection>
         <EffectComposer autoClear={false}>
           <Outline blur edgeStrength={10} />
         </EffectComposer>
-        <Select enabled={hovered}>
+        <Select enabled>
           <mesh geometry={geometry} material={material}>
             {slopeMat}
           </mesh>
@@ -121,12 +121,22 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-9"].geometry}
-            material={nodes["slope-9"].material}
-            hovered={activeSlope == 9}
-            slopeMat={BLACK_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 9 && (
+            <mesh
+              geometry={nodes["slope-9"].geometry}
+              material={nodes["slope-9"].material}
+            >
+              {BLACK_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 9 && (
+            <SlopeComp
+              geometry={nodes["slope-9"].geometry}
+              material={nodes["slope-9"].material}
+              slopeMat={BLACK_SLOPE_MATERIAL}
+            />
+          )}
         </group>
 
         <group
@@ -154,12 +164,21 @@ export default function Slopes(props) {
             />
           </Html>
 
-          <SlopeComp
-            geometry={nodes["slope-10"].geometry}
-            material={nodes["slope-10"].material}
-            hovered={activeSlope == 10}
-            slopeMat={BLACK_SLOPE_MATERIAL}
-          />
+          {activeSlope !== 10 && (
+            <mesh
+              geometry={nodes["slope-10"].geometry}
+              material={nodes["slope-10"].material}
+            >
+              {BLACK_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 10 && (
+            <SlopeComp
+              geometry={nodes["slope-10"].geometry}
+              material={nodes["slope-10"].material}
+              slopeMat={BLACK_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-12"
@@ -185,12 +204,22 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-12"].geometry}
-            material={nodes["slope-12"].material}
-            hovered={activeSlope == 12}
-            slopeMat={BLACK_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 12 && (
+            <mesh
+              geometry={nodes["slope-12"].geometry}
+              material={nodes["slope-12"].material}
+            >
+              {BLACK_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 12 && (
+            <SlopeComp
+              geometry={nodes["slope-12"].geometry}
+              material={nodes["slope-12"].material}
+              slopeMat={BLACK_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           position={[135.335, 2258.611, 328.573]}
@@ -217,12 +246,21 @@ export default function Slopes(props) {
             />
           </Html>
 
-          <SlopeComp
-            geometry={nodes["slope-14"].geometry}
-            material={nodes["slope-14"].material}
-            hovered={activeSlope == 14}
-            slopeMat={BLACK_SLOPE_MATERIAL}
-          />
+          {activeSlope !== 14 && (
+            <mesh
+              geometry={nodes["slope-14"].geometry}
+              material={nodes["slope-14"].material}
+            >
+              {BLACK_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 14 && (
+            <SlopeComp
+              geometry={nodes["slope-14"].geometry}
+              material={nodes["slope-14"].material}
+              slopeMat={BLACK_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-16"
@@ -248,12 +286,22 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-16"].geometry}
-            material={nodes["slope-16"].material}
-            hovered={activeSlope == 16}
-            slopeMat={BLACK_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 16 && (
+            <mesh
+              geometry={nodes["slope-16"].geometry}
+              material={nodes["slope-16"].material}
+            >
+              {BLACK_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 16 && (
+            <SlopeComp
+              geometry={nodes["slope-16"].geometry}
+              material={nodes["slope-16"].material}
+              slopeMat={BLACK_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-17"
@@ -279,12 +327,22 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-17"].geometry}
-            material={nodes["slope-17"].material}
-            hovered={activeSlope == 17}
-            slopeMat={BLACK_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 17 && (
+            <mesh
+              geometry={nodes["slope-17"].geometry}
+              material={nodes["slope-17"].material}
+            >
+              {BLACK_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 17 && (
+            <SlopeComp
+              geometry={nodes["slope-17"].geometry}
+              material={nodes["slope-17"].material}
+              slopeMat={BLACK_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-21"
@@ -310,12 +368,22 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-21"].geometry}
-            material={nodes["slope-21"].material}
-            hovered={activeSlope == 21}
-            slopeMat={BLACK_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 21 && (
+            <mesh
+              geometry={nodes["slope-21"].geometry}
+              material={nodes["slope-21"].material}
+            >
+              {BLACK_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 21 && (
+            <SlopeComp
+              geometry={nodes["slope-21"].geometry}
+              material={nodes["slope-21"].material}
+              slopeMat={BLACK_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-inferno"
@@ -341,12 +409,21 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-inferno"].geometry}
-            material={nodes["slope-inferno"].material}
-            hovered={activeSlope == "i"}
-            slopeMat={BLACK_SLOPE_MATERIAL}
-          />
+          {activeSlope !== "i" && (
+            <mesh
+              geometry={nodes["slope-inferno"].geometry}
+              material={nodes["slope-inferno"].material}
+            >
+              {BLACK_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == "i" && (
+            <SlopeComp
+              geometry={nodes["slope-inferno"].geometry}
+              material={nodes["slope-inferno"].material}
+              slopeMat={BLACK_SLOPE_MATERIAL}
+            />
+          )}
         </group>
       </group>
       {/* yellow slopes */}
@@ -378,12 +455,22 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-27"].geometry}
-            material={nodes["slope-27"].material}
-            hovered={activeSlope == "27"}
-            slopeMat={YELLOW_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 27 && (
+            <mesh
+              geometry={nodes["slope-27"].geometry}
+              material={nodes["slope-27"].material}
+            >
+              {YELLOW_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 27 && (
+            <SlopeComp
+              geometry={nodes["slope-27"].geometry}
+              material={nodes["slope-27"].material}
+              slopeMat={YELLOW_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-finel"
@@ -412,12 +499,21 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-finel"].geometry}
-            material={nodes["slope-finel"].material}
-            hovered={activeSlope == "F"}
-            slopeMat={YELLOW_SLOPE_MATERIAL}
-          />
+          {activeSlope !== "F" && (
+            <mesh
+              geometry={nodes["slope-finel"].geometry}
+              material={nodes["slope-finel"].material}
+            >
+              {YELLOW_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == "F" && (
+            <SlopeComp
+              geometry={nodes["slope-finel"].geometry}
+              material={nodes["slope-finel"].material}
+              slopeMat={YELLOW_SLOPE_MATERIAL}
+            />
+          )}
         </group>
       </group>
       {/* red slopes */}
@@ -446,12 +542,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-1"].geometry}
-            material={nodes["slope-1"].material}
-            hovered={activeSlope == "1"}
-            slopeMat={RED_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 1 && (
+            <mesh
+              geometry={nodes["slope-1"].geometry}
+              material={nodes["slope-1"].material}
+            >
+              {RED_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 1 && (
+            <SlopeComp
+              geometry={nodes["slope-1"].geometry}
+              material={nodes["slope-1"].material}
+              hovered={activeSlope == "1"}
+              slopeMat={RED_SLOPE_MATERIAL}
+            />
+          )}
         </group>
 
         <group
@@ -478,12 +585,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-3"].geometry}
-            material={nodes["slope-3"].material}
-            hovered={activeSlope == "3"}
-            slopeMat={RED_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 3 && (
+            <mesh
+              geometry={nodes["slope-3"].geometry}
+              material={nodes["slope-3"].material}
+            >
+              {RED_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 3 && (
+            <SlopeComp
+              geometry={nodes["slope-3"].geometry}
+              material={nodes["slope-3"].material}
+              hovered={activeSlope == "3"}
+              slopeMat={RED_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-5"
@@ -509,12 +627,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-5"].geometry}
-            material={nodes["slope-5"].material}
-            hovered={activeSlope == "5"}
-            slopeMat={RED_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 3 && (
+            <mesh
+              geometry={nodes["slope-5"].geometry}
+              material={nodes["slope-5"].material}
+            >
+              {RED_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 5 && (
+            <SlopeComp
+              geometry={nodes["slope-5"].geometry}
+              material={nodes["slope-5"].material}
+              hovered={activeSlope == "5"}
+              slopeMat={RED_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-13"
@@ -540,12 +669,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-13"].geometry}
-            material={nodes["slope-13"].material}
-            hovered={activeSlope == "13"}
-            slopeMat={RED_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 13 && (
+            <mesh
+              geometry={nodes["slope-13"].geometry}
+              material={nodes["slope-13"].material}
+            >
+              {RED_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 13 && (
+            <SlopeComp
+              geometry={nodes["slope-13"].geometry}
+              material={nodes["slope-13"].material}
+              hovered={activeSlope == "13"}
+              slopeMat={RED_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-15"
@@ -571,12 +711,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-15"].geometry}
-            material={nodes["slope-15"].material}
-            hovered={activeSlope == "15"}
-            slopeMat={RED_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 15 && (
+            <mesh
+              geometry={nodes["slope-15"].geometry}
+              material={nodes["slope-15"].material}
+            >
+              {RED_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 15 && (
+            <SlopeComp
+              geometry={nodes["slope-15"].geometry}
+              material={nodes["slope-15"].material}
+              hovered={activeSlope == "15"}
+              slopeMat={RED_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-22"
@@ -602,12 +753,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-22"].geometry}
-            material={nodes["slope-22"].material}
-            hovered={activeSlope == "22"}
-            slopeMat={RED_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 22 && (
+            <mesh
+              geometry={nodes["slope-22"].geometry}
+              material={nodes["slope-22"].material}
+            >
+              {RED_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 22 && (
+            <SlopeComp
+              geometry={nodes["slope-22"].geometry}
+              material={nodes["slope-22"].material}
+              hovered={activeSlope == "22"}
+              slopeMat={RED_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-24"
@@ -633,12 +795,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-24"].geometry}
-            material={nodes["slope-24"].material}
-            hovered={activeSlope == "24"}
-            slopeMat={RED_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 24 && (
+            <mesh
+              geometry={nodes["slope-24"].geometry}
+              material={nodes["slope-24"].material}
+            >
+              {RED_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 24 && (
+            <SlopeComp
+              geometry={nodes["slope-24"].geometry}
+              material={nodes["slope-24"].material}
+              hovered={activeSlope == "24"}
+              slopeMat={RED_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-25"
@@ -664,12 +837,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-25"].geometry}
-            material={nodes["slope-25"].material}
-            hovered={activeSlope == "25"}
-            slopeMat={RED_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 25 && (
+            <mesh
+              geometry={nodes["slope-25"].geometry}
+              material={nodes["slope-25"].material}
+            >
+              {RED_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 25 && (
+            <SlopeComp
+              geometry={nodes["slope-25"].geometry}
+              material={nodes["slope-25"].material}
+              hovered={activeSlope == "25"}
+              slopeMat={RED_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-26"
@@ -695,12 +879,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-26"].geometry}
-            material={nodes["slope-26"].material}
-            hovered={activeSlope == "26"}
-            slopeMat={RED_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 26 && (
+            <mesh
+              geometry={nodes["slope-26"].geometry}
+              material={nodes["slope-26"].material}
+            >
+              {RED_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 26 && (
+            <SlopeComp
+              geometry={nodes["slope-26"].geometry}
+              material={nodes["slope-26"].material}
+              hovered={activeSlope == "26"}
+              slopeMat={RED_SLOPE_MATERIAL}
+            />
+          )}
         </group>
       </group>
       {/* blue slopes */}
@@ -729,12 +924,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-2"].geometry}
-            material={nodes["slope-2"].material}
-            hovered={activeSlope == "2"}
-            slopeMat={BLUE_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 2 && (
+            <mesh
+              geometry={nodes["slope-2"].geometry}
+              material={nodes["slope-2"].material}
+            >
+              {BLUE_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 2 && (
+            <SlopeComp
+              geometry={nodes["slope-2"].geometry}
+              material={nodes["slope-2"].material}
+              hovered={activeSlope == "2"}
+              slopeMat={BLUE_SLOPE_MATERIAL}
+            />
+          )}
         </group>
         <group
           name="slope-4"
@@ -760,12 +966,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-4"].geometry}
-            material={nodes["slope-4"].material}
-            hovered={activeSlope == "4"}
-            slopeMat={BLUE_SLOPE_MATERIAL}
-          />
+
+          {activeSlope !== 4 && (
+            <mesh
+              geometry={nodes["slope-4"].geometry}
+              material={nodes["slope-4"].material}
+            >
+              {BLUE_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 4 && (
+            <SlopeComp
+              geometry={nodes["slope-4"].geometry}
+              material={nodes["slope-4"].material}
+              hovered={activeSlope == "4"}
+              slopeMat={BLUE_SLOPE_MATERIAL}
+            />
+          )}
         </group>
 
         <group
@@ -792,12 +1009,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-6"].geometry}
-            material={nodes["slope-6"].material}
-            hovered={activeSlope == "6"}
-            slopeMat={BLUE_SLOPE_MATERIAL}
-          />
+          {activeSlope !== 6 && (
+            <mesh
+              geometry={nodes["slope-6"].geometry}
+              material={nodes["slope-6"].material}
+            >
+              {BLUE_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 6 && (
+              <SlopeComp
+              geometry={nodes["slope-6"].geometry}
+              material={nodes["slope-6"].material}
+              hovered={activeSlope == "6"}
+              slopeMat={BLUE_SLOPE_MATERIAL}
+            
+           />
+          )}
         </group>
 
         <group
@@ -824,12 +1052,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-7"].geometry}
-            material={nodes["slope-7"].material}
-            hovered={activeSlope == "7"}
-            slopeMat={BLUE_SLOPE_MATERIAL}
-          />
+          {activeSlope !== 7 && (
+            <mesh
+              geometry={nodes["slope-7"].geometry}
+              material={nodes["slope-7"].material}
+            >
+              {BLUE_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 7 && (
+              <SlopeComp
+              geometry={nodes["slope-7"].geometry}
+              material={nodes["slope-7"].material}
+              hovered={activeSlope == "7"}
+              slopeMat={BLUE_SLOPE_MATERIAL}
+            
+           />
+          )}
         </group>
 
         <group
@@ -856,12 +1095,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-8"].geometry}
-            material={nodes["slope-8"].material}
-            hovered={activeSlope == "8"}
-            slopeMat={BLUE_SLOPE_MATERIAL}
-          />
+          {activeSlope !== 8 && (
+            <mesh
+              geometry={nodes["slope-8"].geometry}
+              material={nodes["slope-8"].material}
+            >
+              {BLUE_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 8 && (
+              <SlopeComp
+              geometry={nodes["slope-8"].geometry}
+              material={nodes["slope-8"].material}
+              hovered={activeSlope == "8"}
+              slopeMat={BLUE_SLOPE_MATERIAL}
+            
+           />
+          )}
         </group>
 
         <group
@@ -888,12 +1138,27 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-20"].geometry}
-            material={nodes["slope-20"].material}
-            hovered={activeSlope == "20"}
-            slopeMat={BLUE_SLOPE_MATERIAL}
-          />
+
+
+          {activeSlope !== 20 && (
+            <mesh
+              geometry={nodes["slope-20"].geometry}
+              material={nodes["slope-20"].material}
+            >
+              {BLUE_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 20 && (
+              <SlopeComp
+              geometry={nodes["slope-20"].geometry}
+              material={nodes["slope-20"].material}
+              hovered={activeSlope == "20"}
+              slopeMat={BLUE_SLOPE_MATERIAL}
+            
+           />
+          )}
+
+         
         </group>
 
         <group
@@ -920,12 +1185,25 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-23"].geometry}
-            material={nodes["slope-23"].material}
-            hovered={activeSlope == "23"}
-            slopeMat={BLUE_SLOPE_MATERIAL}
-          />
+          {activeSlope !== 23 && (
+            <mesh
+              geometry={nodes["slope-23"].geometry}
+              material={nodes["slope-23"].material}
+            >
+              {BLUE_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 23 && (
+              <SlopeComp
+              geometry={nodes["slope-23"].geometry}
+              material={nodes["slope-23"].material}
+              hovered={activeSlope == "23"}
+              slopeMat={BLUE_SLOPE_MATERIAL}
+            
+           />
+          )}
+
+        
         </group>
 
         <group
@@ -952,12 +1230,23 @@ export default function Slopes(props) {
               handle={handleOpen}
             />
           </Html>
-          <SlopeComp
-            geometry={nodes["slope-11"].geometry}
-            material={nodes["slope-11"].material}
-            hovered={activeSlope == "11"}
-            slopeMat={BLUE_SLOPE_MATERIAL}
-          />
+          {activeSlope !== 11 && (
+            <mesh
+              geometry={nodes["slope-11"].geometry}
+              material={nodes["slope-11"].material}
+            >
+              {BLUE_SLOPE_MATERIAL}
+            </mesh>
+          )}
+          {activeSlope == 11 && (
+              <SlopeComp
+              geometry={nodes["slope-11"].geometry}
+              material={nodes["slope-11"].material}
+              hovered={activeSlope == "11"}
+              slopeMat={BLUE_SLOPE_MATERIAL}
+            
+           />
+          )}
         </group>
       </group>
     </group>

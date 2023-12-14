@@ -56,26 +56,6 @@ function Plants() {
           title="Geöffnete Anlagen"
           text="Hier finden Sie eine Übersicht der aktuell geöffneten Anlagen."
         />
-        {/* <div className="mb-8">
-          <ul>
-            <li className="flex">
-              <p>Lawinenwarnstufe: </p>
-              <p className="ml-1">-</p>
-            </li>
-            <li className="flex">
-              <p>Neuschnee seit 24h: </p>
-              <p className="ml-1">0cm</p>
-            </li>
-            <li className="flex">
-              <p>Schneehöhe Berg (2970 m): </p>
-              <p className="ml-1">0cm</p>
-            </li>
-            <li className="flex">
-              <p>LSchneehöhe Tal (1638 m): </p>
-              <p className="ml-1">0cm</p>
-            </li>
-          </ul>
-        </div> */}
 
         <div className="">
           <ContentSection

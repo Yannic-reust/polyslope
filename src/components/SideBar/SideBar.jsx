@@ -37,33 +37,33 @@ const SideBar = () => {
                 <nav className="w-[100px] pt-10 pb-10 flex flex-col h-full bg-white/20 z-[999]">
                 <div className="flex flex-col space-y-5 items-center flex-grow-0 justify-start flex-1">
                     <div>
-                        <NavItem icon={<CableCarSVG className={NAV_ICON_CLASSES} />} title="Plants" togglePage={togglePage} page={page} open={open} />
+                        <NavItem icon={<CableCarSVG className={NAV_ICON_CLASSES} />} title="Anlagen" togglePage={togglePage} page={page} open={open} />
                     </div>
                     <div>
                         <NavItem icon={<FoodSVG className={NAV_ICON_CLASSES} />} title="Restaurants" togglePage={togglePage} page={page} open={open} />
                     </div>
                     <div>
-                        <NavItem icon={<WheatherSVG className={NAV_ICON_CLASSES} />} title="Weather" togglePage={togglePage} page={page} open={open} />
+                        <NavItem icon={<WheatherSVG className={NAV_ICON_CLASSES} />} title="Wetter" togglePage={togglePage} page={page} open={open} />
                     </div>
                 </div>
 
                 <div className="flex justify-center items-center flex-grow">
-                    <NavItem icon={<FilterSVG className={NAV_ICON_CLASSES} />} title="Settings" togglePage={togglePage} page={page} open={open} />
+                    <NavItem icon={<FilterSVG className={NAV_ICON_CLASSES} />} title="Einstellungen" togglePage={togglePage} page={page} open={open} />
                 </div>
 
                 <div className="flex items-end justify-center">
-                    <NavItem icon={<InfoSVG className={NAV_ICON_CLASSES} />} title="About" togglePage={togglePage} page={page} open={open} />
+                    <NavItem icon={<InfoSVG className={NAV_ICON_CLASSES} />} title="Info" togglePage={togglePage} page={page} open={open} />
                 </div>
                 </nav>
 
                 <CloseSVG onClick={ () => setOpen(false) } className={`absolute cursor-pointer top-10 right-10 fill-white w-6 max-h-6`} />
 
                 <div className="content w-[800px] p-10 overflow-auto">
-                    { page === 'About' &&  <About /> }
-                    { page === 'Plants' &&  <Plants /> }
+                    { page === 'Info' &&  <About /> }
+                    { page === 'Anlagen' &&  <Plants /> }
                     { page === 'Restaurants' &&  <Restaurants /> }
-                    { page === 'Weather' &&  <Weather /> }
-                    { page === 'Settings' &&  <Settings /> }
+                    { page === 'Wetter' &&  <Weather /> }
+                    { page === 'Einstellungen' &&  <Settings /> }
                 </div>
               
 

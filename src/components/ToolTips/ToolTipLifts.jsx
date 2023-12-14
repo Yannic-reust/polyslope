@@ -40,7 +40,7 @@ function ToolTipLifts({ handle, lift }) {
       <div className={`contentLift select-none ${open ? "lineLift" : ""}`} onClick={toggleOpen}>
         <div className="flex">
           {!open && getPlantIcon(lift.type ?? '')}
-          {open && <p className="ml-2 text-p-lg text-white">{lift.name ?? ''}</p>}
+          {open && <p className="text-p-md font-semibold text-center text-white">{lift.name}</p>}
         </div>
         {open && (
           <div>

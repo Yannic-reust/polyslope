@@ -26,7 +26,7 @@ const TabBar = () => {
 
     const menuItems = [
         {
-            title: "Plants",
+            title: "Anlagen",
             icon: <CableCarSVG className={NAV_ICON_CLASSES} />,
         },
         {
@@ -34,15 +34,15 @@ const TabBar = () => {
             icon: <FoodSVG className={NAV_ICON_CLASSES} />,
         },
         {
-            title: "Weather",
+            title: "Wetter",
             icon: <WheatherSVG className={NAV_ICON_CLASSES} />,
         },
         {
-            title: "More",
+            title: "Mehr",
             icon: <MenuSVG className={NAV_ICON_CLASSES} />,
             childItems: [
-                { title: "Filter", icon: <FilterSVG className={INSIDE_NAV_ICON_CLASSES} /> },
-                { title: "About", icon: <InfoSVG className={INSIDE_NAV_ICON_CLASSES} /> },
+                { title: "Einstellungen", icon: <FilterSVG className={INSIDE_NAV_ICON_CLASSES} /> },
+                { title: "Info", icon: <InfoSVG className={INSIDE_NAV_ICON_CLASSES} /> },
             ]
         },
       ];
@@ -99,13 +99,15 @@ const TabBar = () => {
                 }
 
                 { /* main content */ }
-                { page === 'Plants' && <Plants /> }
+                { page === 'Anlagen' && <Plants /> }
                 { page === 'Restaurants' && <Restaurants /> }
-                { page === 'Weather' && <Weather /> }   
+                { page === 'Wetter' && <Weather /> }   
 
                 { /* more content */ }
+
                 { page === 'More' && subPage === 'Filter' && <Settings /> }
                 { page === 'More' && subPage === 'About' && <About /> }
+
 
             </div>
 

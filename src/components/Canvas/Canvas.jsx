@@ -11,6 +11,7 @@ import Restaurants from "../Models/Restaurants";
 import Lifts from "../Models/Lifts";
 import Slopes from "../Models/Slopes";
 import Huts from "../Models/Huts";
+import EasterEgg from "../Models/EasterEgg";
 
 
 const Canvas = () => {
@@ -30,6 +31,11 @@ const Canvas = () => {
                     <LandscapeHigh />
                     <LandscapeMed />
                     <LandscapeLow />
+                </Detailed>
+                <Detailed distances={[0, 4500, 6000]}>
+                    <EasterEgg />
+                    <group></group>
+                    <group></group>
                 </Detailed>
                 <Restaurants />
                 <Lifts />

@@ -1,14 +1,17 @@
-import { Canvas as R3fCanvas } from "@react-three/fiber";
+import { Canvas as R3fCanvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Detailed } from '@react-three/drei';
+import { useEffect } from "react";
 
 //component imports
 import Light from "./Light";
 import LandscapeLow from "./LandscapeLow";
 import LandscapeMedium from "./LandscapeMedium";
 import LandscapeHigh from "./LandscapeHigh";
+import Loading from "./Loading";
 
 
-const Canvas = () => {
+const Canvas = ({setLoading}) => {
+
     return ( 
         <div className="absolute canvas-container h-screen w-screen bg-darkblue z-[-1]">
             <R3fCanvas 
@@ -31,6 +34,7 @@ const Canvas = () => {
                     minPolarAngle={Math.PI * 0.2}
                     maxPolarAngle={Math.PI * 0.45}
                 />
+                <Loading setLoading={setLoading} />
             </R3fCanvas>
         </div>
      );

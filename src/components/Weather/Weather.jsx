@@ -15,6 +15,62 @@ function Weather() {
 
   const snowData = useSelector((state) => state.snowData.value);
 
+  const SnowConditions = {
+    UNAVAILABLE: "unbekannt",
+    HARD: "hart",
+    WET: "nass",
+    POWDER: "pulver"
+  }
+
+  function getSnowCondition(status) {
+    switch(status) {
+      case "POWDER":
+      case "POWDER_HARD":
+      case "POWDER_WET":
+      case "POWDER_ASPIC":
+        return SnowConditions.POWDER
+      case "HARD":
+      case "HARD_POWDER":
+      case "HARD_WET":
+      case "HARD_WET":
+      case "HARD_ASPIC":
+        return SnowConditions.HARD
+      case "WET":
+      case "WET_POWDER":
+      case "WET_SPRING":
+      case "WET_HARD":
+        return SnowConditions.WET
+      default:
+        return SnowConditions.UNAVAILABLE
+    }
+  }
+
+  const AvalancheRisk = {
+    UNBEKANNT: "unbekannt",
+    GERING: "gering",
+    MAESSIG: "mässig",
+    ERHEBLICH: "erheblich",
+    GROSS: "gross",
+    SEHRGROSS: "sehr gross",
+  }
+
+  function getAvalancheRisk(level) {
+    switch(level) {
+      case 1:
+        return AvalancheRisk.GERING
+      case 2:
+        return AvalancheRisk.MAESSIG
+      case 3:
+        return AvalancheRisk.ERHEBLICH
+      case 4:
+        return AvalancheRisk.GROSS
+      case 5:
+        return AvalancheRisk.SEHRGROSS
+      default:
+        return AvalancheRisk.UNBEKANNT
+    }
+  }
+
   const { daysArray } = useDayData();
 
   const sliceArray = (data) => {
@@ -63,11 +119,11 @@ function Weather() {
 
         <div className="mb-8">
           <ul>
-            <li>Lawinenwarnstufe: {snowData.avalancheRisk.level } ({snowData.avalancheRisk.name})</li>
+            <li>Lawinenwarnstufe: {snowData.avalancheRisk.level} ({getAvalancheRisk(snowData.avalancheRisk.level)})</li>
             <li>Neuschnee seit 24h: {snowData.peakSnow.last24hInCm} cm</li>
             <li>Schneehöhe Berg: {snowData.peakSnow.heightInCm} cm</li>
             <li>Schneehöhe Tal: {snowData.valleySnow.heightInCm} cm</li>
-            <li>Schneequalität: {snowData.peakSnow.condition}</li>
+            <li>Schneequalität: {getSnowCondition(snowData.peakSnow.condition)}</li>
           </ul>
         </div>
 

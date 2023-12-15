@@ -16,6 +16,7 @@ import Slopes from "../Models/Slopes";
 import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
 import Loading from "./Loading";
+import Huts from "../Models/Huts";
 
 //stores initial camera position to reset camera after focusing on an object
 const initialCameraPos = {
@@ -120,6 +121,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           allowShadow={allowShadow}
           refsToUse={restaurantRefs}
         />
+  
         <Lifts
           allowShadow={allowShadow}
           refsToUse={liftRefs}
@@ -131,7 +133,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
          
           refsToUse={slopesRefs}
           setFocusObject={(obj) => changeFocusObject(obj)}
-        />
+        />       <Huts />
         <SetUpControls
           controls={controlerRef}
           initialCameraPos={initialCameraPos}

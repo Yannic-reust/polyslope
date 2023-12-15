@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import audioService from "../../services/audioService";
+
 
 export const music = createSlice({
   name: "music",
@@ -8,6 +10,14 @@ export const music = createSlice({
   reducers: {
     toggleMusic: (state) => {
       state.value = !state.value;
+
+      if (state.value == true) {
+        const tracks = ["./music/Calmness.mp3"];
+        audioService.initialize(tracks);
+        audioService.play();
+      } else {
+        audioService.stop();
+      }
    },
   },
 });

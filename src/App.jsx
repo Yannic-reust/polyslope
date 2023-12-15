@@ -24,13 +24,7 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
 
   const musicStatus = useSelector((state) => state.music.value);
 
-  if (musicStatus == true) {
-    const tracks = ["./music/Calmness.mp3", "./music/SnowySilence.mp3"];
-    audioService.initialize(tracks);
-    audioService.play();
-  } else {
-    audioService.stop();
-  }
+ 
   const mute = () => {
     dispatch(toggleVolume());
     audioService.mute();

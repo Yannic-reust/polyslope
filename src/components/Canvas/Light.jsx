@@ -26,7 +26,7 @@ const Light = ({distance}) => {
     return ( 
         <>
 
-            <directionalLight 
+            {/* <directionalLight 
                 position={[lightX, lightY, 0]}
                 intensity={2}
                 shadow-mapSize={4096}
@@ -37,19 +37,19 @@ const Light = ({distance}) => {
                 shadow-camera-bottom={-4500}
                 shadow-camera-far={15000}
             />
-            <Sun position={[lightX, lightY, 0]}/>
+            <Sun position={[lightX, lightY, 0]}/> */}
             <directionalLight 
                 position={[0, distance, 0]} 
                 intensity={0.5}
                 color="#e8f0a5"
             />
             <ambientLight intensity={0.1} />
-            {/* <directionalLight 
+            <directionalLight 
                 position={[lightPositionX[state], lightPositionY[state], 0]}
                 intensity={1}
                 castShadow={false}
             />
-            <Sun position={[lightPositionX[state], lightPositionY[state], 0]}/> */}
+            <Sun position={[lightPositionX[state], lightPositionY[state], 0]}/>
         </>
      );
 }

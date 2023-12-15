@@ -24,7 +24,6 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
 
   const musicStatus = useSelector((state) => state.music.value);
 
- 
   const mute = () => {
     dispatch(toggleVolume());
     audioService.mute();

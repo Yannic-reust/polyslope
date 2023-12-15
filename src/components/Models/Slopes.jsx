@@ -71,7 +71,7 @@ export default function Slopes(
 
   return (
     <>
-    {tracks.length !== 0 && 
+    {tracks && 
     <group position={[0, 0 + moveUp, 0]} {...props} dispose={null}>
       {slope.includes("Schwarz") ? (
         <group name="black-slopes">

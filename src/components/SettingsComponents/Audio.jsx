@@ -1,11 +1,18 @@
+import { useSelector,useDispatch } from "react-redux";
+import { toggleMusic } from "../../store/music/musicState";
+
 function Audio() {
+
+  const dispatch = useDispatch();
+ // const music = useSelector((state) => state.music.value);
+  
   return (
     <>
       <div>
         <h2 className="text-h-md font-karmina">Musik</h2>
         <p className="mt-2">Aktivere die Musik</p>
         <label className="relative inline-flex items-center cursor-pointer mt-4">
-          <input type="checkbox" value="" className="sr-only peer" />
+          <input type="checkbox" defaultChecked={true} className="sr-only peer" onChange={() => dispatch(toggleMusic())}/>
           <div
             className="
             bg-white/20

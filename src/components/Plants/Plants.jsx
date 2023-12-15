@@ -7,7 +7,7 @@ import useCalcStatus from "../../services/useCalcStatus";
 import { useSelector } from "react-redux";
 import { useState,useEffect } from "react";
 
-function Plants() {
+function Plants({setFocusFromOutside}) {
   const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
 
   const lift = useSelector((state) => state.lift.value);
@@ -38,7 +38,7 @@ function Plants() {
 
     const liftsText = {
     title: "Anlagen",
-    text: `(${useCalcStatus(lift).openCount}/19 geöffnet)`,
+    text: `(${useCalcStatus(lift).openCount}/14 geöffnet)`,
     open: false,
     icon: <CableCarVG className={NAV_ICON_CLASSES} />,
   };
@@ -56,33 +56,13 @@ function Plants() {
           title="Geöffnete Anlagen"
           text="Hier finden Sie eine Übersicht der aktuell geöffneten Anlagen."
         />
-        {/* <div className="mb-8">
-          <ul>
-            <li className="flex">
-              <p>Lawinenwarnstufe: </p>
-              <p className="ml-1">-</p>
-            </li>
-            <li className="flex">
-              <p>Neuschnee seit 24h: </p>
-              <p className="ml-1">0cm</p>
-            </li>
-            <li className="flex">
-              <p>Schneehöhe Berg (2970 m): </p>
-              <p className="ml-1">0cm</p>
-            </li>
-            <li className="flex">
-              <p>LSchneehöhe Tal (1638 m): </p>
-              <p className="ml-1">0cm</p>
-            </li>
-          </ul>
-        </div> */}
 
         <div className="">
           <ContentSection
             item={liftsText}
             data={[{title:"Bergbahnen", data: lift}]}
             camera={false}
-         
+            setFocusFromOutside={setFocusFromOutside}
             height={520}
           />
         </div>

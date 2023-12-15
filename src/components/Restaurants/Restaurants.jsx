@@ -1,20 +1,21 @@
 import "./Restaurants.css";
 import ContentIntroduction from "../ContentIntroduction/ContentIntroduction";
 import ContentSection from "../ContentSection/ContentSection";
-import ResturantSVG from "../../assets/icons/food.svg?react";
+import RestaurantsSVG from "../../assets/icons/food.svg?react";
 //import BarSVG from "../../assets/icons/beer.svg?react";
 import { useSelector } from "react-redux";
 import useCalcStatus from "../../services/useCalcStatus";
 
-function Restaurants() {
+function Restaurants({setFocusFromOutside}) {
   const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
 
   const restaurant = useSelector((state) => state.restaurant.value);
+  
   const restaurantText = {
-    title: "Resturants",
-    text: `(${useCalcStatus(restaurant).openCount}/12 geöffnet)`,
+    title: "Restaurants",
+    text: `(${useCalcStatus(restaurant).openCount}/9 geöffnet)`,
     open: false,
-    icon: <ResturantSVG className={NAV_ICON_CLASSES} />,
+    icon: <RestaurantsSVG className={NAV_ICON_CLASSES} />,
   };
 
  /* const barsText = {
@@ -37,6 +38,7 @@ function Restaurants() {
             data={[{title:"", data:restaurant}]}
             camera={false}
             title={"Berg Restaurats"}
+            setFocusFromOutside={setFocusFromOutside}
           />
         </div>
       </div>

@@ -1,22 +1,39 @@
 import { useState } from "react";
 import { toggleIntro } from "../../store/intro/introState";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Content from "./Content";
+import { toggleMusic } from "../../store/music/musicState";
+import { setFirstTime } from "../../store/firstTime/firstTimeState";
 
 const Tutorial = () => {
   const [menuState, setMenuState] = useState(0);
   const dispatch = useDispatch();
 
   const active = useSelector((state) => state.intro.value);
+  const firstTime = useSelector((state) => state.firstTime.value);
 
   function increaseMenu(e) {
     if (e == 4) {
       dispatch(toggleIntro());
+      if (firstTime) {
+        dispatch(toggleMusic());
+      }
+
+      dispatch(setFirstTime(false));
+
       setMenuState(0);
     } else {
       setMenuState(e);
     }
+  }
+  function skip() {
+    dispatch(toggleIntro());
+
+    if (firstTime) {
+      dispatch(toggleMusic());
+    }
+    dispatch(setFirstTime(false));
   }
 
   return (
@@ -32,7 +49,7 @@ const Tutorial = () => {
         <p
           className="justify-self-end px-4 font-thin text-xs text-black cursor-pointer"
           style={{ fontSize: "0.9em" }}
-          onClick={() => dispatch(toggleIntro())}
+          onClick={() => skip()}
         >
           Überspringen
         </p>

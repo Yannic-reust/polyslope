@@ -17,6 +17,7 @@ import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
 import Loading from "./Loading";
 import Huts from "../Models/Huts";
+import SnowFlakes from "./Snowflakes";
 
 //stores initial camera position to reset camera after focusing on an object
 const initialCameraPos = {
@@ -96,7 +97,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           enableRotate
           rotateSpeed={1}
         />
-        <FocusOnObject
+        {/* <FocusOnObject
           setFocusObject={(obj) => changeFocusObject(obj)}
           focusObject={focusObject}
           focusFromOutside={focusFromOutside}
@@ -104,7 +105,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           initialCameraPos={initialCameraPos}
           refList={refList}
           setFocusFromOutside={setFocusFromOutside}
-        />
+        /> */}
         <Light distance={9000} />
         <Detailed distances={[0, 4500, 6000]}>
           <LandscapeHigh allowShadow={allowShadow} />
@@ -141,6 +142,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           refList={refList}
           setFocusObject={(obj) => changeFocusObject(obj)}
         />
+      
         <Loading setLoading={setLoading} />
       </R3fCanvas>
     </div>

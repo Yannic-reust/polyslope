@@ -17,8 +17,10 @@ import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
 import Loading from "./Loading";
 import Huts from "../Models/Huts";
-import SnowFlakes from "./Snowflakes";
+import SnowFlackes from "./SnowFlackes";
+import { Suspense } from "react";
 
+import { Stats } from '@react-three/drei'
 //stores initial camera position to reset camera after focusing on an object
 const initialCameraPos = {
   x: 4000,
@@ -29,7 +31,7 @@ const initialCameraPos = {
   targetZ: -650,
 };
 
-const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
+const Canvas = ({ focusFromOutside, setLoading, setFocusFromOutside }) => {
   //shadow settings
   const allowShadow = {
     trees: true,
@@ -86,7 +88,6 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
         }}
         shadows
       >
-
         <CameraControls
           ref={controlerRef}
           minDistance={1000}
@@ -97,7 +98,11 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           enableRotate
           rotateSpeed={1}
         />
-        {/* <FocusOnObject
+         <Stats />
+        <Suspense fallback={null}>
+          <SnowFlackes />
+        </Suspense>
+        <FocusOnObject
           setFocusObject={(obj) => changeFocusObject(obj)}
           focusObject={focusObject}
           focusFromOutside={focusFromOutside}
@@ -105,7 +110,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           initialCameraPos={initialCameraPos}
           refList={refList}
           setFocusFromOutside={setFocusFromOutside}
-        /> */}
+        />
         <Light distance={9000} />
         <Detailed distances={[0, 4500, 6000]}>
           <LandscapeHigh allowShadow={allowShadow} />
@@ -122,7 +127,6 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           allowShadow={allowShadow}
           refsToUse={restaurantRefs}
         />
-  
         <Lifts
           allowShadow={allowShadow}
           refsToUse={liftRefs}
@@ -131,10 +135,10 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
         />
         <Trees allowShadow={allowShadow} />
         <Slopes
-         
           refsToUse={slopesRefs}
           setFocusObject={(obj) => changeFocusObject(obj)}
-        />       <Huts />
+        />{" "}
+        <Huts />
         <SetUpControls
           controls={controlerRef}
           initialCameraPos={initialCameraPos}
@@ -142,7 +146,6 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           refList={refList}
           setFocusObject={(obj) => changeFocusObject(obj)}
         />
-      
         <Loading setLoading={setLoading} />
       </R3fCanvas>
     </div>

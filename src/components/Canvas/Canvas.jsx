@@ -68,6 +68,12 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
     lifts: liftRefs,
     slopes: slopesRefs,
   };
+  const easterEggRefA = useRef();
+  const easterEggRefB = useRef();
+  const easterEggRefs = [
+    easterEggRefA,
+    easterEggRefB
+  ]
 
   return (
     <div className="absolute canvas-container h-screen w-screen bg-darkblue z-[-1]">
@@ -104,6 +110,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           initialCameraPos={initialCameraPos}
           refList={refList}
           setFocusFromOutside={setFocusFromOutside}
+          easterEggRefs={easterEggRefs}
         />
         <Light distance={9000} />
         <Detailed distances={[0, 4500, 6000]}>
@@ -112,7 +119,10 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           <LandscapeLow allowShadow={allowShadow} />
         </Detailed>
         <Detailed distances={[0, 4500, 6000]}>
-          <EasterEgg />
+          <EasterEgg 
+            refsToUse={easterEggRefs}
+            setFocusObject={(obj) => changeFocusObject(obj)} 
+          />
           <group></group>
           <group></group>
         </Detailed>
@@ -121,7 +131,6 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           allowShadow={allowShadow}
           refsToUse={restaurantRefs}
         />
-  
         <Lifts
           allowShadow={allowShadow}
           refsToUse={liftRefs}
@@ -130,10 +139,10 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
         />
         <Trees allowShadow={allowShadow} />
         <Slopes
-         
           refsToUse={slopesRefs}
           setFocusObject={(obj) => changeFocusObject(obj)}
-        />       <Huts />
+        />       
+        <Huts allowShadow={allowShadow} />
         <SetUpControls
           controls={controlerRef}
           initialCameraPos={initialCameraPos}

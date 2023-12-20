@@ -547,10 +547,10 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
             }}
           />
         </Html>
-        <mesh name="restaurant360-mesh" geometry={nodes['restaurant360-mesh'].geometry} material={materials['glass.011']} />
-        <mesh name="restaurant360-mesh_1" geometry={nodes['restaurant360-mesh_1'].geometry} material={materials['silver.010']} />
-        <mesh name="restaurant360-mesh_2" geometry={nodes['restaurant360-mesh_2'].geometry} material={materials['black.014']} />
-        <mesh name="restaurant360-mesh_3" geometry={nodes['restaurant360-mesh_3'].geometry} material={materials.tile} />
+        <mesh castShadow={restaurantShadow} receiveShadow={restaurantShadow} name="restaurant360-mesh" geometry={nodes['restaurant360-mesh'].geometry} material={materials['glass.011']} />
+        <mesh castShadow={restaurantShadow} receiveShadow={restaurantShadow} name="restaurant360-mesh_1" geometry={nodes['restaurant360-mesh_1'].geometry} material={materials['silver.010']} />
+        <mesh castShadow={restaurantShadow} receiveShadow={restaurantShadow} name="restaurant360-mesh_2" geometry={nodes['restaurant360-mesh_2'].geometry} material={materials['black.014']} />
+        <mesh castShadow={restaurantShadow} receiveShadow={restaurantShadow} name="restaurant360-mesh_3" geometry={nodes['restaurant360-mesh_3'].geometry} material={materials.tile} />
       </group>
     </group>
   );

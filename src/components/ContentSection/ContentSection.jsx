@@ -20,8 +20,7 @@ const ContentSection = ({ item, camera, data, setFocusFromOutside }) => {
   }
   const optionsRef = useRef(null);
 
-
-  
+ 
   return (
     <div className="mb-8">
       {data && (
@@ -41,7 +40,7 @@ const ContentSection = ({ item, camera, data, setFocusFromOutside }) => {
               {data.map((item, index) => (
                 <div key={index}>
                   <p className="text-xl-4 font-medium text-1xl mt-6">{item.title}</p>
-                  {item.data.map((item2, index) => (
+                  {item.data?.map((item2, index) => (
                     <div
                       className={`flex mt-2 justify-between w-full  p-2 trasition-all  duration-500 cursor-pointer hover:bg-white/20`}
                       key={index}
@@ -60,7 +59,7 @@ const ContentSection = ({ item, camera, data, setFocusFromOutside }) => {
                       }
                     
                     </div>
-                  ))}
+                  ))} 
                 </div>
               ))}
             </div>

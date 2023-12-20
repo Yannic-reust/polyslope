@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useCalcStatus = (props) => {
   const [openCount, setOpenCount] = useState(null);
-
+console.log(props)
   useEffect(() => {
     let openCount = 0;
 

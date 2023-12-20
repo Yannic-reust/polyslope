@@ -17,6 +17,7 @@ import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
 import Loading from "./Loading";
 import Huts from "../Models/Huts";
+import { Perf } from "r3f-perf";
 
 //stores initial camera position to reset camera after focusing on an object
 const initialCameraPos = {
@@ -85,6 +86,8 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
         }}
         shadows
       >
+
+        <Perf position="top-left" />
 
         <CameraControls
           ref={controlerRef}

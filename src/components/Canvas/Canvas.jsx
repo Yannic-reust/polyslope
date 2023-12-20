@@ -33,7 +33,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
   //shadow settings
   const allowShadow = {
     trees: true,
-    buildings: true,
+    buildings: false,
     landscape: true,
   };
 

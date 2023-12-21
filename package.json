@@ -9,6 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "unit test": "vitest",
+    "unit report": "vitest --reporter=html",
     "e2e test": "npx cypress open"
   },
   "dependencies": {
@@ -26,7 +27,6 @@
     "vite-plugin-svgr": "^4.1.0"
   },
   "devDependencies": {
-    "@esbuild/win32-x64": "^0.19.10",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
     "@types/react": "^18.2.15",

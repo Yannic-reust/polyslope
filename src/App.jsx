@@ -51,9 +51,9 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
 
       <Tutorial /> 
 
-       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-8 hidden tablet:inline">
+       {/* <div className="absolute left-1/2 transform -translate-x-1/2 bottom-8 hidden tablet:inline">
         <AnimationsStatus />
-      </div> 
+      </div>  */}
     </>
   );
 }

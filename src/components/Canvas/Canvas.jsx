@@ -137,7 +137,7 @@ const Canvas = ({ focusFromOutside, setLoading, setFocusFromOutside }) => {
         <Slopes
           refsToUse={slopesRefs}
           setFocusObject={(obj) => changeFocusObject(obj)}
-        />{" "}
+        />
         <Huts />
         <SetUpControls
           controls={controlerRef}

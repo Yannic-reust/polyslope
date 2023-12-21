@@ -9,7 +9,8 @@ const FocusOnObject = ({
   initialCameraPos,
   focusFromOutside,
   refList,
-  setFocusFromOutside
+  setFocusFromOutside,
+  easterEggRefs
 }) => {
   useEffect(() => {
     focus(focusObject, fromOutside);
@@ -116,7 +117,11 @@ const FocusOnObject = ({
         );
         fromOutside = false;
       } else {
-        controls.current.setLookAt(x + 200, y + 400, z + 200, x, y, z, true);
+        if (objRef == easterEggRefs[0] || objRef == easterEggRefs[1]) {
+          controls.current.setLookAt(x + 50, y + 50, z + 50, x, y, z, true);
+        } else {
+          controls.current.setLookAt(x + 200, y + 400, z + 200, x, y, z, true);
+        }
       }
     }
   }

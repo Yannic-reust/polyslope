@@ -10,6 +10,7 @@ import musicReducer from './music/musicState'
 import volumeReducer from './volume/volumeState'
 import firstTimeReducer from './firstTime/firstTimeState'
 import snowDataReducer from './snowData/snowDataState'
+import performanceReducer from './performance/performanceState'
 
 export default configureStore({
   reducer: {
@@ -23,8 +24,7 @@ export default configureStore({
     music: musicReducer,
     volume: volumeReducer,
     firstTime: firstTimeReducer,
-    snowData: snowDataReducer
-
-
+    snowData: snowDataReducer,
+    performance: performanceReducer
   },
 })

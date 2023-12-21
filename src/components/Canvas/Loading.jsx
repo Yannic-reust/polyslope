@@ -1,4 +1,3 @@
-import { useFrame } from "@react-three/fiber";
 import { useEffect } from "react";
 
 

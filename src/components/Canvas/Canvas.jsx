@@ -1,6 +1,6 @@
 import { Canvas as R3fCanvas } from "@react-three/fiber";
-import { CameraControls, Detailed } from "@react-three/drei";
-import { useRef, useState } from "react";
+import { CameraControls, Detailed, PerformanceMonitor } from "@react-three/drei";
+import { useEffect, useRef, useState } from "react";
 
 //component imports
 import SetUpControls from "./SetUpControls";
@@ -17,6 +17,8 @@ import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
 import Loading from "./Loading";
 import Huts from "../Models/Huts";
+import { useDispatch, useSelector } from "react-redux";
+import { PerformanceMode, setPerformance } from "../../store/performance/performanceState";
 
 //stores initial camera position to reset camera after focusing on an object
 const initialCameraPos = {
@@ -29,12 +31,14 @@ const initialCameraPos = {
 };
 
 const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
-  //shadow settings
-  const allowShadow = {
-    trees: true,
-    buildings: true,
-    landscape: true,
-  };
+  // different shadow settings based on device performance
+  const shadowHigh = {trees: true, buildings: false, landscape: true};
+  const shadowMedium = {trees: false, buildings: false, landscape: true};
+  const shadowLow = {trees: false, buildings: false, landscape: false};
+
+  const [allowShadow, setAllowShadow] = useState(shadowMedium)
+  let currentPerformance = useSelector((state) => state.performance.value);
+  const dispatch = useDispatch();
 
   //focusObject, accepts ref of an element
   const [focusObject, setFocusObject] = useState(null);
@@ -47,6 +51,35 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
     } else {
       setFocusObject(obj);
     }
+  }
+
+  useEffect(() => {
+    switch(currentPerformance) {
+      case PerformanceMode.HIGH:
+        setAllowShadow(shadowHigh);
+        break;
+      case PerformanceMode.MEDIUM:
+        setAllowShadow(shadowMedium);
+        break;
+      case PerformanceMode.LOW:
+        setTimeout(() => {
+          setAllowShadow(shadowLow);
+        }, 12000) // to still display intro animation
+        setDpr(1)
+        break;
+    }
+  },[currentPerformance]);
+
+  // reacts to changes in performance on device
+  function adaptToPerformance(perf) {
+    if(perf.factor >= 0.6) {
+      dispatch(setPerformance(PerformanceMode.HIGH));
+      return;
+    } else if(perf.factor <= 0.4) {
+      dispatch(setPerformance(PerformanceMode.LOW));
+      return;
+    }
+    dispatch(setPerformance(PerformanceMode.MEDIUM))
   }
 
   //refs
@@ -68,6 +101,14 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
     lifts: liftRefs,
     slopes: slopesRefs,
   };
+  const easterEggRefA = useRef();
+  const easterEggRefB = useRef();
+  const easterEggRefs = [
+    easterEggRefA,
+    easterEggRefB
+  ]
+
+  const [dpr, setDpr] = useState([1, 2]) // change the render resolution
 
   return (
     <div className="absolute canvas-container h-screen w-screen bg-darkblue z-[-1]">
@@ -84,7 +125,10 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           ],
         }}
         shadows
+        dpr={dpr} // render resolution
       >
+
+        <PerformanceMonitor onChange={ (perf) => adaptToPerformance(perf)} />
 
         <CameraControls
           ref={controlerRef}
@@ -104,6 +148,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           initialCameraPos={initialCameraPos}
           refList={refList}
           setFocusFromOutside={setFocusFromOutside}
+          easterEggRefs={easterEggRefs}
         />
         <Light distance={9000} />
         <Detailed distances={[0, 4500, 6000]}>
@@ -112,7 +157,10 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           <LandscapeLow allowShadow={allowShadow} />
         </Detailed>
         <Detailed distances={[0, 4500, 6000]}>
-          <EasterEgg />
+          <EasterEgg 
+            refsToUse={easterEggRefs}
+            setFocusObject={(obj) => changeFocusObject(obj)} 
+          />
           <group></group>
           <group></group>
         </Detailed>
@@ -121,7 +169,6 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           allowShadow={allowShadow}
           refsToUse={restaurantRefs}
         />
-  
         <Lifts
           allowShadow={allowShadow}
           refsToUse={liftRefs}
@@ -130,10 +177,10 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
         />
         <Trees allowShadow={allowShadow} />
         <Slopes
-         
           refsToUse={slopesRefs}
           setFocusObject={(obj) => changeFocusObject(obj)}
-        />       <Huts />
+        />       
+        <Huts allowShadow={allowShadow} />
         <SetUpControls
           controls={controlerRef}
           initialCameraPos={initialCameraPos}

@@ -75,7 +75,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
   // reacts to changes in performance on device
   function adaptToPerformance(perf) {
 
-    setCustomData(perf.factor) // for the r3f-perf
+    setCustomData(perf.fps) // for the r3f-perf
 
     if(perf.factor >= 0.6) {
       dispatch(setPerformance(PerformanceMode.HIGH));
@@ -135,7 +135,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
 
         <Perf 
           position="top-left"
-          customData={{ value: 0.5, name: 'factor', round: 1 }}
+          customData={{ value: 30, name: 'AVG-FPS', round: 1 }}
         />
 
         <PerformanceMonitor onChange={ (perf) => adaptToPerformance(perf)} />

@@ -15,7 +15,6 @@ import Slopes from "../Models/Slopes";
 
 import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
-import Loading from "./Loading";
 import Huts from "../Models/Huts";
 import { useDispatch, useSelector } from "react-redux";
 import { PerformanceMode, setPerformance } from "../../store/performance/performanceState";
@@ -30,7 +29,7 @@ const initialCameraPos = {
   targetZ: -650,
 };
 
-const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
+const Canvas = ({ focusFromOutside, setFocusFromOutside }) => {
   // different shadow settings based on device performance
   const shadowHigh = {trees: true, buildings: false, landscape: true};
   const shadowMedium = {trees: false, buildings: false, landscape: true};
@@ -188,7 +187,6 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           refList={refList}
           setFocusObject={(obj) => changeFocusObject(obj)}
         />
-        <Loading setLoading={setLoading} />
       </R3fCanvas>
     </div>
   );

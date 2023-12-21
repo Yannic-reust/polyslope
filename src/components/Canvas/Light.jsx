@@ -36,6 +36,7 @@ const Light = ({distance}) => {
                 shadow-camera-top={4500}
                 shadow-camera-bottom={-4500}
                 shadow-camera-far={15000}
+                shadow-bias={0.0008}
             />
             <Sun position={[lightX, lightY, 0]}/>
             <directionalLight 

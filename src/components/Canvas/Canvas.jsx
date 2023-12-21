@@ -33,7 +33,7 @@ const initialCameraPos = {
 
 const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
   // different shadow settings based on device performance
-  const shadowHigh = {trees: true, buildings: true, landscape: true};
+  const shadowHigh = {trees: true, buildings: false, landscape: true};
   const shadowMedium = {trees: false, buildings: false, landscape: true};
   const shadowLow = {trees: false, buildings: false, landscape: false};
 
@@ -64,6 +64,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
         break;
       case PerformanceMode.LOW:
         setTimeout(() => {
+          console.log('hey')
           setAllowShadow(shadowLow);
         }, 12000) // to still display intro animation
         setDpr(1)
@@ -137,7 +138,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           customData={{ value: 0.5, name: 'factor', round: 1 }}
         />
 
-        <PerformanceMonitor onChange={ (perf) => adaptToPerformance(perf)} flipflops={3} onFallback={() => dispatch(setPerformance(PerformanceMode.LOW))} />
+        <PerformanceMonitor onChange={ (perf) => adaptToPerformance(perf)} />
 
         <CameraControls
           ref={controlerRef}
@@ -197,7 +198,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           refList={refList}
           setFocusObject={(obj) => changeFocusObject(obj)}
         />
-        {/* <Loading setLoading={setLoading} /> */}
+        <Loading setLoading={setLoading} />
       </R3fCanvas>
     </div>
   );

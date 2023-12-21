@@ -34,6 +34,7 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
      <div
         className="absolute top-5 right-5 tablet:ml-8 tablet:bottom-8 tablet:top-auto tablet:right-auto"
         onClick={() => mute()}
+        id="MusicBadge"
       >
         <MusicBadge />
       </div>
@@ -42,7 +43,7 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
       <TabBar />
       <Canvas setFocusFromOutside={(obj) =>setFocusFromOutside(obj)} focusFromOutside={focusFromOutside} setLoading={(bool) => setLoading(bool)}/>
 
-      <Loading loading={loading} />
+      {/* <Loading loading={loading} /> */}
 
     
 

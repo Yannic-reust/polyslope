@@ -45,7 +45,7 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
         <Canvas setFocusFromOutside={(obj) =>setFocusFromOutside(obj)} focusFromOutside={focusFromOutside} setLoading={(bool) => setLoading(bool)}/>
       </Suspense>
 
-      <Loading loading={loading} />
+      {/* <Loading loading={loading} /> */}
 
     
 

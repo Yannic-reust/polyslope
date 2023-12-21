@@ -1,6 +1,6 @@
 import { Canvas as R3fCanvas } from "@react-three/fiber";
-import { CameraControls, Detailed } from "@react-three/drei";
-import { useRef, useState } from "react";
+import { CameraControls, Detailed, PerformanceMonitor } from "@react-three/drei";
+import { useEffect, useRef, useState } from "react";
 
 //component imports
 import SetUpControls from "./SetUpControls";
@@ -17,7 +17,9 @@ import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
 import Loading from "./Loading";
 import Huts from "../Models/Huts";
-import { Perf } from "r3f-perf";
+import { Perf, setCustomData } from "r3f-perf";
+import { useDispatch, useSelector } from "react-redux";
+import { PerformanceMode, setPerformance } from "../../store/performance/performanceState";
 
 //stores initial camera position to reset camera after focusing on an object
 const initialCameraPos = {
@@ -30,12 +32,14 @@ const initialCameraPos = {
 };
 
 const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
-  //shadow settings
-  const allowShadow = {
-    trees: true,
-    buildings: false,
-    landscape: true,
-  };
+  // different shadow settings based on device performance
+  const shadowHigh = {trees: true, buildings: true, landscape: true};
+  const shadowMedium = {trees: false, buildings: false, landscape: true};
+  const shadowLow = {trees: false, buildings: false, landscape: false};
+
+  const [allowShadow, setAllowShadow] = useState(shadowMedium)
+  let currentPerformance = useSelector((state) => state.performance.value);
+  const dispatch = useDispatch();
 
   //focusObject, accepts ref of an element
   const [focusObject, setFocusObject] = useState(null);
@@ -48,6 +52,38 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
     } else {
       setFocusObject(obj);
     }
+  }
+
+  useEffect(() => {
+    switch(currentPerformance) {
+      case PerformanceMode.HIGH:
+        setAllowShadow(shadowHigh);
+        break;
+      case PerformanceMode.MEDIUM:
+        setAllowShadow(shadowMedium);
+        break;
+      case PerformanceMode.LOW:
+        setTimeout(() => {
+          setAllowShadow(shadowLow);
+        }, 12000) // to still display intro animation
+        setDpr(1)
+        break;
+    }
+  },[currentPerformance]);
+
+  // reacts to changes in performance on device
+  function adaptToPerformance(perf) {
+
+    setCustomData(perf.factor) // for the r3f-perf
+
+    if(perf.factor >= 0.6) {
+      dispatch(setPerformance(PerformanceMode.HIGH));
+      return;
+    } else if(perf.factor <= 0.4) {
+      dispatch(setPerformance(PerformanceMode.LOW));
+      return;
+    }
+    dispatch(setPerformance(PerformanceMode.MEDIUM))
   }
 
   //refs
@@ -76,6 +112,8 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
     easterEggRefB
   ]
 
+  const [dpr, setDpr] = useState([1, 2]) // change the render resolution
+
   return (
     <div className="absolute canvas-container h-screen w-screen bg-darkblue z-[-1]">
       <R3fCanvas
@@ -91,9 +129,15 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           ],
         }}
         shadows
+        dpr={dpr} // render resolution
       >
 
-        <Perf position="top-left" />
+        <Perf 
+          position="top-left"
+          customData={{ value: 0.5, name: 'factor', round: 1 }}
+        />
+
+        <PerformanceMonitor onChange={ (perf) => adaptToPerformance(perf)} flipflops={3} onFallback={() => dispatch(setPerformance(PerformanceMode.LOW))} />
 
         <CameraControls
           ref={controlerRef}
@@ -153,7 +197,7 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
           refList={refList}
           setFocusObject={(obj) => changeFocusObject(obj)}
         />
-        <Loading setLoading={setLoading} />
+        {/* <Loading setLoading={setLoading} /> */}
       </R3fCanvas>
     </div>
   );

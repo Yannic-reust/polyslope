@@ -17,7 +17,6 @@ import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
 import Loading from "./Loading";
 import Huts from "../Models/Huts";
-import { Perf, setCustomData } from "r3f-perf";
 import { useDispatch, useSelector } from "react-redux";
 import { PerformanceMode, setPerformance } from "../../store/performance/performanceState";
 
@@ -64,7 +63,6 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
         break;
       case PerformanceMode.LOW:
         setTimeout(() => {
-          console.log('hey')
           setAllowShadow(shadowLow);
         }, 12000) // to still display intro animation
         setDpr(1)
@@ -74,9 +72,6 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
 
   // reacts to changes in performance on device
   function adaptToPerformance(perf) {
-
-    setCustomData(perf.fps) // for the r3f-perf
-
     if(perf.factor >= 0.6) {
       dispatch(setPerformance(PerformanceMode.HIGH));
       return;
@@ -132,11 +127,6 @@ const Canvas = ({ focusFromOutside, setLoading,setFocusFromOutside }) => {
         shadows
         dpr={dpr} // render resolution
       >
-
-        <Perf 
-          position="top-left"
-          customData={{ value: 30, name: 'AVG-FPS', round: 1 }}
-        />
 
         <PerformanceMonitor onChange={ (perf) => adaptToPerformance(perf)} />
 

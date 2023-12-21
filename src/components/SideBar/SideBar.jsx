@@ -56,7 +56,7 @@ const SideBar = ({setFocusFromOutside}) => {
                 </div>
                 </nav>
 
-                <CloseSVG onClick={ () => setOpen(false) } className={`absolute cursor-pointer top-10 right-10 fill-white w-6 max-h-6`} />
+                <CloseSVG onClick={ () => setOpen(false) } className={`absolute cursor-pointer top-10 right-10 fill-white w-6 max-h-6`} data-testid="close-icon"/>
 
                 <div className="content w-[800px] p-10 overflow-auto">
                     { page === 'Info' &&  <About /> }

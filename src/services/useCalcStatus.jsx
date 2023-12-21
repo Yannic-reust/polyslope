@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
 
 const useCalcStatus = (props) => {
-  const [openCount, setOpenCount] = useState(null);
-console.log(props)
+  const [openCount, setOpenCount] = useState(0);
+
   useEffect(() => {
-    let openCount = 0;
+    if (props && Array.isArray(props)) {
+      let count = 0;
 
-    for (const item of props) {
-      const { status } = item;
+      for (let i = 0; i < props.length; i++) {
+        const item = props[i];
+        const { status } = item;
 
-      if (status && status.toUpperCase() === "OPEN") {
-        setOpenCount((openCount += 1));
+        if (status && status.toUpperCase() === "OPEN") {
+          count += 1;
+        }
       }
+
+      setOpenCount(count);
     }
-  }, [props, openCount]);
+  }, [props]);
 
   return { openCount };
 };

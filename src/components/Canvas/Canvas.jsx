@@ -21,6 +21,7 @@ import SnowFlackes from "./SnowFlackes";
 import { Suspense } from "react";
 
 import { Stats } from '@react-three/drei'
+import { useSelector } from "react-redux";
 //stores initial camera position to reset camera after focusing on an object
 const initialCameraPos = {
   x: 4000,
@@ -42,6 +43,9 @@ const Canvas = ({ focusFromOutside, setLoading, setFocusFromOutside }) => {
   //focusObject, accepts ref of an element
   const [focusObject, setFocusObject] = useState(null);
   //focusFromOutside probably have to hardcode a refrence from the buildings and lifts ref to a sting
+
+  // if animation should be activated
+  const animationState = useSelector((state) => state.animation.value);
 
   //if focus object already applied, remove focus object
   function changeFocusObject(obj) {
@@ -100,7 +104,7 @@ const Canvas = ({ focusFromOutside, setLoading, setFocusFromOutside }) => {
         />
          <Stats />
         <Suspense fallback={null}>
-          <SnowFlackes />
+          { animationState && <SnowFlackes />}
         </Suspense>
         <FocusOnObject
           setFocusObject={(obj) => changeFocusObject(obj)}

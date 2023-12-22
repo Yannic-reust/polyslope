@@ -20,13 +20,12 @@ const ContentSection = ({ item, camera, data, setFocusFromOutside }) => {
   }
   const optionsRef = useRef(null);
 
-
-  
+ 
   return (
     <div className="mb-8">
       {data && (
         <>
-          <div onClick={handleClick} className="cursor-pointer">
+          <div onClick={handleClick} className="cursor-pointer" id={`${item.title}-Detail`} >
             <ContentAccordion item={item} icon={item.icon} open={open} />
           </div>
 
@@ -39,9 +38,9 @@ const ContentSection = ({ item, camera, data, setFocusFromOutside }) => {
               className={`relative overflow-hidden max-h-0 duration-500  pl-4 pr-4`}
             >
               {data.map((item, index) => (
-                <div key={index}>
+                <div key={index} >
                   <p className="text-xl-4 font-medium text-1xl mt-6">{item.title}</p>
-                  {item.data.map((item2, index) => (
+                  {item.data?.map((item2, index) => (
                     <div
                       className={`flex mt-2 justify-between w-full  p-2 trasition-all  duration-500 cursor-pointer hover:bg-white/20`}
                       key={index}
@@ -60,7 +59,7 @@ const ContentSection = ({ item, camera, data, setFocusFromOutside }) => {
                       }
                     
                     </div>
-                  ))}
+                  ))} 
                 </div>
               ))}
             </div>

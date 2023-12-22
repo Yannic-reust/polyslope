@@ -13,7 +13,7 @@
     "e2e test": "npx cypress open"
   },
   "dependencies": {
-    "@react-three/drei": "^9.88.13",
+    "@react-three/drei": "^9.92.5",
     "@react-three/fiber": "^8.15.10",
     "@reduxjs/toolkit": "^1.9.7",
     "autoprefixer": "^10.4.16",
@@ -38,10 +38,12 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "i": "^0.3.7",
     "jsdom": "^23.0.1",
     "npm": "^10.2.5",
     "vite": "^4.4.5",
-    "vitest": "^1.1.0"
+    "vitest": "^1.1.0",
+    "r3f-perf": "^7.1.2"
+
+
   }
 }

@@ -1,16 +1,20 @@
 import "./App.css";
-import SideBar from "./components/SideBar/SideBar";
-import TabBar from "./components/TabBar/TabBar";
 import AnimationsStatus from "./components/AnimationsStatus/AnimationsStatus";
-import Canvas from "./components/Canvas/Canvas";
-import Tutorial from "./components/Tutorial/Tutorial";
-import MusicBadge from "./components/MusicBadge/MusicBadge";
 import useAPIData from "./services/useAPIData";
 import audioService from "./services/audioService";
 import { toggleVolume } from "./store/volume/volumeState";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import { Suspense, useState, lazy } from "react";
 import Loading from "./components/Loading/Loading";
+
+//lazy imports
+const Canvas = lazy(() => import('./components/Canvas/Canvas'));
+const SideBar = lazy(() => import('./components/SideBar/SideBar'));
+const TabBar = lazy(() => import('./components/TabBar/TabBar'));
+const Tutorial = lazy(() => import('./components/Tutorial/Tutorial'));
+const MusicBadge = lazy(() => import('./components/MusicBadge/MusicBadge'));
+
+
 
 function App() {
 const [focusFromOutside, setFocusFromOutside] = useState("");
@@ -20,7 +24,6 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
   useAPIData();
 
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(true);
 
   const musicStatus = useSelector((state) => state.music.value);
 
@@ -53,7 +56,8 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
 
       {/* <div className="absolute left-1/2 transform -translate-x-1/2 bottom-8 hidden tablet:inline">
         <AnimationsStatus />
-      </div> */}
+      </div> 
+      */}
     </>
   );
 }

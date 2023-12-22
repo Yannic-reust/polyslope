@@ -1,12 +1,12 @@
 
 # Polyslope
 
-PolySlope is an interactive ski map in 3D, implemented with React and React Three Fiber.We used the Mürren - Schilthorn region as a model.
+PolySlope is an interactive ski map in 3D, implemented with React and React Three Fiber. We used the Mürren - Schilthorn region as a model.
 
 ![image](https://github.com/Yannic-reust/polyslope/assets/62382435/fe072b97-0670-48ea-983b-1cfb4cafbd1a)
 
 
-Polyslope originated as a prototype or proof of concept developed within the framework of a course in the Digital Ideation program at Lucerne University of Applied Sciences.
+Polyslope originated as a prototype or proof of concept developed in the STUW1 course in the Digital Ideation program at Lucerne University of Applied Sciences.
 
 ## Contributing
 The Project was developed by a group of three. This is a rough overview of the responsibilities of everyone in the team.

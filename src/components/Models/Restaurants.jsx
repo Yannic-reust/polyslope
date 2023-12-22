@@ -48,37 +48,37 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
         </Html>
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh"].geometry}
           material={materials["Dark_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_1"].geometry}
           material={materials["Light_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_2"].geometry}
           material={materials["Glass.011"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_3"].geometry}
           material={materials["grey.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_4"].geometry}
           material={materials["Black.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_5"].geometry}
           material={materials.fundament}
         />
@@ -86,8 +86,8 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
       <group
         ref={refsToUse[1]}
         name="Bistro_Birg"
-        position={[-482.707, 2626.613, 1121.244]}
-        rotation={[0, 0.047, 0]}
+        position={[-503.996, 2628.053, 1101.381]}
+        rotation={[-Math.PI, 0.737, -Math.PI]}
         scale={3}
       >
         <Html
@@ -111,37 +111,37 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
         </Html>
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh"].geometry}
           material={materials["Dark_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_1"].geometry}
           material={materials["Light_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_2"].geometry}
           material={materials["Glass.011"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_3"].geometry}
           material={materials["grey.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_4"].geometry}
           material={materials["Black.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_5"].geometry}
           material={materials.fundament}
         />
@@ -171,37 +171,37 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
         </Html>
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh"].geometry}
           material={materials["Dark_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_1"].geometry}
           material={materials["Light_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_2"].geometry}
           material={materials["Glass.011"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_3"].geometry}
           material={materials["grey.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_4"].geometry}
           material={materials["Black.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_5"].geometry}
           material={materials.fundament}
         />
@@ -233,37 +233,37 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
         </Html>
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh"].geometry}
           material={materials["Dark_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_1"].geometry}
           material={materials["Light_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_2"].geometry}
           material={materials["Glass.011"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_3"].geometry}
           material={materials["grey.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_4"].geometry}
           material={materials["Black.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_5"].geometry}
           material={materials.fundament}
         />
@@ -296,37 +296,37 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
         </Html>
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh"].geometry}
           material={materials["Dark_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_1"].geometry}
           material={materials["Light_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_2"].geometry}
           material={materials["Glass.011"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_3"].geometry}
           material={materials["grey.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_4"].geometry}
           material={materials["Black.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_5"].geometry}
           material={materials.fundament}
         />
@@ -334,7 +334,7 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
       <group
         name="Restaurant_Allmendhubel"
         ref={refsToUse[5]}
-        position={[1899.663, 1870.255, 877.93]}
+        position={[1881.04, 1879.211, 890.186]}
         rotation={[Math.PI, -0.179, Math.PI]}
         scale={3}
       >
@@ -360,37 +360,37 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
         </Html>
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh"].geometry}
           material={materials["Dark_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_1"].geometry}
           material={materials["Light_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_2"].geometry}
           material={materials["Glass.011"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_3"].geometry}
           material={materials["grey.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_4"].geometry}
           material={materials["Black.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_5"].geometry}
           material={materials.fundament}
         />
@@ -423,37 +423,37 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
         </Html>
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh"].geometry}
           material={materials["Dark_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_1"].geometry}
           material={materials["Light_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_2"].geometry}
           material={materials["Glass.011"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_3"].geometry}
           material={materials["grey.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_4"].geometry}
           material={materials["Black.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_5"].geometry}
           material={materials.fundament}
         />
@@ -486,37 +486,37 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
         </Html>
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh"].geometry}
           material={materials["Dark_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_1"].geometry}
           material={materials["Light_wood.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_2"].geometry}
           material={materials["Glass.011"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_3"].geometry}
           material={materials["grey.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_4"].geometry}
           material={materials["Black.010"]}
         />
         <mesh
           castShadow={restaurantShadow}
-          receiveShadow={restaurantShadow}
+          receiveShadow={false}
           geometry={nodes["restaurant-mesh_5"].geometry}
           material={materials.fundament}
         />
@@ -524,9 +524,9 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
       <group
         name="Restaurant_Piz-Gloria"
         ref={refsToUse[8]}
-        position={[-2217.465, 2916.482, 1634.611]}
-       
-        scale={3}
+        position={[-2219.763, 2915.514, 1627.045]}
+        rotation={[-Math.PI, 0.083, -Math.PI]}
+        scale={1.152}
       >
         <Html
           zIndexRange={[
@@ -547,10 +547,10 @@ export default function Restaurants({allowShadow, refsToUse, setFocusObject}) {
             }}
           />
         </Html>
-        <mesh castShadow={restaurantShadow} receiveShadow={restaurantShadow} name="restaurant360-mesh" geometry={nodes['restaurant360-mesh'].geometry} material={materials['glass.011']} />
-        <mesh castShadow={restaurantShadow} receiveShadow={restaurantShadow} name="restaurant360-mesh_1" geometry={nodes['restaurant360-mesh_1'].geometry} material={materials['silver.010']} />
-        <mesh castShadow={restaurantShadow} receiveShadow={restaurantShadow} name="restaurant360-mesh_2" geometry={nodes['restaurant360-mesh_2'].geometry} material={materials['black.014']} />
-        <mesh castShadow={restaurantShadow} receiveShadow={restaurantShadow} name="restaurant360-mesh_3" geometry={nodes['restaurant360-mesh_3'].geometry} material={materials.tile} />
+        <mesh castShadow={restaurantShadow} receiveShadow={false} name="restaurant360-mesh" geometry={nodes['restaurant360-mesh'].geometry} material={materials['glass.011']} />
+        <mesh castShadow={restaurantShadow} receiveShadow={false} name="restaurant360-mesh_1" geometry={nodes['restaurant360-mesh_1'].geometry} material={materials['silver.010']} />
+        <mesh castShadow={restaurantShadow} receiveShadow={false} name="restaurant360-mesh_2" geometry={nodes['restaurant360-mesh_2'].geometry} material={materials['black.014']} />
+        <mesh castShadow={restaurantShadow} receiveShadow={false} name="restaurant360-mesh_3" geometry={nodes['restaurant360-mesh_3'].geometry} material={materials.tile} />
       </group>
     </group>
   );

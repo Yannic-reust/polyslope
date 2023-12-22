@@ -16,6 +16,8 @@ import Slopes from "../Models/Slopes";
 import EasterEgg from "../Models/EasterEgg";
 import FocusOnObject from "./FocusOnObject";
 import Huts from "../Models/Huts";
+import SnowFlackes from "./SnowFlackes";
+import { Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PerformanceMode, setPerformance } from "../../store/performance/performanceState";
 
@@ -42,6 +44,9 @@ const Canvas = ({ focusFromOutside, setFocusFromOutside }) => {
   //focusObject, accepts ref of an element
   const [focusObject, setFocusObject] = useState(null);
   //focusFromOutside probably have to hardcode a refrence from the buildings and lifts ref to a sting
+
+  // if animation should be activated
+  const animationState = useSelector((state) => state.animation.value);
 
   //if focus object already applied, remove focus object
   function changeFocusObject(obj) {
@@ -139,6 +144,9 @@ const Canvas = ({ focusFromOutside, setFocusFromOutside }) => {
           enableRotate
           rotateSpeed={1}
         />
+        <Suspense fallback={null}>
+          { animationState && <SnowFlackes />}
+        </Suspense>
         <FocusOnObject
           setFocusObject={(obj) => changeFocusObject(obj)}
           focusObject={focusObject}

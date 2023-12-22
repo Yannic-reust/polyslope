@@ -13,7 +13,7 @@ export default function Trees({ allowShadow }) {
           materials["dark_green.008"],
           3334,
         ]}
-        receiveShadow={treeShadow}
+        receiveShadow={false}
         castShadow={treeShadow}
         instanceMatrix={nodes.SM_Tree_fir001.instanceMatrix}
       />

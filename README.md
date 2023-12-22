@@ -1,8 +1,29 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Polyslope
 
-Currently, two official plugins are available:
+PolySlope is an interactive ski map in 3D, implemented with React and React Three Fiber. We used the Mürren - Schilthorn region as a model.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/Yannic-reust/polyslope/assets/62382435/fe072b97-0670-48ea-983b-1cfb4cafbd1a)
+
+
+Polyslope originated as a prototype or proof of concept developed in the STUW1 course in the Digital Ideation program at Lucerne University of Applied Sciences.
+
+## Contributing
+The Project was developed by a group of three. This is a rough overview of the responsibilities of everyone in the team.
+
+Yannic - Programming, Modeling <br/>
+Cyril - Programming, ThreeJS <br/>
+Ramon - Design, Programming, Blender
+
+## Frontend 
+Requirements: Node.js 18^ and npm
+
+1. `npm install`
+2. `npm run dev` 
+
+### Testing
+To be able to run the e2e tests, the development server must run on port `5173`.
+
+To run the e2e test:
+1. `npm run dev`
+2. `npx cypress open`

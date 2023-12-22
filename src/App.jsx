@@ -34,30 +34,22 @@ const [focusFromOutside, setFocusFromOutside] = useState("");
 
   return (
     <>
-     <div
-        className="absolute top-5 right-5 tablet:ml-8 tablet:bottom-8 tablet:top-auto tablet:right-auto"
-        onClick={() => mute()}
-        id="MusicBadge"
-      >
-        <MusicBadge />
-      </div>
 
-      <SideBar setFocusFromOutside={(obj) => setFocusFromOutside(obj)}/>
-      <TabBar />
-      <Canvas setFocusFromOutside={(obj) =>setFocusFromOutside(obj)} focusFromOutside={focusFromOutside} setLoading={(bool) => setLoading(bool)}/>
+     <Suspense fallback={<Loading />}>
+        <Canvas setFocusFromOutside={(obj) =>setFocusFromOutside(obj)} focusFromOutside={focusFromOutside} />
+        <Tutorial />
+        <div
+          className="absolute top-5 right-5 tablet:ml-8 tablet:bottom-8 tablet:top-auto tablet:right-auto"
+          onClick={() => mute()}
+           id="MusicBadge"
+        >
+          <MusicBadge />
+        </div>
 
-      {/* <Loading loading={loading} /> */}
+        <SideBar setFocusFromOutside={(obj) => setFocusFromOutside(obj)}/>
+        <TabBar />
+      </Suspense>
 
-    
-
-     
-
-      <Tutorial />
-
-      {/* <div className="absolute left-1/2 transform -translate-x-1/2 bottom-8 hidden tablet:inline">
-        <AnimationsStatus />
-      </div> 
-      */}
     </>
   );
 }

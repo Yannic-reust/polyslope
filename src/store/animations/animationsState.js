@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const animations = createSlice({
   name: 'animations',
   initialState: {
-    value: true
+    value: false
 
   },
   reducers: {

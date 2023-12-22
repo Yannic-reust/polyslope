@@ -10,7 +10,7 @@ function Animation() {
         <h2 className="text-h-md font-karmina">Animationen</h2>
         <p className="mt-2">Aktivere die Animationen</p>
         <label className="relative inline-flex items-center cursor-pointer mt-4">
-          <input type="checkbox"   defaultChecked={true} className="sr-only peer" onChange={() => dispatch(toggleAnimation())}/>
+          <input type="checkbox" defaultChecked={false} className="sr-only peer" onChange={() => dispatch(toggleAnimation())}/>
           <div
             className="
             bg-white/20

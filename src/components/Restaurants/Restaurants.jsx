@@ -10,7 +10,9 @@ function Restaurants({setFocusFromOutside}) {
   const NAV_ICON_CLASSES = "w-8 max-h-7 fill-white";
 
   const restaurant = useSelector((state) => state.restaurant.value);
-  
+
+ 
+
   const restaurantText = {
     title: "Restaurants",
     text: `(${useCalcStatus(restaurant).openCount}/9 geöffnet)`,

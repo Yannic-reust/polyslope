@@ -17,7 +17,7 @@ import Settings from "../Settings/Settings";
 
 const TabBar = () => {
     const [ page, setPage ] = useState('');
-    const [ subPage, setSubPage ] = useState('Filter');
+    const [ subPage, setSubPage ] = useState('Einstellungen');
     const [ open, setOpen ] = useState(false);
     const [ subMenuItems, setSubMenuItems ] = useState([]);
 

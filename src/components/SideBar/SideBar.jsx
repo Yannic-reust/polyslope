@@ -36,27 +36,27 @@ const SideBar = ({setFocusFromOutside}) => {
             <aside className={`flex w-[900px] right-0 top-0 h-screen pointer-events-auto backdrop-blur backdrop-brightness-90 bg-darkblue/80 transition-all duration-500 ease-in-out ${open ? "translate-x-0" : "translate-x-[800px]"}`}>
                 <nav className="w-[100px] pt-10 pb-10 flex flex-col h-full bg-white/20 z-[999]">
                 <div className="flex flex-col space-y-5 items-center flex-grow-0 justify-start flex-1">
-                    <div>
+                    <div id="Anlagen">
                         <NavItem icon={<CableCarSVG className={NAV_ICON_CLASSES} />} title="Anlagen" togglePage={togglePage} page={page} open={open} />
                     </div>
-                    <div>
+                    <div  id="Restaurants">
                         <NavItem icon={<FoodSVG className={NAV_ICON_CLASSES} />} title="Restaurants" togglePage={togglePage} page={page} open={open} />
                     </div>
-                    <div>
+                    <div id="Wetter">
                         <NavItem icon={<WheatherSVG className={NAV_ICON_CLASSES} />} title="Wetter" togglePage={togglePage} page={page} open={open} />
                     </div>
                 </div>
 
-                <div className="flex justify-center items-center flex-grow">
+                <div className="flex justify-center items-center flex-grow" id="Einstellungen">
                     <NavItem icon={<FilterSVG className={NAV_ICON_CLASSES} />} title="Einstellungen" togglePage={togglePage} page={page} open={open} />
                 </div>
 
-                <div className="flex items-end justify-center">
+                <div className="flex items-end justify-center" id="Info">
                     <NavItem icon={<InfoSVG className={NAV_ICON_CLASSES} />} title="Info" togglePage={togglePage} page={page} open={open} />
                 </div>
                 </nav>
 
-                <CloseSVG onClick={ () => setOpen(false) } className={`absolute cursor-pointer top-10 right-10 fill-white w-6 max-h-6`} />
+                <CloseSVG onClick={ () => setOpen(false) } className={`absolute cursor-pointer top-10 right-10 fill-white w-6 max-h-6`} data-testid="close-icon"/>
 
                 <div className="content w-[800px] p-10 overflow-auto">
                     { page === 'Info' &&  <About /> }

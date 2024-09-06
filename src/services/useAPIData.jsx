@@ -11,9 +11,7 @@ const useAPIData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const existingDataResponse = await fetch(
-          "../../public/backup_data.json"
-        );
+        const existingDataResponse = await fetch("../../backup_data.json");
         const existingData = await existingDataResponse.json();
 
         dispatch(setRestaurants(existingData.restaurants));

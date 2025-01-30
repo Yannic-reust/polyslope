@@ -8,18 +8,61 @@ import { useDispatch } from "react-redux";
 const useAPIData = () => {
   const dispatch = useDispatch();
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const existingDataResponse = await fetch("../../backup_data.json");
+  //       const existingData = await existingDataResponse.json();
+
+  //       dispatch(setRestaurants(existingData.restaurants));
+  //       dispatch(setLift(existingData.lifts.slice(0, 19)));
+  //       dispatch(setTrack(existingData.tracks));
+  //       dispatch(setSnowData(existingData.summary));
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, [dispatch]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const existingDataResponse = await fetch("../../backup_data.json");
-        const existingData = await existingDataResponse.json();
+        const response = await fetch(
+          "https://www.jungfrau.ch/api/resort/v01/winter/overview"
+        );
+        const newData = await response.json();
 
-        dispatch(setRestaurants(existingData.restaurants));
-        dispatch(setLift(existingData.lifts.slice(0, 19)));
-        dispatch(setTrack(existingData.tracks));
-        dispatch(setSnowData(existingData.summary));
+        let resortData;
+
+        // check if new or old structure is used
+        if (newData.data?.resorts?.length > 2) {
+          resortData = newData.data.resorts[2]; // new
+        } else {
+          resortData = newData.data || newData; // old
+        }
+
+        dispatch(setRestaurants(resortData.restaurants || []));
+        dispatch(setLift(resortData.lifts?.slice(0, 19) || []));
+        dispatch(setTrack(resortData.tracks || []));
+        dispatch(setSnowData(resortData.summary || {}));
       } catch (error) {
-        console.error("Error fetching data:", error);
+        try {
+          const existingDataResponse = await fetch(
+            "../../public/backup_data.json"
+          );
+          const existingData = await existingDataResponse.json();
+
+          dispatch(setRestaurants(existingData.restaurants || []));
+          dispatch(setLift(existingData.lifts?.slice(0, 19) || []));
+          dispatch(setTrack(existingData.tracks || []));
+          dispatch(setSnowData(existingData.summary || {}));
+
+          console.error("Error fetching data, using backup:", error);
+        } catch (backupError) {
+          console.error("Error loading backup data:", backupError);
+        }
       }
     };
 
